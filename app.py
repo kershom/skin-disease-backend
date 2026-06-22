@@ -44,7 +44,7 @@ SEVERITY_MAP = {
 # ─── Load Model ───────────────────────────────────────────────────────────────
 
 print("Loading model...")
-model = tf.keras.models.load_model(MODEL_PATH)
+model = tf.keras.models.load_model(MODEL_PATH, compile=False)
 IMG_SIZE = (model.input_shape[1], model.input_shape[2])
 num_classes = model.output_shape[-1]
 
