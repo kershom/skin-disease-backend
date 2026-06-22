@@ -44,7 +44,34 @@ SEVERITY_MAP = {
 # ─── Load Model ───────────────────────────────────────────────────────────────
 
 print("Loading model...")
-model = tf.keras.models.load_model(MODEL_PATH, compile=False)
+try:
+    # Try standard loading first
+    model = tf.keras.models.load_model(MODEL_PATH, compile=False)
+    print("Model loaded with standard method")
+except Exception as e1:
+    print(f"Standard loading failed: {e1}")
+    try:
+        # Try with custom objects to handle batch_shape issue
+        import keras
+        from keras.layers import InputLayer
+        
+        class CompatInputLayer(InputLayer):
+            def __init__(self, **kwargs):
+                if 'batch_shape' in kwargs:
+                    batch_shape = kwargs.pop('batch_shape')
+                    kwargs['shape'] = batch_shape[1:]
+                super().__init__(**kwargs)
+
+        model = tf.keras.models.load_model(
+            MODEL_PATH,
+            compile=False,
+            custom_objects={'InputLayer': CompatInputLayer}
+        )
+        print("Model loaded with compatibility method")
+    except Exception as e2:
+        print(f"Compatibility loading failed: {e2}")
+        model = None
+        print("Running in MOCK MODE")
 IMG_SIZE = (model.input_shape[1], model.input_shape[2])
 num_classes = model.output_shape[-1]
 
