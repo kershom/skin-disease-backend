@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Sparkles, ArrowRight, Camera, Microscope, CheckCircle, Zap, ShieldCheck } from 'lucide-react';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -11,9 +10,8 @@ const Hero = () => {
       <div className="max-w-6xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
 
         <div className="flex-1 text-center md:text-left">
-          <div className="inline-flex items-center bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-            <Sparkles className="w-3.5 h-3.5 mr-1" />
-            {t('hero.badge')}
+          <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+            🤖 {t('hero.badge')}
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white leading-tight mb-4">
             {t('hero.titleLine1')} <br />
@@ -27,17 +25,15 @@ const Hero = () => {
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <button
               onClick={() => navigate('/login')}
-              className="inline-flex items-center bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-lg shadow-blue-200 dark:shadow-blue-900"
+              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-lg shadow-blue-200 dark:shadow-blue-900"
             >
-              {t('hero.getStarted')}
-              <ArrowRight className="w-4 h-4 ml-2" />
+              🚀 {t('hero.getStarted')}
             </button>
             <button
               onClick={() => navigate('/login')}
-              className="inline-flex items-center bg-cyan-500 hover:bg-cyan-600 dark:bg-cyan-600 dark:hover:bg-cyan-700 text-white font-semibold px-6 py-3 rounded-xl transition-all"
+              className="bg-cyan-500 hover:bg-cyan-600 dark:bg-cyan-600 dark:hover:bg-cyan-700 text-white font-semibold px-6 py-3 rounded-xl transition-all"
             >
-              <Camera className="w-4 h-4 mr-2" />
-              {t('hero.scanNow')}
+              📷 {t('hero.scanNow')}
             </button>
           </div>
 
@@ -63,21 +59,18 @@ const Hero = () => {
             <div className="absolute inset-6 rounded-full bg-gradient-to-br from-blue-300 to-cyan-300 dark:from-blue-800 dark:to-cyan-800 opacity-40"></div>
             <div className="absolute inset-12 rounded-full bg-white dark:bg-slate-700 shadow-xl flex items-center justify-center">
               <div className="text-center">
-                <Microscope className="w-16 h-16 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
+                <div className="text-6xl mb-2">🔬</div>
                 <div className="text-xs font-semibold text-slate-500 dark:text-slate-300">{t('hero.aiAnalysis')}</div>
               </div>
             </div>
-            <div className="absolute top-4 right-0 bg-white dark:bg-slate-800 rounded-xl shadow-lg dark:shadow-slate-900 px-3 py-2 text-xs font-medium text-green-600 dark:text-green-400 flex items-center gap-1.5 border border-slate-100 dark:border-slate-700">
-              <CheckCircle className="w-4 h-4 text-green-500" />
-              <span>{t('hero.badgeAccurate')}</span>
+            <div className="absolute top-4 right-0 bg-white dark:bg-slate-800 rounded-xl shadow-lg dark:shadow-slate-900 px-3 py-2 text-xs font-medium text-green-600 dark:text-green-400">
+              ✅ {t('hero.badgeAccurate')}
             </div>
-            <div className="absolute bottom-8 left-0 bg-white dark:bg-slate-800 rounded-xl shadow-lg dark:shadow-slate-900 px-3 py-2 text-xs font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1.5 border border-slate-100 dark:border-slate-700">
-              <Zap className="w-4 h-4 text-blue-500" />
-              <span>{t('hero.badgeResults')}</span>
+            <div className="absolute bottom-8 left-0 bg-white dark:bg-slate-800 rounded-xl shadow-lg dark:shadow-slate-900 px-3 py-2 text-xs font-medium text-blue-600 dark:text-blue-400">
+              ⚡ {t('hero.badgeResults')}
             </div>
-            <div className="absolute bottom-0 right-8 bg-white dark:bg-slate-800 rounded-xl shadow-lg dark:shadow-slate-900 px-3 py-2 text-xs font-medium text-purple-600 dark:text-purple-400 flex items-center gap-1.5 border border-slate-100 dark:border-slate-700">
-              <ShieldCheck className="w-4 h-4 text-purple-500" />
-              <span>{t('hero.badgeSecure')}</span>
+            <div className="absolute bottom-0 right-8 bg-white dark:bg-slate-800 rounded-xl shadow-lg dark:shadow-slate-900 px-3 py-2 text-xs font-medium text-purple-600 dark:text-purple-400">
+              🔒 {t('hero.badgeSecure')}
             </div>
           </div>
         </div>

@@ -30,6 +30,7 @@ const UsersTable = () => {
         createdAt:   doc.data().createdAt?.toDate().toLocaleDateString('en-IN') || 'N/A',
         lastLogin:   doc.data().lastLogin?.toDate().toLocaleDateString('en-IN') || 'N/A',
         phone:       doc.data().phone || '—',
+        scans:       doc.data().scans || 0,
       }));
       setUsers(userList);
     } catch (err) {
@@ -131,6 +132,7 @@ const UsersTable = () => {
                 <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 px-6 py-3">#</th>
                 <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 px-6 py-3">User</th>
                 <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 px-6 py-3 hidden sm:table-cell">Email</th>
+                <th className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 px-6 py-3">Predictions</th>
                 <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 px-6 py-3 hidden md:table-cell">Phone</th>
                 <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 px-6 py-3 hidden lg:table-cell">Joined</th>
                 <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 px-6 py-3 hidden lg:table-cell">Last Login</th>
@@ -164,6 +166,11 @@ const UsersTable = () => {
                   </td>
                   <td className="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 hidden sm:table-cell">
                     {user.email}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 text-center">
+                    <span className="inline-flex items-center justify-center px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                      {user.scans}
+                    </span>
                   </td>
                   <td className="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 hidden md:table-cell">
                     {user.phone}

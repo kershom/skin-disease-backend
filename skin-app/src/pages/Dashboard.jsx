@@ -9,18 +9,13 @@ import Precautions from '../components/dashboard/Precautions';
 import Profile from '../components/dashboard/Profile';
 import LanguageSelector from '../components/layout/LanguageSelector';
 import { isAdmin } from '../firebase/admins';
-import { Stethoscope, Shield, Microscope, BookOpen, ShieldAlert, User as UserIcon, Sliders, LogOut, Moon, Sun, Menu, ArrowRight } from 'lucide-react';
 
 const Dashboard = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('scan');
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [images, setImages] = useState([]);
-  const [selectedImageId, setSelectedImageId] = useState(null);
+  const [predictionData, setPredictionData] = useState(null);
   const navigate = useNavigate();
-  const [isDarkMode, setIsDarkMode] = useState(
-    document.documentElement.classList.contains('dark')
-  );
   const user = auth.currentUser;
 
   const handleLogout = async () => {
@@ -29,12 +24,12 @@ const Dashboard = () => {
   };
 
   const navItems = [
-    { id: 'scan', icon: Microscope, labelKey: 'dashboard.nav.scan' },
-    { id: 'disease', icon: BookOpen, labelKey: 'dashboard.nav.disease' },
-    { id: 'precautions', icon: ShieldAlert, labelKey: 'dashboard.nav.precautions' },
-    { id: 'profile', icon: UserIcon, labelKey: 'dashboard.nav.profile' },
+    { id: 'scan', icon: '🔬', labelKey: 'dashboard.nav.scan' },
+    { id: 'disease', icon: '📚', labelKey: 'dashboard.nav.disease' },
+    { id: 'precautions', icon: '⚠️', labelKey: 'dashboard.nav.precautions' },
+    { id: 'profile', icon: '👤', labelKey: 'dashboard.nav.profile' },
     ...(isAdmin(user?.email)
-      ? [{ id: 'admin', icon: Sliders, labelKey: 'dashboard.nav.admin' }]
+      ? [{ id: 'admin', icon: '🛡️', labelKey: 'dashboard.nav.admin' }]
       : []),
   ];
 
@@ -53,7 +48,7 @@ const Dashboard = () => {
       `}>
         <div className="p-6 border-b border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-2">
-            <Stethoscope className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+            <span className="text-2xl">🩺</span>
             <span className="text-xl font-bold text-slate-800 dark:text-white">
               Derma<span className="text-blue-600">Lens</span>
             </span>
@@ -71,9 +66,8 @@ const Dashboard = () => {
               </div>
               <div className="text-xs text-slate-400 truncate">{user?.email}</div>
               {isAdmin(user?.email) && (
-                <span className="inline-flex items-center gap-1 text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-lg font-semibold mt-1">
-                  <Shield className="w-3 h-3 text-red-500" />
-                  {t('dashboard.adminBadge')}
+                <span className="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-lg font-semibold mt-1 inline-block">
+                  🛡️ {t('dashboard.adminBadge')}
                 </span>
               )}
             </div>
@@ -94,7 +88,7 @@ const Dashboard = () => {
                   : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'
               }`}
             >
-              <item.icon className="w-5 h-5 shrink-0" />
+              <span className="text-lg">{item.icon}</span>
               {t(item.labelKey)}
             </button>
           ))}
@@ -111,7 +105,7 @@ const Dashboard = () => {
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all w-full"
           >
-            <LogOut className="w-5 h-5 shrink-0" />
+            <span className="text-lg">🚪</span>
             {t('dashboard.logout')}
           </button>
         </div>
@@ -130,17 +124,16 @@ const Dashboard = () => {
           <div className="flex items-center gap-3 min-w-0">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden text-slate-600 dark:text-slate-300 text-xl shrink-0 focus:outline-none"
+              className="lg:hidden text-slate-600 dark:text-slate-300 text-xl shrink-0"
             >
-              <Menu className="w-6 h-6" />
+              ☰
             </button>
             <div className="min-w-0">
-              <h1 className="text-lg font-bold text-slate-800 dark:text-white truncate flex items-center gap-2">
-                {activeNav && <activeNav.icon className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />}
-                <span>{activeNav ? t(activeNav.labelKey) : ''}</span>
+              <h1 className="text-lg font-bold text-slate-800 dark:text-white truncate">
+                {activeNav?.icon} {activeNav ? t(activeNav.labelKey) : ''}
               </h1>
               <p className="text-xs text-slate-400 truncate">
-                {t('dashboard.welcomeBack', { name: firstName })}
+                {t('dashboard.welcomeBack', { name: firstName })} 👋
               </p>
             </div>
           </div>
@@ -153,12 +146,11 @@ const Dashboard = () => {
               onClick={() => {
                 const isDark = document.documentElement.classList.toggle('dark');
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                setIsDarkMode(isDark);
               }}
-              className="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-600 transition-all"
-              title={isDarkMode ? t('nav.switchToLight') : t('nav.switchToDark')}
+              className="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 flex items-center justify-center text-base hover:bg-slate-100 dark:hover:bg-slate-600 transition-all"
+              title={t('nav.switchToDark')}
             >
-              {isDarkMode ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-blue-500" />}
+              🌙
             </button>
           </div>
         </header>
@@ -166,10 +158,8 @@ const Dashboard = () => {
         <main className="flex-1 p-4 md:p-6 overflow-auto">
           {activeTab === 'scan' && (
             <ImageUpload
-              images={images}
-              setImages={setImages}
-              selectedImageId={selectedImageId}
-              setSelectedImageId={setSelectedImageId}
+              onPrediction={setPredictionData}
+              predictionData={predictionData}
             />
           )}
           {activeTab === 'disease' && <DiseaseInfo />}
@@ -178,7 +168,7 @@ const Dashboard = () => {
 
           {activeTab === 'admin' && (
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center shadow-sm border border-slate-100 dark:border-slate-700">
-              <ShieldAlert className="w-16 h-16 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+              <div className="text-5xl mb-4">🛡️</div>
               <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-2">
                 {t('dashboard.adminPanel.title')}
               </h2>
@@ -187,10 +177,9 @@ const Dashboard = () => {
               </p>
               <button
                 onClick={() => navigate('/admin')}
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-all"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-all"
               >
-                <span>{t('dashboard.adminPanel.open')}</span>
-                <ArrowRight className="w-4 h-4" />
+                🚀 {t('dashboard.adminPanel.open')}
               </button>
             </div>
           )}

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
-import { Stethoscope, Sun, Moon, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -33,7 +32,7 @@ const Navbar = () => {
           onClick={() => navigate('/')}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <Stethoscope className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+          <span className="text-2xl">🩺</span>
           <span className="text-xl font-bold text-slate-800 dark:text-white">
             Derma<span className="text-blue-600">Lens</span>
           </span>
@@ -56,10 +55,10 @@ const Navbar = () => {
 
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
+            className="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 flex items-center justify-center text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all"
             title={darkMode ? t('nav.switchToLight') : t('nav.switchToDark')}
           >
-            {darkMode ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-blue-500" />}
+            {darkMode ? '☀️' : '🌙'}
           </button>
 
           <button
@@ -72,9 +71,9 @@ const Navbar = () => {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-slate-600 dark:text-slate-300 focus:outline-none"
+          className="md:hidden text-slate-600 dark:text-slate-300 text-2xl"
         >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {menuOpen ? '✕' : '☰'}
         </button>
       </div>
 
@@ -90,17 +89,7 @@ const Navbar = () => {
             onClick={() => setDarkMode(!darkMode)}
             className="w-full border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 py-2 rounded-xl text-sm flex items-center justify-center gap-2"
           >
-            {darkMode ? (
-              <>
-                <Sun className="w-4 h-4 text-amber-500" />
-                {t('nav.switchToLight')}
-              </>
-            ) : (
-              <>
-                <Moon className="w-4 h-4 text-blue-500" />
-                {t('nav.switchToDark')}
-              </>
-            )}
+            {darkMode ? `☀️ ${t('nav.switchToLight')}` : `🌙 ${t('nav.switchToDark')}`}
           </button>
 
           <button

@@ -7,27 +7,42 @@ const StatsCards = () => {
   const [predictionCount, setPredictionCount] = useState('...');
   const [highRiskCount, setHighRiskCount] = useState('...');
   const [webcamCount, setWebcamCount] = useState('...');
+  const [consensusCount, setConsensusCount] = useState('...');
+  const [averageScans, setAverageScans] = useState('...');
 
   useEffect(() => {
     const fetchCounts = async () => {
       try {
-        const [usersSnap, predsSnap, highRiskSnap, webcamSnap] = await Promise.all([
+        const [usersSnap, predsSnap, highRiskSnap, webcamSnap, consensusSnap] = await Promise.all([
           getCountFromServer(collection(db, 'users')),
           getCountFromServer(collection(db, 'predictions')),
           getCountFromServer(query(collection(db, 'predictions'), where('severity', '==', 'High'))),
-          getCountFromServer(query(collection(db, 'predictions'), where('source', '==', 'webcam')))
+          getCountFromServer(query(collection(db, 'predictions'), where('source', '==', 'webcam'))),
+          getCountFromServer(query(collection(db, 'predictions'), where('isConsensus', '==', true)))
         ]);
         
-        setUserCount(usersSnap.data().count.toLocaleString());
-        setPredictionCount(predsSnap.data().count.toLocaleString());
-        setHighRiskCount(highRiskSnap.data().count.toLocaleString());
-        setWebcamCount(webcamSnap.data().count.toLocaleString());
+        const usersVal = usersSnap.data().count;
+        const predsVal = predsSnap.data().count;
+        const highRiskVal = highRiskSnap.data().count;
+        const webcamVal = webcamSnap.data().count;
+        const consensusVal = consensusSnap.data().count;
+
+        setUserCount(usersVal.toLocaleString());
+        setPredictionCount(predsVal.toLocaleString());
+        setHighRiskCount(highRiskVal.toLocaleString());
+        setWebcamCount(webcamVal.toLocaleString());
+        setConsensusCount(consensusVal.toLocaleString());
+
+        const avg = usersVal > 0 ? (predsVal / usersVal).toFixed(1) : '0';
+        setAverageScans(avg);
       } catch (err) {
         console.error('Error fetching dashboard counts:', err);
         setUserCount('N/A');
         setPredictionCount('N/A');
         setHighRiskCount('N/A');
         setWebcamCount('N/A');
+        setConsensusCount('N/A');
+        setAverageScans('N/A');
       }
     };
     fetchCounts();
@@ -55,10 +70,10 @@ const StatsCards = () => {
       border: 'border-purple-100 dark:border-purple-800',
     },
     {
-      icon: '🎯',
-      label: 'Model Accuracy',
-      value: '95.4%',
-      change: 'HAM10000 dataset',
+      icon: '📊',
+      label: 'Average Scans / User',
+      value: averageScans,
+      change: 'Usage density',
       changeType: 'neutral',
       bg: 'bg-green-50 dark:bg-green-900/20',
       iconBg: 'bg-green-100 dark:bg-green-900/40',
@@ -85,10 +100,10 @@ const StatsCards = () => {
       border: 'border-cyan-100 dark:border-cyan-800',
     },
     {
-      icon: '🌐',
-      label: 'Active Languages',
-      value: '21',
-      change: 'Supported languages',
+      icon: '🤝',
+      label: 'Consensus Predictions',
+      value: consensusCount,
+      change: 'Multi-image reviews',
       changeType: 'neutral',
       bg: 'bg-amber-50 dark:bg-amber-900/20',
       iconBg: 'bg-amber-100 dark:bg-amber-900/40',

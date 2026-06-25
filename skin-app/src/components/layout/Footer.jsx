@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { Stethoscope } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -8,7 +7,7 @@ const Footer = () => {
     <footer className="bg-slate-900 text-slate-400 py-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <div className="flex items-center justify-center gap-2 mb-3">
-          <Stethoscope className="w-6 h-6 text-blue-500" />
+          <span className="text-2xl">🩺</span>
           <span className="text-white font-bold text-xl">DermaLens</span>
         </div>
         <p className="text-sm mb-4">{t('footer.tagline')}</p>

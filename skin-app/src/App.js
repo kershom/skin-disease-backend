@@ -1,11 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { auth } from './firebase/firebase';
+import i18n from './i18n';
 import { onAuthStateChanged } from 'firebase/auth';
 import { isAdmin } from './firebase/admins';
-import signupFlag from './utils/signupFlag';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -17,11 +17,6 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // ✅ Skip auth state changes during signup
-      if (signupFlag.isSigningUp) {
-        console.log('⏭️ Skipping auth change — signup in progress');
-        return;
-      }
       setUser(currentUser);
       setLoading(false);
     });
@@ -34,7 +29,7 @@ function App() {
         <div className="text-center">
           <div className="text-5xl mb-4">🩺</div>
           <div className="text-slate-500 dark:text-slate-400 text-sm">
-            Loading DermaLens...
+            {i18n.t('app.loading')}
           </div>
         </div>
       </div>
@@ -45,15 +40,20 @@ function App() {
     <BrowserRouter>
       <Toaster position="top-right" />
       <Routes>
+        {/* Public */}
         <Route path="/" element={<Home />} />
         <Route
           path="/login"
           element={user ? <Navigate to="/dashboard" /> : <Login />}
         />
+
+        {/* User dashboard — any logged in user */}
         <Route
           path="/dashboard"
           element={user ? <Dashboard /> : <Navigate to="/login" />}
         />
+
+        {/* Admin dashboard — only admin emails */}
         <Route
           path="/admin"
           element={
@@ -64,13 +64,18 @@ function App() {
               : <Navigate to="/unauthorized" />
           }
         />
+
+        {/* Unauthorized page */}
         <Route path="/unauthorized" element={<Unauthorized />} />
+
+        {/* Catch all */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
+// Unauthorized page — shown to non-admins trying to access /admin
 const Unauthorized = () => {
   const navigate = useNavigate();
   return (
