@@ -14,7 +14,8 @@ const Dashboard = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('scan');
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [predictionData, setPredictionData] = useState(null);
+  const [images, setImages] = useState([]);
+  const [selectedImageId, setSelectedImageId] = useState(null);
   const navigate = useNavigate();
   const user = auth.currentUser;
 
@@ -25,7 +26,7 @@ const Dashboard = () => {
 
   const navItems = [
     { id: 'scan', icon: '🔬', labelKey: 'dashboard.nav.scan' },
-    { id: 'disease', icon: '📚', labelKey: 'dashboard.nav.disease' },
+    { id: 'disease', icon: '📜', labelKey: 'dashboard.nav.disease' },
     { id: 'precautions', icon: '⚠️', labelKey: 'dashboard.nav.precautions' },
     { id: 'profile', icon: '👤', labelKey: 'dashboard.nav.profile' },
     ...(isAdmin(user?.email)
@@ -48,7 +49,7 @@ const Dashboard = () => {
       `}>
         <div className="p-6 border-b border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🩺</span>
+            <span className="text-2xl">🔬</span>
             <span className="text-xl font-bold text-slate-800 dark:text-white">
               Derma<span className="text-blue-600">Lens</span>
             </span>
@@ -148,7 +149,6 @@ const Dashboard = () => {
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
               }}
               className="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 flex items-center justify-center text-base hover:bg-slate-100 dark:hover:bg-slate-600 transition-all"
-              title={t('nav.switchToDark')}
             >
               🌙
             </button>
@@ -158,8 +158,10 @@ const Dashboard = () => {
         <main className="flex-1 p-4 md:p-6 overflow-auto">
           {activeTab === 'scan' && (
             <ImageUpload
-              onPrediction={setPredictionData}
-              predictionData={predictionData}
+              images={images}
+              setImages={setImages}
+              selectedImageId={selectedImageId}
+              setSelectedImageId={setSelectedImageId}
             />
           )}
           {activeTab === 'disease' && <DiseaseInfo />}
