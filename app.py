@@ -1,12 +1,12 @@
 import os
-import uuid
 import numpy as np
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from PIL import Image
 import tensorflow as tf
 import cv2
 import io
-from flask import Flask, request, jsonify, send_from_directory, after_this_request
+import base64
 
 app = Flask(__name__)
 CORS(app)
@@ -17,6 +17,7 @@ def add_cors_headers(response):
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
     response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
     return response
+
 # ─── Model Configuration ──────────────────────────────────────────────────────
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model", "skin_disease_mobilenet.h5")
@@ -77,18 +78,14 @@ def preprocess_image(file_bytes):
     img = Image.open(io.BytesIO(file_bytes)).convert("RGB")
     img = img.resize(IMG_SIZE)
     arr = np.array(img, dtype=np.float32)
-
-    # ✅ MobileNet preprocessing — scales pixels to [-1, 1]
     arr = tf.keras.applications.mobilenet_v2.preprocess_input(arr)
-
     arr = np.expand_dims(arr, axis=0)
     return arr
 
 
 def generate_gradcam(img_array, class_index):
-    """Generate Grad-CAM heatmap and return filename."""
+    """Generate Grad-CAM heatmap and return as base64 string."""
     try:
-        # Find last Conv2D layer
         last_conv_layer_name = None
         for layer in reversed(model.layers):
             if isinstance(layer, tf.keras.layers.Conv2D):
@@ -99,7 +96,6 @@ def generate_gradcam(img_array, class_index):
             print("No Conv2D layer found")
             return None
 
-        # Build gradient model
         grad_model = tf.keras.models.Model(
             inputs=model.input,
             outputs=[
@@ -108,7 +104,6 @@ def generate_gradcam(img_array, class_index):
             ]
         )
 
-        # Compute gradients
         with tf.GradientTape() as tape:
             conv_outputs, preds = grad_model(img_array)
             loss = preds[:, class_index]
@@ -122,7 +117,6 @@ def generate_gradcam(img_array, class_index):
         heatmap      = heatmap / (tf.math.reduce_max(heatmap) + 1e-8)
         heatmap      = heatmap.numpy()
 
-        # Resize and colorize
         h, w = IMG_SIZE
         heatmap_resized = cv2.resize(heatmap, (w, h))
         heatmap_colored = cv2.applyColorMap(
@@ -130,7 +124,6 @@ def generate_gradcam(img_array, class_index):
             cv2.COLORMAP_JET
         )
 
-        # Overlay on original image
         original     = np.uint8(img_array[0] * 255)
         original_bgr = cv2.cvtColor(original, cv2.COLOR_RGB2BGR)
         superimposed = cv2.addWeighted(
@@ -139,14 +132,10 @@ def generate_gradcam(img_array, class_index):
             0
         )
 
-        # Save heatmap
-        save_dir = os.path.join(os.path.dirname(__file__), 'static', 'gradcam')
-        os.makedirs(save_dir, exist_ok=True)
-        filename = f"gradcam_{uuid.uuid4().hex[:8]}.jpg"
-        filepath = os.path.join(save_dir, filename)
-        cv2.imwrite(filepath, superimposed)
-
-        return filename
+        # Return as base64 instead of saving to disk
+        _, buffer = cv2.imencode('.jpg', superimposed)
+        b64 = base64.b64encode(buffer).decode('utf-8')
+        return f"data:image/jpeg;base64,{b64}"
 
     except Exception as e:
         print(f"Grad-CAM error: {e}")
@@ -174,9 +163,9 @@ def build_response(predictions, img_array=None):
     # Generate Grad-CAM
     gradcam_url = None
     if img_array is not None:
-        gradcam_file = generate_gradcam(img_array, top_index)
-        if gradcam_file:
-            gradcam_url = f"https://skin-disease-backend-1.onrender.com/gradcam/{gradcam_file}"
+        gradcam_b64 = generate_gradcam(img_array, top_index)
+        if gradcam_b64:
+            gradcam_url = gradcam_b64
 
     return {
         "disease":       top_disease,
@@ -221,11 +210,10 @@ def predict():
         return jsonify({"error": f"Unsupported file type: {file.content_type}"}), 400
 
     try:
-        file_bytes = file.read()
-        arr        = preprocess_image(file_bytes)
+        file_bytes  = file.read()
+        arr         = preprocess_image(file_bytes)
         predictions = model.predict(arr, verbose=0)
 
-        # ✅ Reject low confidence predictions
         top_confidence = float(np.max(predictions[0])) * 100
         MIN_CONFIDENCE = 30.0
 
@@ -242,14 +230,6 @@ def predict():
     except Exception as e:
         app.logger.exception("Prediction failed")
         return jsonify({"error": f"Prediction failed: {str(e)}"}), 500
-
-
-@app.route('/gradcam/<filename>')
-def serve_gradcam(filename):
-    return send_from_directory(
-        os.path.join(os.path.dirname(__file__), 'static', 'gradcam'),
-        filename
-    )
 
 
 # ─── Entry Point ──────────────────────────────────────────────────────────────
