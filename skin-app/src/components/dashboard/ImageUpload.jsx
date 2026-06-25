@@ -47,6 +47,7 @@ const ImageUpload = ({ onPrediction, predictionData }) => {
 
  const handleAnalyze = async () => {
     if (!image) return;
+     console.log("API URL:", process.env.REACT_APP_API_URL)
     setLoading(true);
     try {
       const formData = new FormData();
