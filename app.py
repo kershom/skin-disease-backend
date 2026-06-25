@@ -9,7 +9,7 @@ import cv2
 import io
 
 app = Flask(__name__)
-CORS(app, origins=["https://skin-disease-frontend-s38h.onrender.com"])
+CORS(app)
 
 # ─── Model Configuration ──────────────────────────────────────────────────────
 
