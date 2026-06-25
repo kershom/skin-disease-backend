@@ -170,7 +170,7 @@ def build_response(predictions, img_array=None):
     if img_array is not None:
         gradcam_file = generate_gradcam(img_array, top_index)
         if gradcam_file:
-            gradcam_url = f"http://localhost:5000/gradcam/{gradcam_file}"
+            gradcam_url = f"https://skin-disease-backend-1.onrender.com/gradcam/{gradcam_file}"
 
     return {
         "disease":       top_disease,
