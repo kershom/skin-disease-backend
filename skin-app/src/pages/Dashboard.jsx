@@ -7,7 +7,6 @@ import ImageUpload from '../components/dashboard/ImageUpload';
 import DiseaseInfo from '../components/dashboard/DiseaseInfo';
 import Precautions from '../components/dashboard/Precautions';
 import Profile from '../components/dashboard/Profile';
-import AiAssistant from '../components/dashboard/AiAssistant';
 import LanguageSelector from '../components/layout/LanguageSelector';
 import { isAdmin } from '../firebase/admins';
 import {
@@ -22,7 +21,6 @@ import {
   Sun,
   Moon,
   ArrowRight,
-  MessageCircle,
 } from 'lucide-react';
 
 const Dashboard = () => {
@@ -50,7 +48,6 @@ const Dashboard = () => {
     ...(isAdmin(user?.email)
       ? [{ id: 'admin', icon: Shield, labelKey: 'dashboard.nav.admin' }]
       : []),
-    { id: 'assistant', icon: MessageCircle, labelKey: 'dashboard.nav.assistant' },
   ];
 
   const activeNav = navItems.find((n) => n.id === activeTab);
@@ -109,7 +106,7 @@ const Dashboard = () => {
               }`}
             >
               <item.icon className="w-5 h-5 shrink-0" />
-              <span>{t(item.labelKey, item.id === 'assistant' ? 'AI Assistant' : item.id)}</span>
+              <span>{t(item.labelKey)}</span>
             </button>
           ))}
         </nav>
@@ -151,7 +148,7 @@ const Dashboard = () => {
             <div className="min-w-0">
               <h1 className="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2 truncate">
                 {activeNav && <activeNav.icon className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />}
-                <span>{activeNav ? t(activeNav.labelKey, activeNav.id === 'assistant' ? 'AI Assistant' : activeNav.id) : ''}</span>
+                <span>{activeNav ? t(activeNav.labelKey) : ''}</span>
               </h1>
               <p className="text-xs text-slate-400 truncate">
                 {t('dashboard.welcomeBack', { name: firstName })}
@@ -188,7 +185,6 @@ const Dashboard = () => {
           {activeTab === 'disease' && <DiseaseInfo />}
           {activeTab === 'precautions' && <Precautions />}
           {activeTab === 'profile' && <Profile />}
-          {activeTab === 'assistant' && <AiAssistant />}
 
           {activeTab === 'admin' && (
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center shadow-sm border border-slate-100 dark:border-slate-700">
