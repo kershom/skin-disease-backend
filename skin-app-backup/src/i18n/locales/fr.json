@@ -1,0 +1,151 @@
+{
+  "app": {
+    "tagline": "Détection des maladies de la peau alimentée par l'IA",
+    "loading": "Chargement de DermaLens..."
+  },
+  "languages": {
+    "en": "Français",
+    "hi": "Hindi",
+    "ml": "Malayalam",
+    "ta": "Tamil",
+    "te": "Télougou",
+    "kn": "Kannada",
+    "bn": "Bengali",
+    "mr": "Marathi",
+    "gu": "Gujarati",
+    "pa": "Pendjabi",
+    "or": "Odia",
+    "ur": "Urdu",
+    "fr": "French",
+    "es": "Spanish",
+    "ar": "Arabe",
+    "zh": "Chinois",
+    "ja": "Japonais",
+    "ko": "Coréen",
+    "ru": "Russe",
+    "de": "Allemand",
+    "pt": "Portugais"
+  },
+  "nav": {
+    "features": "Les fonctionnalités",
+    "howItWorks": "Comment ça marche",
+    "awareness": "Détection",
+    "login": "Connexion",
+    "indianLanguages": "Langues indiennes",
+    "internationalLanguages": "LANGUES INTERNATIONAL E S",
+    "switchToLight": "Activer l’affichage clair",
+    "switchToDark": "Activer l’affichage sombrE"
+  },
+  "hero": {
+    "badge": "Soins de santé alimentés par l'IA",
+    "titleLine1": "Alimenté par l'IA",
+    "titleLine2": "AFFECTION DE LA PEAU",
+    "titleLine3": "Système de détection",
+    "subtitle": "Téléchargez ou numérisez votre image de peau et recevez des prédictions instantanées alimentées par l'IA, des informations sur les maladies et des précautions d'expert.",
+    "getStarted": "Démarrez",
+    "scanNow": "Analyser Maintenant",
+    "statDiseases": "Maladies détectées",
+    "statAccuracy": "Taux d'exactitude ",
+    "statInstant": "Résultats de l'IA",
+    "statInstantValue": "Immédiat",
+    "aiAnalysis": "Analyse par l'IA",
+    "badgeAccurate": "Précis à 95 %",
+    "badgeResults": "Résultats instantanés",
+    "badgeSecure": "Données privées sécurisées."
+  },
+  "features": {
+    "badge": "Ce que nous proposons ",
+    "title": "Fonctionnalités Puissantes",
+    "subtitle": "Tout ce dont vous avez besoin pour la détection des maladies de la peau alimentée par l'IA sur une seule plateforme.",
+    "aiPrediction": {
+      "title": "Prédiction de l'IA",
+      "description": "Le modèle CNN formé sur l'ensemble de données HAM10000 détecte 7 types de maladies de la peau avec une grande précision."
+    },
+    "webcam": {
+      "title": "Détection de webcam en direct",
+      "description": "Utilisez l'appareil photo de votre appareil pour capturer et analyser des images de la peau en temps réel."
+    },
+    "awareness": {
+      "title": "Sensibilisation à la maladie",
+      "description": "Informations détaillées sur les symptômes, les causes, la gravité et la prévention de chaque maladie."
+    },
+    "gradcam": {
+      "title": "Visualisation Cam Grad",
+      "description": "Voyez exactement où l'IA s'est concentrée sur votre image à l'aide de superpositions de cartes thermiques."
+    },
+    "multilingual": {
+      "title": "Prise en charge multilingue",
+      "description": "Disponible en anglais, hindi, malayalam, tamoul et bien d'autres langues pour une plus grande accessibilité."
+    },
+    "secure": {
+      "title": "Profils utilisateur sécurisés",
+      "description": "Vos données sont protégées par l'authentification Firebase et le stockage sécurisé dans le cloud."
+    }
+  },
+  "howItWorks": {
+    "badge": "Procédé simple",
+    "title": "Comment ça marche",
+    "subtitle": "Obtenez votre analyse cutanée IA en 3 étapes simples — aucune connaissance médicale requise.",
+    "stepLabel": "ÉTAPE",
+    "step1": {
+      "title": "Télécharger ou numériser une image",
+      "description": "Faites glisser et déposez une image de peau ou utilisez votre webcam en direct pour en capturer une directement."
+    },
+    "step2": {
+      "title": "L'IA analyse l'image",
+      "description": "Notre modèle CNN traite l'image et l'exécute à travers le modèle formé par HAM10000."
+    },
+    "step3": {
+      "title": "Obtenir des résultats et des précautions",
+      "description": "Recevez la maladie prédite, le score de confiance, la carte thermique Grad-CAM et les précautions."
+    }
+  },
+  "awareness": {
+    "disclaimerTitle": "Clause de non-responsabilité médicale",
+    "disclaimerBody": "Les prédictions de l'IA ne remplacent pas le diagnostic médical professionnel. Cet outil est destiné uniquement à la sensibilisation et à la détection précoce. Consultez toujours un dermatologue certifié pour un diagnostic et un traitement appropriés.",
+    "ctaTitle": "Prêt à commencer ?",
+    "ctaSubtitle": "Rejoignez des milliers d'utilisateurs utilisant l'IA pour rester conscients de la santé de leur peau.",
+    "ctaButton": "Essayez DermaLens gratuitement"
+  },
+  "footer": {
+    "tagline": "Système de détection des maladies de la peau alimenté par l'IA",
+    "copyright": "© 2025 DermaLens. À des fins de sensibilisation uniquement. Ne se substitue pas à un avis médical."
+  },
+  "login": {
+    "backToHome": "Retour à la Page d'Accueil",
+    "tagline": "Détection des maladies de la peau alimentée par l'IA",
+    "loginTab": "Connexion",
+    "signupTab": "Inscription",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "fullName": "Nom et prénom",
+    "phone": "Numéro de téléphone",
+    "phoneOptional": "(facultatif)",
+    "confirmPassword": "Confirmer le mot de passe",
+    "savePassword": "Enregistrer le mot de passe",
+    "loggingIn": "Connexion...",
+    "loginButton": "Connexion",
+    "creatingAccount": "Création d'un compte",
+    "createAccount": "Créer compte",
+    "or": "ou",
+    "continueGoogle": "Continuer avec Google",
+    "emailPlaceholder": "votre@exemple.com",
+    "phonePlaceholder": "Numéro à 10 chiffres",
+    "passwordMinPlaceholder": "Min. 6 caractères",
+    "confirmPlaceholder": "Re-entrer mot de passe",
+    "errors": {
+      "fillAll": "Veuillez remplir tous les champs obligatoires.",
+      "fillRequired": "Veuillez remplir tous les champs requis.",
+      "passwordMin": "Le mot de passe doit avoir au moins 6 caractères.",
+      "passwordMismatch": "Les mots de passe ne correspondent pas.",
+      "phoneInvalid": "Veuillez saisir un numéro de téléphone valide.",
+      "userNotFound": "Aucun compte trouvé avec cet e-mail.",
+      "wrongPassword": "Mot de passe incorrect.",
+      "invalidEmail": "Adresse courriel non valide.",
+      "emailInUse": "Un compte avec cette adresse e-mail existe déjà."
+    },
+    "successLogin": "Connexion réussie",
+    "successSignup": "Compte créé avec succès ! Veuillez vous connecter.",
+    "successGoogle": "Connecté avec Google !"
+  }
+}

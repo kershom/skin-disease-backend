@@ -1,0 +1,151 @@
+{
+  "app": {
+    "tagline": "AI-ಚಾಲಿತ ಚರ್ಮದ ಕಾಯಿಲೆ ಪತ್ತೆ",
+    "loading": "ಡರ್ಮಲೆನ್ಸ್ ಲೋಡ್ ಆಗುತ್ತಿದೆ..."
+  },
+  "languages": {
+    "en": "ನಾನು ಕರೆ ಮಾಡಬಹುದಾ",
+    "hi": "ಹಿಂದಿ",
+    "ml": "മലയാളം",
+    "ta": "Kanada",
+    "te": "ತೆಲುಗು",
+    "kn": "Kannada",
+    "bn": "ಬಂಗಾಳಿ",
+    "mr": "ಮರಾಠಿ",
+    "gu": "ಗುಜರಾತಿ",
+    "pa": "ಪಂಜಾಬಿ",
+    "or": "ಒಡಿಯಾ",
+    "ur": "ಉರ್ದುName",
+    "fr": "ಫ್ರೆಂಚ್Name",
+    "es": "Spanish",
+    "ar": "Arabic",
+    "zh": "Chinese",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "ru": "Russian",
+    "de": "German",
+    "pt": "Portuguese"
+  },
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "awareness": "Awareness",
+    "login": "Login",
+    "indianLanguages": "Indian Languages",
+    "internationalLanguages": "International Languages",
+    "switchToLight": "Switch to Light Mode",
+    "switchToDark": "Switch to Dark Mode"
+  },
+  "hero": {
+    "badge": "AI-Powered Healthcare",
+    "titleLine1": "AI-Powered",
+    "titleLine2": "Skin Disease",
+    "titleLine3": "Detection System",
+    "subtitle": "Upload or scan your skin image and receive instant AI-powered predictions, disease information, and expert precautions.",
+    "getStarted": "Get Started",
+    "scanNow": "Scan Now",
+    "statDiseases": "Diseases Detected",
+    "statAccuracy": "Accuracy Rate",
+    "statInstant": "AI Results",
+    "statInstantValue": "Instant",
+    "aiAnalysis": "AI Analysis",
+    "badgeAccurate": "95% Accurate",
+    "badgeResults": "Instant Results",
+    "badgeSecure": "Secure & Private"
+  },
+  "features": {
+    "badge": "What We Offer",
+    "title": "Powerful Features",
+    "subtitle": "Everything you need for AI-powered skin disease detection in one platform.",
+    "aiPrediction": {
+      "title": "AI Prediction",
+      "description": "CNN model trained on HAM10000 dataset detects 7 types of skin diseases with high accuracy."
+    },
+    "webcam": {
+      "title": "Live Webcam Detection",
+      "description": "Use your device camera to capture and analyze skin images in real time."
+    },
+    "awareness": {
+      "title": "Disease Awareness",
+      "description": "Detailed information about symptoms, causes, severity, and prevention for each disease."
+    },
+    "gradcam": {
+      "title": "Grad-CAM Visualization",
+      "description": "See exactly where the AI focused on your image using heatmap overlays."
+    },
+    "multilingual": {
+      "title": "Multilingual Support",
+      "description": "Available in English, Hindi, Malayalam, Tamil and many more languages for wider accessibility."
+    },
+    "secure": {
+      "title": "Secure User Profiles",
+      "description": "Your data is protected with Firebase authentication and secure cloud storage."
+    }
+  },
+  "howItWorks": {
+    "badge": "Simple Process",
+    "title": "How It Works",
+    "subtitle": "Get your AI skin analysis in 3 simple steps — no medical knowledge required.",
+    "stepLabel": "STEP",
+    "step1": {
+      "title": "Upload or Scan Image",
+      "description": "Drag and drop a skin image or use your live webcam to capture one directly."
+    },
+    "step2": {
+      "title": "AI Analyzes Image",
+      "description": "Our CNN model processes the image and runs it through the HAM10000 trained model."
+    },
+    "step3": {
+      "title": "Get Results & Precautions",
+      "description": "Receive the predicted disease, confidence score, Grad-CAM heatmap, and precautions."
+    }
+  },
+  "awareness": {
+    "disclaimerTitle": "Medical Disclaimer",
+    "disclaimerBody": "AI predictions are not a replacement for professional medical diagnosis. This tool is meant for awareness and early detection only. Always consult a certified dermatologist for proper diagnosis and treatment.",
+    "ctaTitle": "Ready to Get Started?",
+    "ctaSubtitle": "Join thousands of users using AI to stay aware of their skin health.",
+    "ctaButton": "Try DermaLens For Free"
+  },
+  "footer": {
+    "tagline": "AI-Powered Skin Disease Detection System",
+    "copyright": "© 2025 DermaLens. For awareness purposes only. Not a substitute for medical advice."
+  },
+  "login": {
+    "backToHome": "Back to Home",
+    "tagline": "AI-ಚಾಲಿತ ಚರ್ಮದ ಕಾಯಿಲೆ ಪತ್ತೆ",
+    "loginTab": "Login",
+    "signupTab": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "phoneOptional": "(optional)",
+    "confirmPassword": "Confirm Password",
+    "savePassword": "Save password",
+    "loggingIn": "Logging in...",
+    "loginButton": "Login",
+    "creatingAccount": "Creating account...",
+    "createAccount": "Create Account",
+    "or": "or",
+    "continueGoogle": "Continue with Google",
+    "emailPlaceholder": "you@example.com",
+    "phonePlaceholder": "10-digit number",
+    "passwordMinPlaceholder": "Min. 6 characters",
+    "confirmPlaceholder": "Re-enter password",
+    "errors": {
+      "fillAll": "Please fill in all fields.",
+      "fillRequired": "Please fill in all required fields.",
+      "passwordMin": "Password must be at least 6 characters.",
+      "passwordMismatch": "Passwords do not match.",
+      "phoneInvalid": "Please enter a valid 10-digit phone number.",
+      "userNotFound": "No account found with this email.",
+      "wrongPassword": "Incorrect password.",
+      "invalidEmail": "Invalid email address.",
+      "emailInUse": "An account with this email already exists."
+    },
+    "successLogin": "Logged in successfully!",
+    "successSignup": "Account created successfully! Please login.",
+    "successGoogle": "Logged in with Google!"
+  }
+}

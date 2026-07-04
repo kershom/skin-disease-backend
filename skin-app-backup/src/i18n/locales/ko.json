@@ -1,0 +1,151 @@
+{
+  "app": {
+    "tagline": "AI 기반 피부 질환 감지",
+    "loading": "DermaLens 로드 중..."
+  },
+  "languages": {
+    "en": "영어",
+    "hi": "니르빅 차우다리",
+    "ml": "Sivani",
+    "ta": "타밀식",
+    "te": "Korean",
+    "kn": "칸나다어",
+    "bn": "벵골어",
+    "mr": "마라티어",
+    "gu": "구자라티식",
+    "pa": "펀자브식",
+    "or": "오디아식",
+    "ur": "우르두어",
+    "fr": "프랑스어",
+    "es": "스페인어",
+    "ar": "아랍어",
+    "zh": "중국어",
+    "ja": "일본어",
+    "ko": "한국어",
+    "ru": "러시아어",
+    "de": "독일어",
+    "pt": "포르투갈어"
+  },
+  "nav": {
+    "features": "기능",
+    "howItWorks": "이용방법",
+    "awareness": "자각",
+    "login": "로그인",
+    "indianLanguages": "인도 언어",
+    "internationalLanguages": "국제어",
+    "switchToLight": "라이트 모드로 전환",
+    "switchToDark": "다크 모드로 전환"
+  },
+  "hero": {
+    "badge": "AI 기반 헬스케어",
+    "titleLine1": "AI 기반",
+    "titleLine2": "피부병",
+    "titleLine3": "검출 시스템",
+    "subtitle": "피부 이미지를 업로드하거나 스캔하면 즉각적인 AI 기반 예측, 질병 정보 및 전문가의 예방 조치를 받을 수 있습니다.",
+    "getStarted": "시작하기",
+    "scanNow": "스캔하기",
+    "statDiseases": "질병 감지됨",
+    "statAccuracy": "정확도",
+    "statInstant": "AI 결과",
+    "statInstantValue": "즉시",
+    "aiAnalysis": "AI 분석",
+    "badgeAccurate": "95% 정확도",
+    "badgeResults": "즉각적인 결과",
+    "badgeSecure": "보안 및 비공개"
+  },
+  "features": {
+    "badge": "저희가 제공하는 혜택:",
+    "title": "강력한 기능",
+    "subtitle": "하나의 플랫폼에서 AI 기반 피부 질환을 감지하는 데 필요한 모든 것을 제공합니다.",
+    "aiPrediction": {
+      "title": "AI 예측",
+      "description": "HAM10000 데이터세트에 대해 훈련된 CNN 모델은 높은 정확도로 7가지 유형의 피부 질환을 감지합니다."
+    },
+    "webcam": {
+      "title": "라이브 웹캠 감지",
+      "description": "장치 카메라를 사용하여 실시간으로 피부 이미지를 캡처하고 분석합니다."
+    },
+    "awareness": {
+      "title": "질병의 인식",
+      "description": "각 질환의 증상, 원인, 중증도 및 예방에 대한 자세한 정보."
+    },
+    "gradcam": {
+      "title": "Grad-CAM 시각화",
+      "description": "히트맵 오버레이를 사용하여 AI가 이미지에 초점을 맞춘 위치를 정확히 확인하세요."
+    },
+    "multilingual": {
+      "title": "다국어 지원",
+      "description": "더 넓은 접근성을 위해 영어, 힌디어, 말라얄람어, 타밀어 등 다양한 언어로 제공됩니다."
+    },
+    "secure": {
+      "title": "사용자 프로필 보안",
+      "description": "사용자의 데이터는 Firebase 인증 및 안전한 클라우드 스토리지로 보호됩니다."
+    }
+  },
+  "howItWorks": {
+    "badge": "간단한 프로세스",
+    "title": "이용방법",
+    "subtitle": "의학적 지식 없이도 간단한 3단계로 AI 피부 분석을 수행할 수 있습니다.",
+    "stepLabel": "단계",
+    "step1": {
+      "title": "이미지 업로드 또는 스캔",
+      "description": "스킨 이미지를 드래그 앤 드롭하거나 라이브 웹캠을 사용하여 직접 캡처할 수 있습니다."
+    },
+    "step2": {
+      "title": "AI가 이미지 분석",
+      "description": "CNN 모델은 이미지를 처리하고 HAM10000 훈련 모델을 통해 실행합니다."
+    },
+    "step3": {
+      "title": "결과 및 주의 사항 가져오기",
+      "description": "예측된 질환, 신뢰도 점수, Grad-CAM 히트맵 및 예방 조치를 받습니다."
+    }
+  },
+  "awareness": {
+    "disclaimerTitle": "의료 면책 조항",
+    "disclaimerBody": "AI 예측은 전문 의료 진단을 대체할 수 없습니다. 이 도구는 인식 및 조기 감지를 위한 것입니다. 적절한 진단과 치료를 위해 항상 공인 피부과 전문의와 상담하십시오.",
+    "ctaTitle": "준비가 되었나요?",
+    "ctaSubtitle": "AI를 사용하는 수천 명의 사용자와 함께 피부 건강에 대해 알아보세요.",
+    "ctaButton": "DermaLens를 무료로 사용해 보세요"
+  },
+  "footer": {
+    "tagline": "AI 기반 피부 질환 감지 시스템",
+    "copyright": "© 2025 DermaLens. 인식 목적으로만 사용됩니다. 의학적 조언을 대신할 수 없습니다."
+  },
+  "login": {
+    "backToHome": "집으로 돌아가기",
+    "tagline": "AI 기반 피부 질환 감지",
+    "loginTab": "로그인",
+    "signupTab": "가입하기",
+    "email": "이메일",
+    "password": "비밀번호",
+    "fullName": "전체 이름",
+    "phone": "전화 번호",
+    "phoneOptional": "(선택 사항)",
+    "confirmPassword": "비밀번호 확인",
+    "savePassword": "암호 저장",
+    "loggingIn": "로그인 중...",
+    "loginButton": "로그인",
+    "creatingAccount": "계정 생성 중...",
+    "createAccount": "계정 생성",
+    "or": "또는",
+    "continueGoogle": " Google로 로그인",
+    "emailPlaceholder": "you@example.com",
+    "phonePlaceholder": "10자리 숫자",
+    "passwordMinPlaceholder": "최소 6자",
+    "confirmPlaceholder": "비밀번호 다시 입력",
+    "errors": {
+      "fillAll": "모든 항목을 빠짐없이 입력하세요.",
+      "fillRequired": "필요한 모든 사항을 기입하시기 바랍니다.",
+      "passwordMin": "비밀번호는 최소 6자 이상이어야 합니다.",
+      "passwordMismatch": "비밀번호가 일치하지 않습니다.",
+      "phoneInvalid": "유효한 전화번호를 입력하세요.",
+      "userNotFound": "이 이메일로 등록된 계정이 없습니다.",
+      "wrongPassword": "ìí¸ê° íë ¸ìµëë¤. ë¤ì ìëíì­ìì¤.",
+      "invalidEmail": "잘못된 이메일 주소.",
+      "emailInUse": "이 이메일 주소를 사용하는 계정이 이미 존재합니다"
+    },
+    "successLogin": "사용자 로그인 성공.",
+    "successSignup": "계정이 성공적으로 생성되었습니다! 로그인하십시오.",
+    "successGoogle": "Google로 로그인되었습니다!"
+  }
+}
