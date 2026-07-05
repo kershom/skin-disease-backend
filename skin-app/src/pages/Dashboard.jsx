@@ -7,6 +7,7 @@ import ImageUpload from '../components/dashboard/ImageUpload';
 import DiseaseInfo from '../components/dashboard/DiseaseInfo';
 import Precautions from '../components/dashboard/Precautions';
 import Profile from '../components/dashboard/Profile';
+import AppointmentBooking from '../components/dashboard/AppointmentBooking';
 import LanguageSelector from '../components/layout/LanguageSelector';
 import { isAdmin } from '../firebase/admins';
 import {
@@ -21,6 +22,7 @@ import {
   Sun,
   Moon,
   ArrowRight,
+  MapPin,
 } from 'lucide-react';
 
 const Dashboard = () => {
@@ -48,6 +50,7 @@ const Dashboard = () => {
     ...(isAdmin(user?.email)
       ? [{ id: 'admin', icon: Shield, labelKey: 'dashboard.nav.admin' }]
       : []),
+    { id: 'appointment', icon: MapPin, labelKey: 'dashboard.nav.appointment' },
   ];
 
   const activeNav = navItems.find((n) => n.id === activeTab);
@@ -106,7 +109,7 @@ const Dashboard = () => {
               }`}
             >
               <item.icon className="w-5 h-5 shrink-0" />
-              <span>{t(item.labelKey)}</span>
+              <span>{t(item.labelKey, item.id === 'appointment' ? 'Find Dermatologist' : item.id)}</span>
             </button>
           ))}
         </nav>
@@ -148,7 +151,7 @@ const Dashboard = () => {
             <div className="min-w-0">
               <h1 className="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2 truncate">
                 {activeNav && <activeNav.icon className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />}
-                <span>{activeNav ? t(activeNav.labelKey) : ''}</span>
+                <span>{activeNav ? t(activeNav.labelKey, activeNav.id === 'appointment' ? 'Find Dermatologist' : activeNav.id) : ''}</span>
               </h1>
               <p className="text-xs text-slate-400 truncate">
                 {t('dashboard.welcomeBack', { name: firstName })}
@@ -185,6 +188,7 @@ const Dashboard = () => {
           {activeTab === 'disease' && <DiseaseInfo />}
           {activeTab === 'precautions' && <Precautions />}
           {activeTab === 'profile' && <Profile />}
+          {activeTab === 'appointment' && <AppointmentBooking />}
 
           {activeTab === 'admin' && (
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center shadow-sm border border-slate-100 dark:border-slate-700">
