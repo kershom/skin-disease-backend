@@ -66,11 +66,12 @@ except Exception as e:
     num_classes = 10
 
 if len(DISEASE_LABELS) != num_classes:
-    raise ValueError(
-        f"DISEASE_LABELS has {len(DISEASE_LABELS)} entries but model outputs {num_classes} classes"
-    )
-print(f"Model loaded. Input shape: {model.input_shape}, Output shape: {model.output_shape}")
+    print(f"WARNING: DISEASE_LABELS has {len(DISEASE_LABELS)} entries but model outputs {num_classes} classes")
 
+if model is not None:
+    print(f"Model ready. Input: {model.input_shape}, Output: {model.output_shape}")
+else:
+    print("No model loaded — running in mock mode")
 # ─── Helper Functions ─────────────────────────────────────────────────────────
 
 def preprocess_image(file_bytes):
@@ -235,5 +236,5 @@ def predict():
 # ─── Entry Point ──────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 7860))
     app.run(host="0.0.0.0", port=port, debug=False)
