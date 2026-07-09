@@ -13,32 +13,31 @@ const UsersTable = () => {
   }, []);
 
   const fetchUsers = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const q = query(
-        collection(db, 'users'),
-        orderBy('createdAt', 'desc')
-      );
-      const snapshot = await getDocs(q);
-      const userList = snapshot.docs.map((doc, index) => ({
-        id:          doc.id,
-        index:       index + 1,
-        displayName: doc.data().displayName || 'Unknown',
-        email:       doc.data().email || '',
-        photoURL:    doc.data().photoURL || '',
-        createdAt:   doc.data().createdAt?.toDate().toLocaleDateString('en-IN') || 'N/A',
-        lastLogin:   doc.data().lastLogin?.toDate().toLocaleDateString('en-IN') || 'N/A',
-        phone:       doc.data().phone || '—',
-        scans:       doc.data().scans || 0,
-      }));
-      setUsers(userList);
-    } catch (err) {
-      console.error('Error fetching users:', err);
-      setError('Failed to load users. Check Firestore rules.');
-    }
-    setLoading(false);
-  };
+  setLoading(true);
+  setError(null);
+  try {
+    const snapshot = await getDocs(collection(db, 'users')); // no orderBy
+    const userList = snapshot.docs.map((doc, index) => ({
+      id:          doc.id,
+      index:       index + 1,
+      displayName: doc.data().displayName || 'Unknown',
+      email:       doc.data().email || '',
+      photoURL:    doc.data().photoURL || '',
+      createdAt:   doc.data().createdAt?.toDate().toLocaleDateString('en-IN') || 'N/A',
+      lastLogin:   doc.data().lastLogin?.toDate().toLocaleDateString('en-IN') || 'N/A',
+      phone:       doc.data().phone || '—',
+      scans:       doc.data().scans || 0,
+      _createdAtRaw: doc.data().createdAt?.toMillis() || 0, // for sorting
+    }))
+    .sort((a, b) => b._createdAtRaw - a._createdAtRaw); // newest first, missing dates go last
+
+    setUsers(userList);
+  } catch (err) {
+    console.error('Error fetching users:', err);
+    setError('Failed to load users. Check Firestore rules.');
+  }
+  setLoading(false);
+};
 
   // Filter users by search
   const filtered = users.filter(u =>

@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { auth, googleProvider } from '../firebase/firebase';
+import { auth, googleProvider, db } from '../firebase/firebase';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
   updateProfile
 } from 'firebase/auth';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -62,8 +63,17 @@ const Login = () => {
     }
     setLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, loginData.email, loginData.password);
-      alert(t('login.successLogin'));
+      const result = await signInWithEmailAndPassword(auth, loginData.email, loginData.password);
+
+      // ✅ Update lastLogin, and backfill profile fields for pre-existing users missing a doc
+      await setDoc(doc(db, 'users', result.user.uid), {
+        displayName: result.user.displayName || '',
+        email: result.user.email || '',
+        photoURL: result.user.photoURL || '',
+        lastLogin: serverTimestamp(),
+      }, { merge: true });
+
+      navigate('/dashboard');
     } catch (err) {
       setError(mapAuthError(err.code) || err.message);
     }
@@ -92,9 +102,20 @@ const Login = () => {
     try {
       const result = await createUserWithEmailAndPassword(auth, signupData.email, signupData.password);
       await updateProfile(result.user, { displayName: signupData.fullName });
-      alert(t('login.successSignup'));
-      setIsLogin(true);
-      setSignupData({ fullName: '', phone: '', email: '', password: '', confirmPassword: '' });
+
+      // ✅ Create Firestore profile doc for the new user
+      await setDoc(doc(db, 'users', result.user.uid), {
+        displayName: signupData.fullName,
+        email: signupData.email,
+        phone: signupData.phone || '',
+        photoURL: result.user.photoURL || '',
+        scans: 0,
+        createdAt: serverTimestamp(),
+        lastLogin: serverTimestamp(),
+      });
+
+      alert(t('login.welcomeAboard')); // updated message — e.g. "Account created! Taking you to your dashboard..."
+      navigate('/dashboard');
     } catch (err) {
       setError(mapAuthError(err.code) || err.message);
     }
@@ -104,8 +125,18 @@ const Login = () => {
   const handleGoogle = async () => {
     setError('');
     try {
-      await signInWithPopup(auth, googleProvider);
+      const result = await signInWithPopup(auth, googleProvider);
+
+      // ✅ Create/update Firestore profile doc for Google sign-ins too
+      await setDoc(doc(db, 'users', result.user.uid), {
+        displayName: result.user.displayName || '',
+        email: result.user.email || '',
+        photoURL: result.user.photoURL || '',
+        lastLogin: serverTimestamp(),
+      }, { merge: true });
+
       alert(t('login.successGoogle'));
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }

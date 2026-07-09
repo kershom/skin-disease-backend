@@ -583,7 +583,7 @@ const ImageUpload = ({ images, setImages, selectedImageId, setSelectedImageId })
                         : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'
                     }`}>
                     <Sparkles className="w-4 h-4" />
-                    {t('dashboard.scan.consensusReport', '✨ Combined Consensus')}
+                    {t('dashboard.scan.consensusReport', ' Combined Consensus')}
                   </button>
                   <button onClick={() => {
                     const firstSuccess = images.find(img => img.status === 'success');
