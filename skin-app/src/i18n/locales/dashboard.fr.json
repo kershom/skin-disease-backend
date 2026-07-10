@@ -51,7 +51,26 @@
     "retake": "Réviser le cours",
     "loadingTitle": "Analyse du modèle de peau...",
     "loadingSubtitle": "Le modèle CNN traite votre image. Veuillez patienter.",
-    "loadingModel": "Exécution du modèle d'apprentissage en profondeur..."
+    "loadingModel": "Exécution du modèle d'apprentissage en profondeur...",
+    "associatedSymptoms": "Symptômes associés",
+    "developmentNote": "Mode Demo",
+    "fusionTitle": "La fusion décisionnelle basée sur les symptômes est en cours de développement",
+    "fusionDesc": "Actuellement, la prédiction est basée uniquement sur l'image téléchargée. Dans une mise à jour future, ces symptômes seront combinés à l'analyse d'image pour améliorer la précision du diagnostic.",
+    "durationLabel": "Durée des symptômes",
+    "symptoms": {
+      "itching": "Démangeaisons",
+      "pain": "Douleur",
+      "fever": "Fièvre",
+      "bleeding": "Saigne",
+      "burningSensation": "SENSATION DE BRULURE",
+      "scaling": " Dimensionnement",
+      "growthInSize": "Augmentation de la taille cellulaire"
+    },
+    "duration": {
+      "less-than-week": "Moins d'une semaine",
+      "weeks": "Semaines",
+      "months": "Mois"
+    }
   },
   "prediction": {
     "title": "Résultat de la prédiction de l'IA",
@@ -76,252 +95,248 @@
     "causes": "Causes",
     "highWarning": "Risque élevé — consultez immédiatement un dermatologue si vous remarquez ces symptômes.",
     "mediumWarning": "Risque moyen — surveillez régulièrement et consultez un médecin si les symptômes s'aggravent.",
-    "disclaimer": "Les images présentées sont des illustrations de référence médicale. Consultez toujours un dermatologue certifié pour un diagnostic approprié."
+    "disclaimer": "Les images présentées sont des illustrations de référence médicale. Consultez toujours un dermatologue certifié pour un diagnostic approprié.",
+    "more": "Plus"
   },
   "diseases": {
-  "acne": {
-    "name": "Acné",
-    "description": "Une affection cutanée courante causée par l'obstruction des pores par le sébum et les cellules mortes.",
-    "visualLabel": "Boutons rouges",
-    "visualDesc": "Boutons rouges apparaissant sur le visage, la poitrine et le dos",
-    "symptoms": [
-      "Boutons",
-      "Points noirs",
-      "Peau grasse",
-      "Cicatrices"
-    ],
-    "causes": [
-      "Excès de sébum",
-      "Bactéries",
-      "Changements hormonaux",
-      "Pores obstrués"
-    ],
-    "lookFor": [
-      "Boutons rouges",
-      "Points blancs",
-      "Pustules",
-      "Visage et dos"
-    ]
+    "acne": {
+      "name": "Acné",
+      "description": "Une affection cutanée courante causée par l'obstruction des pores par le sébum et les cellules mortes.",
+      "visualLabel": "Boutons rouges",
+      "visualDesc": "Boutons rouges apparaissant sur le visage, la poitrine et le dos",
+      "symptoms": [
+        "Boutons",
+        "Points noirs",
+        "Peau grasse",
+        "Cicatrices"
+      ],
+      "causes": [
+        "Excès de sébum",
+        "Bactéries",
+        "Changements hormonaux",
+        "Pores obstrués"
+      ],
+      "lookFor": [
+        "Boutons rouges",
+        "Points blancs",
+        "Pustules",
+        "Visage et dos"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "Kératose actinique",
+      "description": "Plaque rugueuse et squameuse causée par des années d'exposition au soleil. Considérée comme précancéreuse.",
+      "visualLabel": "Plaque rouge squameuse",
+      "visualDesc": "Zone sèche, rugueuse et squameuse, généralement rouge, rose ou brune",
+      "symptoms": [
+        "Plaque rugueuse",
+        "Surface squameuse",
+        "Démangeaisons",
+        "Sensation de brûlure"
+      ],
+      "causes": [
+        "Exposition aux UV",
+        "Cabines de bronzage",
+        "Immunité affaiblie"
+      ],
+      "lookFor": [
+        "Texture rugueuse",
+        "Couleur rouge ou rose",
+        "Surface squameuse",
+        "Légèrement surélevée"
+      ]
+    },
+    "basalCell": {
+      "name": "Carcinome basocellulaire",
+      "description": "Le cancer de la peau le plus fréquent. Il se propage rarement mais nécessite un traitement.",
+      "visualLabel": "Bosse rosée nacrée",
+      "visualDesc": "Bosse brillante et translucide avec un aspect nacré",
+      "symptoms": [
+        "Bosse nacrée",
+        "Lésion plate",
+        "Saignement",
+        "Croissance rosée"
+      ],
+      "causes": [
+        "Exposition prolongée au soleil",
+        "Radiothérapie",
+        "Peau claire"
+      ],
+      "lookFor": [
+        "Surface nacrée",
+        "Couleur rose",
+        "Vaisseaux visibles",
+        "Croissance lente"
+      ]
+    },
+    "eczema": {
+      "name": "Eczéma",
+      "description": "Une maladie chronique de la peau provoquant des démangeaisons et une inflammation.",
+      "visualLabel": "Plaques rouges et irritées",
+      "visualDesc": "Peau sèche, rouge et enflammée",
+      "symptoms": [
+        "Démangeaisons",
+        "Rougeur",
+        "Peau sèche",
+        "Desquamation"
+      ],
+      "causes": [
+        "Système immunitaire",
+        "Génétique",
+        "Environnement",
+        "Allergies"
+      ],
+      "lookFor": [
+        "Plaques rouges",
+        "Peau sèche",
+        "Peau épaissie",
+        "Plis cutanés"
+      ]
+    },
+    "psoriasis": {
+      "name": "Psoriasis",
+      "description": "Une maladie auto-immune entraînant une croissance rapide des cellules cutanées.",
+      "visualLabel": "Plaques squameuses blanches",
+      "visualDesc": "Plaques rouges recouvertes de squames blanches",
+      "symptoms": [
+        "Plaques rouges",
+        "Démangeaisons",
+        "Peau sèche",
+        "Modifications des ongles"
+      ],
+      "causes": [
+        "Maladie auto-immune",
+        "Génétique",
+        "Stress",
+        "Infections"
+      ],
+      "lookFor": [
+        "Squames argentées",
+        "Fond rouge",
+        "Bordures nettes",
+        "Genoux et coudes"
+      ]
+    },
+    "ringworm": {
+      "name": "Teigne",
+      "description": "Une infection fongique de la peau.",
+      "visualLabel": "Plaque rouge circulaire",
+      "visualDesc": "Anneau rouge avec un centre plus clair",
+      "symptoms": [
+        "Plaques circulaires",
+        "Démangeaisons",
+        "Desquamation",
+        "Rougeur"
+      ],
+      "causes": [
+        "Infection fongique",
+        "Contact direct",
+        "Objets partagés",
+        "Humidité"
+      ],
+      "lookFor": [
+        "Forme circulaire",
+        "Bords squameux",
+        "Centre clair",
+        "Démangeaisons"
+      ]
+    },
+    "rosacea": {
+      "name": "Rosacée",
+      "description": "Une maladie chronique provoquant des rougeurs du visage.",
+      "visualLabel": "Rougeur faciale",
+      "visualDesc": "Rougeur persistante des joues et du nez",
+      "symptoms": [
+        "Rougeur du visage",
+        "Vaisseaux visibles",
+        "Petites bosses",
+        "Irritation des yeux"
+      ],
+      "causes": [
+        "Génétique",
+        "Environnement",
+        "Exposition solaire",
+        "Aliments épicés"
+      ],
+      "lookFor": [
+        "Joues rouges",
+        "Petites bosses",
+        "Rougeurs fréquentes",
+        "Vaisseaux visibles"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "Kératose séborrhéique",
+      "description": "Une excroissance cutanée bénigne fréquente avec l'âge.",
+      "visualLabel": "Plaque cireuse",
+      "visualDesc": "Lésion rugueuse et cireuse semblant collée à la peau",
+      "symptoms": [
+        "Surface cireuse",
+        "Variation de couleur",
+        "Démangeaisons",
+        "Démangeaisons"
+      ],
+      "causes": [
+        "Vieillissement",
+        "Exposition solaire",
+        "Génétique"
+      ],
+      "lookFor": [
+        "Texture cireuse",
+        "Couleur brune",
+        "Bord net",
+        "Aspect collé"
+      ]
+    },
+    "vitiligo": {
+      "name": "Vitiligo",
+      "description": "Une maladie entraînant une perte de pigmentation de la peau.",
+      "visualLabel": "Taches blanches",
+      "visualDesc": "Zones blanches bien délimitées",
+      "symptoms": [
+        "Taches blanches",
+        "Blanchiment des cheveux",
+        "Perte de pigmentation",
+        "Patchs symétriques"
+      ],
+      "causes": [
+        "Maladie auto-immune",
+        "Génétique",
+        "Atteinte nerveuse",
+        "Stress oxydant"
+      ],
+      "lookFor": [
+        "Zones blanches",
+        "Bordures nettes",
+        "Symétrie",
+        "Cheveux blancs"
+      ]
+    },
+    "warts": {
+      "name": "Verrues",
+      "description": "Petites excroissances cutanées causées par le virus HPV.",
+      "visualLabel": "Petites bosses rugueuses",
+      "visualDesc": "Petites excroissances ressemblant à un chou-fleur",
+      "symptoms": [
+        "Bosses",
+        "Points noirs",
+        "Douleur",
+        "Peut être douloureux aux pieds"
+      ],
+      "causes": [
+        "Virus HPV",
+        "Contact direct",
+        "Blessures",
+        "Faible immunité"
+      ],
+      "lookFor": [
+        "Surface rugueuse",
+        "Couleur de peau",
+        "Points noirs",
+        "Mains et pieds"
+      ]
+    }
   },
-
-  "actinicKeratosis": {
-    "name": "Kératose actinique",
-    "description": "Plaque rugueuse et squameuse causée par des années d'exposition au soleil. Considérée comme précancéreuse.",
-    "visualLabel": "Plaque rouge squameuse",
-    "visualDesc": "Zone sèche, rugueuse et squameuse, généralement rouge, rose ou brune",
-    "symptoms": [
-      "Plaque rugueuse",
-      "Surface squameuse",
-      "Démangeaisons",
-      "Sensation de brûlure"
-    ],
-    "causes": [
-      "Exposition aux UV",
-      "Cabines de bronzage",
-      "Immunité affaiblie"
-    ],
-    "lookFor": [
-      "Texture rugueuse",
-      "Couleur rouge ou rose",
-      "Surface squameuse",
-      "Légèrement surélevée"
-    ]
-  },
-
-  "basalCell": {
-    "name": "Carcinome basocellulaire",
-    "description": "Le cancer de la peau le plus fréquent. Il se propage rarement mais nécessite un traitement.",
-    "visualLabel": "Bosse rosée nacrée",
-    "visualDesc": "Bosse brillante et translucide avec un aspect nacré",
-    "symptoms": [
-      "Bosse nacrée",
-      "Lésion plate",
-      "Saignement",
-      "Croissance rosée"
-    ],
-    "causes": [
-      "Exposition prolongée au soleil",
-      "Radiothérapie",
-      "Peau claire"
-    ],
-    "lookFor": [
-      "Surface nacrée",
-      "Couleur rose",
-      "Vaisseaux visibles",
-      "Croissance lente"
-    ]
-  },
-
-  "eczema": {
-    "name": "Eczéma",
-    "description": "Une maladie chronique de la peau provoquant des démangeaisons et une inflammation.",
-    "visualLabel": "Plaques rouges et irritées",
-    "visualDesc": "Peau sèche, rouge et enflammée",
-    "symptoms": [
-      "Démangeaisons",
-      "Rougeur",
-      "Peau sèche",
-      "Desquamation"
-    ],
-    "causes": [
-      "Système immunitaire",
-      "Génétique",
-      "Environnement",
-      "Allergies"
-    ],
-    "lookFor": [
-      "Plaques rouges",
-      "Peau sèche",
-      "Peau épaissie",
-      "Plis cutanés"
-    ]
-  },
-
-  "psoriasis": {
-    "name": "Psoriasis",
-    "description": "Une maladie auto-immune entraînant une croissance rapide des cellules cutanées.",
-    "visualLabel": "Plaques squameuses blanches",
-    "visualDesc": "Plaques rouges recouvertes de squames blanches",
-    "symptoms": [
-      "Plaques rouges",
-      "Démangeaisons",
-      "Peau sèche",
-      "Modifications des ongles"
-    ],
-    "causes": [
-      "Maladie auto-immune",
-      "Génétique",
-      "Stress",
-      "Infections"
-    ],
-    "lookFor": [
-      "Squames argentées",
-      "Fond rouge",
-      "Bordures nettes",
-      "Genoux et coudes"
-    ]
-  },
-
-  "ringworm": {
-    "name": "Teigne",
-    "description": "Une infection fongique de la peau.",
-    "visualLabel": "Plaque rouge circulaire",
-    "visualDesc": "Anneau rouge avec un centre plus clair",
-    "symptoms": [
-      "Plaques circulaires",
-      "Démangeaisons",
-      "Desquamation",
-      "Rougeur"
-    ],
-    "causes": [
-      "Infection fongique",
-      "Contact direct",
-      "Objets partagés",
-      "Humidité"
-    ],
-    "lookFor": [
-      "Forme circulaire",
-      "Bords squameux",
-      "Centre clair",
-      "Démangeaisons"
-    ]
-  },
-
-  "rosacea": {
-    "name": "Rosacée",
-    "description": "Une maladie chronique provoquant des rougeurs du visage.",
-    "visualLabel": "Rougeur faciale",
-    "visualDesc": "Rougeur persistante des joues et du nez",
-    "symptoms": [
-      "Rougeur du visage",
-      "Vaisseaux visibles",
-      "Petites bosses",
-      "Irritation des yeux"
-    ],
-    "causes": [
-      "Génétique",
-      "Environnement",
-      "Exposition solaire",
-      "Aliments épicés"
-    ],
-    "lookFor": [
-      "Joues rouges",
-      "Petites bosses",
-      "Rougeurs fréquentes",
-      "Vaisseaux visibles"
-    ]
-  },
-
-  "seborrheicKeratosis": {
-    "name": "Kératose séborrhéique",
-    "description": "Une excroissance cutanée bénigne fréquente avec l'âge.",
-    "visualLabel": "Plaque cireuse",
-    "visualDesc": "Lésion rugueuse et cireuse semblant collée à la peau",
-    "symptoms": [
-      "Surface cireuse",
-      "Variation de couleur",
-      "Démangeaisons"
-    ],
-    "causes": [
-      "Vieillissement",
-      "Exposition solaire",
-      "Génétique"
-    ],
-    "lookFor": [
-      "Texture cireuse",
-      "Couleur brune",
-      "Bord net",
-      "Aspect collé"
-    ]
-  },
-
-  "vitiligo": {
-    "name": "Vitiligo",
-    "description": "Une maladie entraînant une perte de pigmentation de la peau.",
-    "visualLabel": "Taches blanches",
-    "visualDesc": "Zones blanches bien délimitées",
-    "symptoms": [
-      "Taches blanches",
-      "Blanchiment des cheveux",
-      "Perte de pigmentation"
-    ],
-    "causes": [
-      "Maladie auto-immune",
-      "Génétique",
-      "Atteinte nerveuse"
-    ],
-    "lookFor": [
-      "Zones blanches",
-      "Bordures nettes",
-      "Symétrie",
-      "Cheveux blancs"
-    ]
-  },
-
-  "warts": {
-    "name": "Verrues",
-    "description": "Petites excroissances cutanées causées par le virus HPV.",
-    "visualLabel": "Petites bosses rugueuses",
-    "visualDesc": "Petites excroissances ressemblant à un chou-fleur",
-    "symptoms": [
-      "Bosses",
-      "Points noirs",
-      "Douleur"
-    ],
-    "causes": [
-      "Virus HPV",
-      "Contact direct",
-      "Blessures",
-      "Faible immunité"
-    ],
-    "lookFor": [
-      "Surface rugueuse",
-      "Couleur de peau",
-      "Points noirs",
-      "Mains et pieds"
-    ]
-  }
-},
   "precautions": {
     "title": "Précautions et soins de la peau",
     "subtitle": "Suivez ces directives pour maintenir une peau saine et prévenir les maladies de la peau.",

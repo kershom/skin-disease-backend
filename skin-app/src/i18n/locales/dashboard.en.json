@@ -51,7 +51,26 @@
     "retake": "Retake",
     "loadingTitle": "Analyzing Skin Pattern...",
     "loadingSubtitle": "CNN model is processing your image. Please wait.",
-    "loadingModel": "Running deep learning model..."
+    "loadingModel": "Running deep learning model...",
+    "associatedSymptoms": "Associated Symptoms",
+    "developmentNote": "Demo Mode",
+    "fusionTitle": "Symptom-based decision fusion is under development",
+    "fusionDesc": "Currently, prediction is based solely on the uploaded image. In a future update, these symptoms will be combined with image analysis to improve diagnostic accuracy.",
+    "durationLabel": "Symptom Duration",
+    "symptoms": {
+      "itching": "Itching",
+      "pain": "Pain",
+      "fever": "Fever",
+      "bleeding": "Bleeding",
+      "burningSensation": "Burning Sensation",
+      "scaling": "Scaling",
+      "growthInSize": "Growth in Size"
+    },
+    "duration": {
+      "less-than-week": "Less than a week",
+      "weeks": "Weeks",
+      "months": "Months"
+    }
   },
   "prediction": {
     "title": "AI Prediction Result",

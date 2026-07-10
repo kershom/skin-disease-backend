@@ -4,7 +4,6 @@
   "adminBadge": "Admin",
   "logout": "Abmelden",
   "welcomeBack": "Willkommen zurück, {{name}}",
-
   "nav": {
     "scan": "Scannen & Vorhersage",
     "disease": "Krankheitsinformationen",
@@ -12,13 +11,11 @@
     "profile": "Mein Profil",
     "admin": "Admin-Bereich"
   },
-
   "adminPanel": {
     "title": "Admin-Bereich",
     "description": "Zugriff auf das vollständige Admin-Dashboard zur Verwaltung von Benutzern, Analysen und Vorhersagen.",
     "open": "Admin-Dashboard öffnen"
   },
-
   "severity": {
     "low": "Niedrig",
     "medium": "Mittel",
@@ -28,7 +25,6 @@
     "monitor": "Genau beobachten",
     "urgent": "Bald einen Arzt aufsuchen"
   },
-
   "scan": {
     "title": "Hautbildanalyse",
     "subtitle": "Laden Sie ein Bild hoch oder verwenden Sie Ihre Live-Webcam für eine sofortige KI-Hautanalyse.",
@@ -55,9 +51,27 @@
     "retake": "Neu aufnehmen",
     "loadingTitle": "Hautmuster wird analysiert...",
     "loadingSubtitle": "Das CNN-Modell verarbeitet Ihr Bild. Bitte warten.",
-    "loadingModel": "Deep-Learning-Modell läuft..."
+    "loadingModel": "Deep-Learning-Modell läuft...",
+    "associatedSymptoms": "Herzerkrankungen",
+    "developmentNote": "Demo-Modus",
+    "fusionTitle": "Symptombasierte Entscheidungsfusion befindet sich in der Entwicklung",
+    "fusionDesc": "Derzeit basiert die Vorhersage ausschließlich auf dem hochgeladenen Bild. In einem zukünftigen Update werden diese Symptome mit einer Bildanalyse kombiniert, um die diagnostische Genauigkeit zu verbessern.",
+    "durationLabel": "Symptomdauer",
+    "symptoms": {
+      "itching": "Juckreiz",
+      "pain": "Schmerz",
+      "fever": "Fieber",
+      "bleeding": "Bluten",
+      "burningSensation": "Brennen",
+      "scaling": "Scaling",
+      "growthInSize": "Größenwachstum der Zelle"
+    },
+    "duration": {
+      "less-than-week": "Weniger als eine Woche",
+      "weeks": "Wochen ",
+      "months": "Monate"
+    }
   },
-
   "prediction": {
     "title": "KI-Vorhersageergebnis",
     "condition": "ERKANNTE ERKRANKUNG",
@@ -71,7 +85,6 @@
     "disclaimer": "Dies ist nur eine KI-basierte Einschätzung. Bitte konsultieren Sie einen Dermatologen.",
     "others": "Andere"
   },
-
   "diseaseInfo": {
     "title": "Aufklärung über Hautkrankheiten",
     "subtitle": "Erfahren Sie mehr über die 10 von DermaLens erkannten Hauterkrankungen. Klicken Sie auf eine Karte für Details.",
@@ -85,327 +98,314 @@
     "mediumWarning": "Mittleres Risiko – regelmäßig beobachten.",
     "disclaimer": "Die Bilder dienen nur als medizinische Referenz. Bitte konsultieren Sie einen Arzt."
   },
-
- "diseases": {
-  "acne": {
-    "name": "Akne",
-    "description": "Häufige Hauterkrankung, bei der Haarfollikel durch Öl und abgestorbene Hautzellen verstopfen und Pickel, Mitesser und Whiteheads entstehen.",
-    "visualLabel": "Rote Pickel und Whiteheads",
-    "visualDesc": "Entzündete rote Pickel oder Whiteheads im Gesicht, auf Brust und Rücken",
-    "symptoms": [
-      "Pickel und Pusteln",
-      "Mitesser oder Whiteheads",
-      "Fettige Haut",
-      "Narben nach Abheilung"
-    ],
-    "causes": [
-      "Übermäßige Talgproduktion",
-      "Bakterielle Infektion",
-      "Hormonelle Veränderungen",
-      "Verstopfte Poren"
-    ],
-    "lookFor": [
-      "Rote entzündete Pickel",
-      "Mitesser oder Whiteheads",
-      "Eitergefüllte Pusteln",
-      "Vor allem Gesicht und Rücken"
-    ]
+  "diseases": {
+    "acne": {
+      "name": "Akne",
+      "description": "Häufige Hauterkrankung, bei der Haarfollikel durch Öl und abgestorbene Hautzellen verstopfen und Pickel, Mitesser und Whiteheads entstehen.",
+      "visualLabel": "Rote Pickel und Whiteheads",
+      "visualDesc": "Entzündete rote Pickel oder Whiteheads im Gesicht, auf Brust und Rücken",
+      "symptoms": [
+        "Pickel und Pusteln",
+        "Mitesser oder Whiteheads",
+        "Fettige Haut",
+        "Narben nach Abheilung"
+      ],
+      "causes": [
+        "Übermäßige Talgproduktion",
+        "Bakterielle Infektion",
+        "Hormonelle Veränderungen",
+        "Verstopfte Poren"
+      ],
+      "lookFor": [
+        "Rote entzündete Pickel",
+        "Mitesser oder Whiteheads",
+        "Eitergefüllte Pusteln",
+        "Vor allem Gesicht und Rücken"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "Aktinische Keratose",
+      "description": "Raue, schuppige Hautstellen durch jahrelange Sonneneinstrahlung. Gilt als Krebsvorstufe.",
+      "visualLabel": "Raue, schuppige rote Stelle",
+      "visualDesc": "Trockene, raue, schuppige Hautstelle – meist rot, rosa oder braun",
+      "symptoms": [
+        "Raue schuppige Stelle",
+        "Flach oder leicht erhaben",
+        "Juckreiz oder Brennen",
+        "Harte warzenartige Oberfläche"
+      ],
+      "causes": [
+        "UV-Strahlung",
+        "Solarien",
+        "Geschwächtes Immunsystem"
+      ],
+      "lookFor": [
+        "Schuppige Textur",
+        "Rosa bis rote Farbe",
+        "Fühlt sich rau an",
+        "Flach oder leicht erhaben"
+      ]
+    },
+    "basalCell": {
+      "name": "Basalzellkarzinom",
+      "description": "Häufigster Hautkrebs. Wächst langsam und breitet sich selten aus.",
+      "visualLabel": "Perlige rosafarbene Erhebung",
+      "visualDesc": "Glänzender perliger Knoten",
+      "symptoms": [
+        "Perlige Beule",
+        "Narbenartige Stelle",
+        "Blutende Wunde",
+        "Rosa Wachstum"
+      ],
+      "causes": [
+        "Chronische Sonneneinstrahlung",
+        "Strahlentherapie",
+        "Helle Haut"
+      ],
+      "lookFor": [
+        "Perlige Oberfläche",
+        "Rosa oder hautfarben",
+        "Sichtbare Gefäße",
+        "Langsames Wachstum"
+      ]
+    },
+    "benignKeratosis": {
+      "name": "Gutartige Keratose",
+      "description": "Gutartige Hautwucherung, die häufig im Alter auftritt.",
+      "visualLabel": "Wachsartige erhabene Stelle",
+      "visualDesc": "Rau, wachsartig oder „aufgeklebt“ wirkend",
+      "symptoms": [
+        "Wachsartige Oberfläche",
+        "Aufgeklebt wirkend",
+        "Unterschiedliche Farbe",
+        "Juckreiz"
+      ],
+      "causes": [
+        "Alter",
+        "Sonne",
+        "Genetik"
+      ],
+      "lookFor": [
+        "Wachsartige Textur",
+        "Hell- bis dunkelbraun",
+        "Scharf begrenzt",
+        "Aufgeklebt wirkend"
+      ]
+    },
+    "dermatofibroma": {
+      "name": "Dermatofibrom",
+      "description": "Gutartige feste Hautknoten, meist an den Beinen.",
+      "visualLabel": "Kleiner fester runder Knoten",
+      "visualDesc": "Kleiner erhabener Knoten, der sich beim Drücken eindellt",
+      "symptoms": [
+        "Kleiner fester Knoten",
+        "Braun oder rot",
+        "Delle beim Drücken",
+        "Leicht erhaben"
+      ],
+      "causes": [
+        "Kleinere Hautverletzungen",
+        "Insektenstiche",
+        "Unbekannte Ursachen"
+      ],
+      "lookFor": [
+        "Feste Struktur",
+        "Rötlich-braun",
+        "Dellenzeichen",
+        "Meist an den Beinen"
+      ]
+    },
+    "vascularLesion": {
+      "name": "Gefäßläsion",
+      "description": "Abnormalitäten der Blutgefäße, sichtbar auf der Hautoberfläche.",
+      "visualLabel": "Rote Gefäßläsion",
+      "visualDesc": "Hellrot oder violett durch nahegelegene Blutgefäße verursacht",
+      "symptoms": [
+        "Rote oder violette Flecken",
+        "Flach oder erhaben",
+        "Kann bluten",
+        "Spinnenartige Muster"
+      ],
+      "causes": [
+        "Genetik",
+        "Sonnenschäden",
+        "Alterung"
+      ],
+      "lookFor": [
+        "Leuchtend rote Farbe",
+        "Besenreiser",
+        "Verblasst bei Druck",
+        "Unregelmäßige Form"
+      ]
+    },
+    "eczema": {
+      "name": "Ekzem",
+      "description": "Chronisch entzündliche Hauterkrankung mit Juckreiz und Rötung.",
+      "visualLabel": "Rote juckende Hautstellen",
+      "visualDesc": "Trockene, entzündete Haut",
+      "symptoms": [
+        "Starker Juckreiz",
+        "Rötung",
+        "Trockene Haut",
+        "Nässen oder Krusten"
+      ],
+      "causes": [
+        "Immunsystemreaktion",
+        "Genetik",
+        "Umweltfaktoren",
+        "Allergene"
+      ],
+      "lookFor": [
+        "Rote juckende Flecken",
+        "Trockene schuppige Haut",
+        "Verdickte Haut",
+        "Hautfalten betroffen"
+      ]
+    },
+    "psoriasis": {
+      "name": "Psoriasis",
+      "description": "Chronische Autoimmunerkrankung mit schneller Hautzellproduktion.",
+      "visualLabel": "Dick schuppige silberne Plaques",
+      "visualDesc": "Rote Hautstellen mit silbernen Schuppen",
+      "symptoms": [
+        "Rote schuppige Flecken",
+        "Trockene Haut",
+        "Juckreiz oder Brennen",
+        "Verdickte Nägel"
+      ],
+      "causes": [
+        "Autoimmunreaktion",
+        "Genetik",
+        "Stress",
+        "Infektionen"
+      ],
+      "lookFor": [
+        "Silbrige Schuppen",
+        "Rote Basis",
+        "Scharf begrenzt",
+        "Ellbogen und Knie"
+      ]
+    },
+    "ringworm": {
+      "name": "Ringelflechte",
+      "description": "Pilzinfektion der Haut mit ringförmigem Ausschlag.",
+      "visualLabel": "Ringförmiger roter Ausschlag",
+      "visualDesc": "Roter Ring mit hellem Zentrum",
+      "symptoms": [
+        "Ringförmiger Ausschlag",
+        "Schuppige Ränder",
+        "Juckreiz",
+        "Rötung"
+      ],
+      "causes": [
+        "Pilzinfektion",
+        "Kontakt mit Infizierten",
+        "Geteilte Gegenstände",
+        "Feuchte Umgebung"
+      ],
+      "lookFor": [
+        "Ringform",
+        "Schuppige Ränder",
+        "Helles Zentrum",
+        "Juckender roter Rand"
+      ]
+    },
+    "rosacea": {
+      "name": "Rosazea",
+      "description": "Chronische Gesichtsrötung mit sichtbaren Blutgefäßen.",
+      "visualLabel": "Gesichtsrötung",
+      "visualDesc": "Rötung auf Wangen und Nase",
+      "symptoms": [
+        "Gesichtsrötung",
+        "Sichtbare Gefäße",
+        "Pickelartige Läsionen",
+        "Augenreizung"
+      ],
+      "causes": [
+        "Genetik",
+        "Umweltfaktoren",
+        "Sonne",
+        "Essen/Trinken"
+      ],
+      "lookFor": [
+        "Rote Wangen",
+        "Besenreiser im Gesicht",
+        "Häufige Rötung",
+        "Nasenbereich"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "Seborrhoische Keratose",
+      "description": "Gutartige altersbedingte Hautwucherung.",
+      "visualLabel": "Wachsartige „aufgeklebt“ wirkende Stelle",
+      "visualDesc": "Rau und wachsartig auf der Haut",
+      "symptoms": [
+        "Wachsartige Oberfläche",
+        "Aufgeklebt wirkend",
+        "Farbvariationen",
+        "Juckreiz"
+      ],
+      "causes": [
+        "Alter",
+        "Sonne",
+        "Genetik"
+      ],
+      "lookFor": [
+        "Wachsartig",
+        "Braun bis dunkelbraun",
+        "Scharf begrenzt",
+        "Aufgeklebt"
+      ]
+    },
+    "vitiligo": {
+      "name": "Vitiligo",
+      "description": "Pigmentverlust der Haut mit weißen Flecken.",
+      "visualLabel": "Weiße Depigmentierungsflecken",
+      "visualDesc": "Klar abgegrenzte weiße Hautstellen",
+      "symptoms": [
+        "Weiße Flecken",
+        "Haaraufhellung",
+        "Pigmentverlust",
+        "Symmetrische Verteilung"
+      ],
+      "causes": [
+        "Autoimmunerkrankung",
+        "Genetik",
+        "Oxidativer Stress",
+        "Oxidativer Streß"
+      ],
+      "lookFor": [
+        "Milchweiße Flecken",
+        "Scharfe Grenzen",
+        "Symmetrisch",
+        "Weiße Haare im Bereich"
+      ]
+    },
+    "warts": {
+      "name": "Warzen",
+      "description": "Kleine raue Hautwucherungen durch HPV-Virus.",
+      "visualLabel": "Raue erhabene Knötchen",
+      "visualDesc": "Kleine unregelmäßige Hautwucherungen",
+      "symptoms": [
+        "Raue Oberfläche",
+        "Knötchen",
+        "Schwarze Punkte",
+        "Schmerz bei Druck"
+      ],
+      "causes": [
+        "HPV-Virus",
+        "Kontaktinfektion",
+        "Hautverletzungen",
+        "Schwaches Immunsystem"
+      ],
+      "lookFor": [
+        "Raue Textur",
+        "Hautfarben oder grau",
+        "Schwarze Punkte",
+        "Hände und Füße"
+      ]
+    }
   },
-
-  "actinicKeratosis": {
-    "name": "Aktinische Keratose",
-    "description": "Raue, schuppige Hautstellen durch jahrelange Sonneneinstrahlung. Gilt als Krebsvorstufe.",
-    "visualLabel": "Raue, schuppige rote Stelle",
-    "visualDesc": "Trockene, raue, schuppige Hautstelle – meist rot, rosa oder braun",
-    "symptoms": [
-      "Raue schuppige Stelle",
-      "Flach oder leicht erhaben",
-      "Juckreiz oder Brennen",
-      "Harte warzenartige Oberfläche"
-    ],
-    "causes": [
-      "UV-Strahlung",
-      "Solarien",
-      "Geschwächtes Immunsystem"
-    ],
-    "lookFor": [
-      "Schuppige Textur",
-      "Rosa bis rote Farbe",
-      "Fühlt sich rau an",
-      "Flach oder leicht erhaben"
-    ]
-  },
-
-  "basalCell": {
-    "name": "Basalzellkarzinom",
-    "description": "Häufigster Hautkrebs. Wächst langsam und breitet sich selten aus.",
-    "visualLabel": "Perlige rosafarbene Erhebung",
-    "visualDesc": "Glänzender perliger Knoten",
-    "symptoms": [
-      "Perlige Beule",
-      "Narbenartige Stelle",
-      "Blutende Wunde",
-      "Rosa Wachstum"
-    ],
-    "causes": [
-      "Chronische Sonneneinstrahlung",
-      "Strahlentherapie",
-      "Helle Haut"
-    ],
-    "lookFor": [
-      "Perlige Oberfläche",
-      "Rosa oder hautfarben",
-      "Sichtbare Gefäße",
-      "Langsames Wachstum"
-    ]
-  },
-
-  "benignKeratosis": {
-    "name": "Gutartige Keratose",
-    "description": "Gutartige Hautwucherung, die häufig im Alter auftritt.",
-    "visualLabel": "Wachsartige erhabene Stelle",
-    "visualDesc": "Rau, wachsartig oder „aufgeklebt“ wirkend",
-    "symptoms": [
-      "Wachsartige Oberfläche",
-      "Aufgeklebt wirkend",
-      "Unterschiedliche Farbe",
-      "Juckreiz"
-    ],
-    "causes": [
-      "Alter",
-      "Sonne",
-      "Genetik"
-    ],
-    "lookFor": [
-      "Wachsartige Textur",
-      "Hell- bis dunkelbraun",
-      "Scharf begrenzt",
-      "Aufgeklebt wirkend"
-    ]
-  },
-
-  "dermatofibroma": {
-    "name": "Dermatofibrom",
-    "description": "Gutartige feste Hautknoten, meist an den Beinen.",
-    "visualLabel": "Kleiner fester runder Knoten",
-    "visualDesc": "Kleiner erhabener Knoten, der sich beim Drücken eindellt",
-    "symptoms": [
-      "Kleiner fester Knoten",
-      "Braun oder rot",
-      "Delle beim Drücken",
-      "Leicht erhaben"
-    ],
-    "causes": [
-      "Kleinere Hautverletzungen",
-      "Insektenstiche",
-      "Unbekannte Ursachen"
-    ],
-    "lookFor": [
-      "Feste Struktur",
-      "Rötlich-braun",
-      "Dellenzeichen",
-      "Meist an den Beinen"
-    ]
-  },
-
-  "vascularLesion": {
-    "name": "Gefäßläsion",
-    "description": "Abnormalitäten der Blutgefäße, sichtbar auf der Hautoberfläche.",
-    "visualLabel": "Rote Gefäßläsion",
-    "visualDesc": "Hellrot oder violett durch nahegelegene Blutgefäße verursacht",
-    "symptoms": [
-      "Rote oder violette Flecken",
-      "Flach oder erhaben",
-      "Kann bluten",
-      "Spinnenartige Muster"
-    ],
-    "causes": [
-      "Genetik",
-      "Sonnenschäden",
-      "Alterung"
-    ],
-    "lookFor": [
-      "Leuchtend rote Farbe",
-      "Besenreiser",
-      "Verblasst bei Druck",
-      "Unregelmäßige Form"
-    ]
-  },
-
-  "eczema": {
-    "name": "Ekzem",
-    "description": "Chronisch entzündliche Hauterkrankung mit Juckreiz und Rötung.",
-    "visualLabel": "Rote juckende Hautstellen",
-    "visualDesc": "Trockene, entzündete Haut",
-    "symptoms": [
-      "Starker Juckreiz",
-      "Rötung",
-      "Trockene Haut",
-      "Nässen oder Krusten"
-    ],
-    "causes": [
-      "Immunsystemreaktion",
-      "Genetik",
-      "Umweltfaktoren",
-      "Allergene"
-    ],
-    "lookFor": [
-      "Rote juckende Flecken",
-      "Trockene schuppige Haut",
-      "Verdickte Haut",
-      "Hautfalten betroffen"
-    ]
-  },
-
-  "psoriasis": {
-    "name": "Psoriasis",
-    "description": "Chronische Autoimmunerkrankung mit schneller Hautzellproduktion.",
-    "visualLabel": "Dick schuppige silberne Plaques",
-    "visualDesc": "Rote Hautstellen mit silbernen Schuppen",
-    "symptoms": [
-      "Rote schuppige Flecken",
-      "Trockene Haut",
-      "Juckreiz oder Brennen",
-      "Verdickte Nägel"
-    ],
-    "causes": [
-      "Autoimmunreaktion",
-      "Genetik",
-      "Stress",
-      "Infektionen"
-    ],
-    "lookFor": [
-      "Silbrige Schuppen",
-      "Rote Basis",
-      "Scharf begrenzt",
-      "Ellbogen und Knie"
-    ]
-  },
-
-  "ringworm": {
-    "name": "Ringelflechte",
-    "description": "Pilzinfektion der Haut mit ringförmigem Ausschlag.",
-    "visualLabel": "Ringförmiger roter Ausschlag",
-    "visualDesc": "Roter Ring mit hellem Zentrum",
-    "symptoms": [
-      "Ringförmiger Ausschlag",
-      "Schuppige Ränder",
-      "Juckreiz",
-      "Rötung"
-    ],
-    "causes": [
-      "Pilzinfektion",
-      "Kontakt mit Infizierten",
-      "Geteilte Gegenstände",
-      "Feuchte Umgebung"
-    ],
-    "lookFor": [
-      "Ringform",
-      "Schuppige Ränder",
-      "Helles Zentrum",
-      "Juckender roter Rand"
-    ]
-  },
-
-  "rosacea": {
-    "name": "Rosazea",
-    "description": "Chronische Gesichtsrötung mit sichtbaren Blutgefäßen.",
-    "visualLabel": "Gesichtsrötung",
-    "visualDesc": "Rötung auf Wangen und Nase",
-    "symptoms": [
-      "Gesichtsrötung",
-      "Sichtbare Gefäße",
-      "Pickelartige Läsionen",
-      "Augenreizung"
-    ],
-    "causes": [
-      "Genetik",
-      "Umweltfaktoren",
-      "Sonne",
-      "Essen/Trinken"
-    ],
-    "lookFor": [
-      "Rote Wangen",
-      "Besenreiser im Gesicht",
-      "Häufige Rötung",
-      "Nasenbereich"
-    ]
-  },
-
-  "seborrheicKeratosis": {
-    "name": "Seborrhoische Keratose",
-    "description": "Gutartige altersbedingte Hautwucherung.",
-    "visualLabel": "Wachsartige „aufgeklebt“ wirkende Stelle",
-    "visualDesc": "Rau und wachsartig auf der Haut",
-    "symptoms": [
-      "Wachsartige Oberfläche",
-      "Aufgeklebt wirkend",
-      "Farbvariationen",
-      "Juckreiz"
-    ],
-    "causes": [
-      "Alter",
-      "Sonne",
-      "Genetik"
-    ],
-    "lookFor": [
-      "Wachsartig",
-      "Braun bis dunkelbraun",
-      "Scharf begrenzt",
-      "Aufgeklebt"
-    ]
-  },
-
-  "vitiligo": {
-    "name": "Vitiligo",
-    "description": "Pigmentverlust der Haut mit weißen Flecken.",
-    "visualLabel": "Weiße Depigmentierungsflecken",
-    "visualDesc": "Klar abgegrenzte weiße Hautstellen",
-    "symptoms": [
-      "Weiße Flecken",
-      "Haaraufhellung",
-      "Pigmentverlust",
-      "Symmetrische Verteilung"
-    ],
-    "causes": [
-      "Autoimmunerkrankung",
-      "Genetik",
-      "Oxidativer Stress"
-    ],
-    "lookFor": [
-      "Milchweiße Flecken",
-      "Scharfe Grenzen",
-      "Symmetrisch",
-      "Weiße Haare im Bereich"
-    ]
-  },
-
-  "warts": {
-    "name": "Warzen",
-    "description": "Kleine raue Hautwucherungen durch HPV-Virus.",
-    "visualLabel": "Raue erhabene Knötchen",
-    "visualDesc": "Kleine unregelmäßige Hautwucherungen",
-    "symptoms": [
-      "Raue Oberfläche",
-      "Knötchen",
-      "Schwarze Punkte",
-      "Schmerz bei Druck"
-    ],
-    "causes": [
-      "HPV-Virus",
-      "Kontaktinfektion",
-      "Hautverletzungen",
-      "Schwaches Immunsystem"
-    ],
-    "lookFor": [
-      "Raue Textur",
-      "Hautfarben oder grau",
-      "Schwarze Punkte",
-      "Hände und Füße"
-    ]
-  }
-},
-
   "precautions": {
     "title": "Vorsichtsmaßnahmen & Hautpflege",
     "subtitle": "Richtlinien für gesunde Haut.",
@@ -413,30 +413,59 @@
     "warningBody": "Bei schnellen Hautveränderungen sofort zum Arzt.",
     "sun": {
       "title": "Sonnenschutz",
-      "tips": ["SPF 30+", "Alle 2 Stunden neu auftragen", "Schutzkleidung", "10–16 Uhr vermeiden"]
+      "tips": [
+        "SPF 30+",
+        "Alle 2 Stunden neu auftragen",
+        "Schutzkleidung",
+        "10–16 Uhr vermeiden"
+      ]
     },
     "checks": {
       "title": "Hautkontrolle",
-      "tips": ["Monatlich prüfen", "Neue Muttermale beobachten", "ABCDE-Regel", "Jährlicher Arztbesuch"]
+      "tips": [
+        "Monatlich prüfen",
+        "Neue Muttermale beobachten",
+        "ABCDE-Regel",
+        "Jährlicher Arztbesuch"
+      ]
     },
     "hydration": {
       "title": "Hydration",
-      "tips": ["Eincremen", "Viel Wasser trinken", "Keine heißen Duschen", "Duftfrei"]
+      "tips": [
+        "Eincremen",
+        "Viel Wasser trinken",
+        "Keine heißen Duschen",
+        "Duftfrei"
+      ]
     },
     "diet": {
       "title": "Ernährung",
-      "tips": ["Antioxidantien", "Omega-3", "Weniger Zucker", "Obst & Gemüse"]
+      "tips": [
+        "Antioxidantien",
+        "Omega-3",
+        "Weniger Zucker",
+        "Obst & Gemüse"
+      ]
     },
     "habits": {
       "title": "Schlechte Gewohnheiten vermeiden",
-      "tips": ["Nicht rauchen", "Wenig Alkohol", "Kein Solarium", "Nicht kratzen"]
+      "tips": [
+        "Nicht rauchen",
+        "Wenig Alkohol",
+        "Kein Solarium",
+        "Nicht kratzen"
+      ]
     },
     "doctor": {
       "title": "Wann zum Arzt",
-      "tips": ["Größenänderung", "Nicht heilende Wunden", "Blutung", "Verdächtige Veränderungen"]
+      "tips": [
+        "Größenänderung",
+        "Nicht heilende Wunden",
+        "Blutung",
+        "Verdächtige Veränderungen"
+      ]
     }
   },
-
   "profile": {
     "title": "Mein Profil",
     "displayName": "Anzeigename",

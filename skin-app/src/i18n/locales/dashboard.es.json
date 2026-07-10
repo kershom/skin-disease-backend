@@ -51,7 +51,26 @@
     "retake": "Repetir",
     "loadingTitle": "Analizando el patrón de la piel...",
     "loadingSubtitle": "El modelo de CNN está procesando tu imagen. Espera.",
-    "loadingModel": "Ejecutando un modelo de aprendizaje profundo..."
+    "loadingModel": "Ejecutando un modelo de aprendizaje profundo...",
+    "associatedSymptoms": "Síntomas asociados",
+    "developmentNote": "Modo de demostración",
+    "fusionTitle": "La fusión de decisión basada en síntomas está en desarrollo",
+    "fusionDesc": "Actualmente, la predicción se basa únicamente en la imagen cargada. En una actualización futura, estos síntomas se combinarán con el análisis de imágenes para mejorar la precisión del diagnóstico.",
+    "durationLabel": "Time symptom lasts NOS",
+    "symptoms": {
+      "itching": "Comezón",
+      "pain": "Dolor",
+      "fever": "Fiebre",
+      "bleeding": "Sangrado",
+      "burningSensation": "SENSACION DE QUEMAZON",
+      "scaling": "Descamación",
+      "growthInSize": "Aumento Celular"
+    },
+    "duration": {
+      "less-than-week": "Menos de una semana",
+      "weeks": "Semanas",
+      "months": "Meses"
+    }
   },
   "prediction": {
     "title": "Resultado de la predicción de IA",
@@ -80,249 +99,244 @@
     "disclaimer": "Las imágenes que se muestran son ilustraciones de referencia médica. Siempre consulte a un dermatólogo certificado para un diagnóstico adecuado."
   },
   "diseases": {
-  "acne": {
-    "name": "Acné",
-    "description": "Una afección cutánea común causada por la obstrucción de los poros debido al exceso de grasa y células muertas.",
-    "visualLabel": "Granos rojos",
-    "visualDesc": "Granitos rojos que aparecen en la cara, el pecho y la espalda",
-    "symptoms": [
-      "Granos",
-      "Puntos negros",
-      "Piel grasa",
-      "Cicatrices"
-    ],
-    "causes": [
-      "Exceso de grasa",
-      "Bacterias",
-      "Cambios hormonales",
-      "Poros obstruidos"
-    ],
-    "lookFor": [
-      "Granitos rojos",
-      "Puntos blancos",
-      "Pústulas",
-      "Cara y espalda"
-    ]
+    "acne": {
+      "name": "Acné",
+      "description": "Una afección cutánea común causada por la obstrucción de los poros debido al exceso de grasa y células muertas.",
+      "visualLabel": "Granos rojos",
+      "visualDesc": "Granitos rojos que aparecen en la cara, el pecho y la espalda",
+      "symptoms": [
+        "Granos",
+        "Puntos negros",
+        "Piel grasa",
+        "Cicatrices"
+      ],
+      "causes": [
+        "Exceso de grasa",
+        "Bacterias",
+        "Cambios hormonales",
+        "Poros obstruidos"
+      ],
+      "lookFor": [
+        "Granitos rojos",
+        "Puntos blancos",
+        "Pústulas",
+        "Cara y espalda"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "Queratosis actínica",
+      "description": "Una lesión cutánea áspera y escamosa causada por años de exposición al sol. Se considera precancerosa.",
+      "visualLabel": "Parche rojo áspero y escamoso",
+      "visualDesc": "Parche seco, áspero y escamoso, generalmente rojo, rosado o marrón",
+      "symptoms": [
+        "Parche áspero y escamoso",
+        "Lesión plana o elevada",
+        "Picazón o ardor",
+        "Superficie dura similar a una verruga"
+      ],
+      "causes": [
+        "Exposición a los rayos UV",
+        "Camas de bronceado",
+        "Sistema inmunitario debilitado"
+      ],
+      "lookFor": [
+        "Textura escamosa",
+        "Color rosado o rojo",
+        "Áspera al tacto",
+        "Plana o ligeramente elevada"
+      ]
+    },
+    "basalCell": {
+      "name": "Carcinoma basocelular",
+      "description": "El cáncer de piel más común. Rara vez se propaga, pero requiere tratamiento.",
+      "visualLabel": "Bulto perlado y rosado",
+      "visualDesc": "Bulto brillante y translúcido con apariencia perlada o cerosa",
+      "symptoms": [
+        "Bulto perlado",
+        "Lesión plana similar a una cicatriz",
+        "Llaga que sangra",
+        "Crecimiento rosado"
+      ],
+      "causes": [
+        "Exposición crónica al sol",
+        "Radioterapia",
+        "Piel clara"
+      ],
+      "lookFor": [
+        "Superficie perlada",
+        "Color rosado o color piel",
+        "Puede tener vasos visibles",
+        "Crecimiento lento"
+      ]
+    },
+    "eczema": {
+      "name": "Eccema",
+      "description": "Una enfermedad crónica de la piel que causa picazón e inflamación.",
+      "visualLabel": "Parches rojos y con picazón",
+      "visualDesc": "Piel seca, roja e inflamada",
+      "symptoms": [
+        "Picazón",
+        "Enrojecimiento",
+        "Piel seca",
+        "Descamación"
+      ],
+      "causes": [
+        "Sistema inmunitario",
+        "Genética",
+        "Factores ambientales",
+        "Alergias"
+      ],
+      "lookFor": [
+        "Parches rojos",
+        "Piel seca",
+        "Piel engrosada",
+        "Pliegues cutáneos"
+      ]
+    },
+    "psoriasis": {
+      "name": "Psoriasis",
+      "description": "Una enfermedad autoinmune que provoca un rápido crecimiento de las células de la piel.",
+      "visualLabel": "Placas blancas escamosas",
+      "visualDesc": "Placas rojas cubiertas con escamas blancas",
+      "symptoms": [
+        "Parches rojos",
+        "Picazón",
+        "Piel seca",
+        "Cambios en las uñas"
+      ],
+      "causes": [
+        "Trastorno autoinmune",
+        "Genética",
+        "Estrés",
+        "Infecciones"
+      ],
+      "lookFor": [
+        "Escamas plateadas",
+        "Base roja",
+        "Bordes definidos",
+        "Rodillas y codos"
+      ]
+    },
+    "ringworm": {
+      "name": "Tiña",
+      "description": "Una infección por hongos en la piel.",
+      "visualLabel": "Mancha roja circular",
+      "visualDesc": "Anillo rojo con un centro más claro",
+      "symptoms": [
+        "Manchas circulares",
+        "Picazón",
+        "Descamación",
+        "Enrojecimiento"
+      ],
+      "causes": [
+        "Infección por hongos",
+        "Contacto directo",
+        "Objetos compartidos",
+        "Humedad"
+      ],
+      "lookFor": [
+        "Forma circular",
+        "Bordes escamosos",
+        "Centro claro",
+        "Picazón"
+      ]
+    },
+    "rosacea": {
+      "name": "Rosácea",
+      "description": "Una enfermedad crónica que causa enrojecimiento facial.",
+      "visualLabel": "Enrojecimiento facial",
+      "visualDesc": "Enrojecimiento persistente en mejillas y nariz",
+      "symptoms": [
+        "Enrojecimiento facial",
+        "Vasos sanguíneos visibles",
+        "Pequeños bultos",
+        "Irritación ocular"
+      ],
+      "causes": [
+        "Genética",
+        "Factores ambientales",
+        "Exposición al sol",
+        "Comidas picantes"
+      ],
+      "lookFor": [
+        "Mejillas rojas",
+        "Pequeños bultos",
+        "Rubor frecuente",
+        "Vasos visibles"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "Queratosis seborreica",
+      "description": "Un crecimiento benigno de la piel que aparece comúnmente con la edad.",
+      "visualLabel": "Parche ceroso",
+      "visualDesc": "Lesión rugosa y cerosa que parece adherida a la piel",
+      "symptoms": [
+        "Superficie cerosa",
+        "Cambios de color",
+        "Picazón",
+        "Comezón"
+      ],
+      "causes": [
+        "Envejecimiento",
+        "Exposición al sol",
+        "Genética"
+      ],
+      "lookFor": [
+        "Textura cerosa",
+        "Color marrón",
+        "Bordes definidos",
+        "Aspecto adherido"
+      ]
+    },
+    "vitiligo": {
+      "name": "Vitíligo",
+      "description": "Una afección en la que la piel pierde su pigmentación.",
+      "visualLabel": "Manchas blancas",
+      "visualDesc": "Áreas blancas claramente definidas",
+      "symptoms": [
+        "Manchas blancas",
+        "Blanqueamiento del cabello",
+        "Pérdida de pigmento",
+        "Parches simétricos"
+      ],
+      "causes": [
+        "Trastorno autoinmune",
+        "Genética",
+        "Daño nervioso",
+        "Estrés oxidativo"
+      ],
+      "lookFor": [
+        "Áreas blancas",
+        "Bordes definidos",
+        "Simetría",
+        "Cabello blanco"
+      ]
+    },
+    "warts": {
+      "name": "Verrugas",
+      "description": "Pequeños crecimientos en la piel causados por el virus del VPH.",
+      "visualLabel": "Pequeños bultos ásperos",
+      "visualDesc": "Pequeños crecimientos con apariencia de coliflor",
+      "symptoms": [
+        "Bultos",
+        "Puntos negros",
+        "Dolor",
+        "Puede doler en los pies"
+      ],
+      "causes": [
+        "Virus del VPH",
+        "Contacto directo",
+        "Lesiones",
+        "Inmunidad baja"
+      ],
+      "lookFor": [
+        "Superficie áspera",
+        "Color de la piel",
+        "Puntos negros",
+        "Manos y pies"
+      ]
+    }
   },
-
-  "actinicKeratosis": {
-    "name": "Queratosis actínica",
-    "description": "Una lesión cutánea áspera y escamosa causada por años de exposición al sol. Se considera precancerosa.",
-    "visualLabel": "Parche rojo áspero y escamoso",
-    "visualDesc": "Parche seco, áspero y escamoso, generalmente rojo, rosado o marrón",
-    "symptoms": [
-      "Parche áspero y escamoso",
-      "Lesión plana o elevada",
-      "Picazón o ardor",
-      "Superficie dura similar a una verruga"
-    ],
-    "causes": [
-      "Exposición a los rayos UV",
-      "Camas de bronceado",
-      "Sistema inmunitario debilitado"
-    ],
-    "lookFor": [
-      "Textura escamosa",
-      "Color rosado o rojo",
-      "Áspera al tacto",
-      "Plana o ligeramente elevada"
-    ]
-  },
-
-  "basalCell": {
-    "name": "Carcinoma basocelular",
-    "description": "El cáncer de piel más común. Rara vez se propaga, pero requiere tratamiento.",
-    "visualLabel": "Bulto perlado y rosado",
-    "visualDesc": "Bulto brillante y translúcido con apariencia perlada o cerosa",
-    "symptoms": [
-      "Bulto perlado",
-      "Lesión plana similar a una cicatriz",
-      "Llaga que sangra",
-      "Crecimiento rosado"
-    ],
-    "causes": [
-      "Exposición crónica al sol",
-      "Radioterapia",
-      "Piel clara"
-    ],
-    "lookFor": [
-      "Superficie perlada",
-      "Color rosado o color piel",
-      "Puede tener vasos visibles",
-      "Crecimiento lento"
-    ]
-  },
-
-  "eczema": {
-    "name": "Eccema",
-    "description": "Una enfermedad crónica de la piel que causa picazón e inflamación.",
-    "visualLabel": "Parches rojos y con picazón",
-    "visualDesc": "Piel seca, roja e inflamada",
-    "symptoms": [
-      "Picazón",
-      "Enrojecimiento",
-      "Piel seca",
-      "Descamación"
-    ],
-    "causes": [
-      "Sistema inmunitario",
-      "Genética",
-      "Factores ambientales",
-      "Alergias"
-    ],
-    "lookFor": [
-      "Parches rojos",
-      "Piel seca",
-      "Piel engrosada",
-      "Pliegues cutáneos"
-    ]
-  },
-
-  "psoriasis": {
-    "name": "Psoriasis",
-    "description": "Una enfermedad autoinmune que provoca un rápido crecimiento de las células de la piel.",
-    "visualLabel": "Placas blancas escamosas",
-    "visualDesc": "Placas rojas cubiertas con escamas blancas",
-    "symptoms": [
-      "Parches rojos",
-      "Picazón",
-      "Piel seca",
-      "Cambios en las uñas"
-    ],
-    "causes": [
-      "Trastorno autoinmune",
-      "Genética",
-      "Estrés",
-      "Infecciones"
-    ],
-    "lookFor": [
-      "Escamas plateadas",
-      "Base roja",
-      "Bordes definidos",
-      "Rodillas y codos"
-    ]
-  },
-
-  "ringworm": {
-    "name": "Tiña",
-    "description": "Una infección por hongos en la piel.",
-    "visualLabel": "Mancha roja circular",
-    "visualDesc": "Anillo rojo con un centro más claro",
-    "symptoms": [
-      "Manchas circulares",
-      "Picazón",
-      "Descamación",
-      "Enrojecimiento"
-    ],
-    "causes": [
-      "Infección por hongos",
-      "Contacto directo",
-      "Objetos compartidos",
-      "Humedad"
-    ],
-    "lookFor": [
-      "Forma circular",
-      "Bordes escamosos",
-      "Centro claro",
-      "Picazón"
-    ]
-  },
-
-  "rosacea": {
-    "name": "Rosácea",
-    "description": "Una enfermedad crónica que causa enrojecimiento facial.",
-    "visualLabel": "Enrojecimiento facial",
-    "visualDesc": "Enrojecimiento persistente en mejillas y nariz",
-    "symptoms": [
-      "Enrojecimiento facial",
-      "Vasos sanguíneos visibles",
-      "Pequeños bultos",
-      "Irritación ocular"
-    ],
-    "causes": [
-      "Genética",
-      "Factores ambientales",
-      "Exposición al sol",
-      "Comidas picantes"
-    ],
-    "lookFor": [
-      "Mejillas rojas",
-      "Pequeños bultos",
-      "Rubor frecuente",
-      "Vasos visibles"
-    ]
-  },
-
-  "seborrheicKeratosis": {
-    "name": "Queratosis seborreica",
-    "description": "Un crecimiento benigno de la piel que aparece comúnmente con la edad.",
-    "visualLabel": "Parche ceroso",
-    "visualDesc": "Lesión rugosa y cerosa que parece adherida a la piel",
-    "symptoms": [
-      "Superficie cerosa",
-      "Cambios de color",
-      "Picazón"
-    ],
-    "causes": [
-      "Envejecimiento",
-      "Exposición al sol",
-      "Genética"
-    ],
-    "lookFor": [
-      "Textura cerosa",
-      "Color marrón",
-      "Bordes definidos",
-      "Aspecto adherido"
-    ]
-  },
-
-  "vitiligo": {
-    "name": "Vitíligo",
-    "description": "Una afección en la que la piel pierde su pigmentación.",
-    "visualLabel": "Manchas blancas",
-    "visualDesc": "Áreas blancas claramente definidas",
-    "symptoms": [
-      "Manchas blancas",
-      "Blanqueamiento del cabello",
-      "Pérdida de pigmento"
-    ],
-    "causes": [
-      "Trastorno autoinmune",
-      "Genética",
-      "Daño nervioso"
-    ],
-    "lookFor": [
-      "Áreas blancas",
-      "Bordes definidos",
-      "Simetría",
-      "Cabello blanco"
-    ]
-  },
-
-  "warts": {
-    "name": "Verrugas",
-    "description": "Pequeños crecimientos en la piel causados por el virus del VPH.",
-    "visualLabel": "Pequeños bultos ásperos",
-    "visualDesc": "Pequeños crecimientos con apariencia de coliflor",
-    "symptoms": [
-      "Bultos",
-      "Puntos negros",
-      "Dolor"
-    ],
-    "causes": [
-      "Virus del VPH",
-      "Contacto directo",
-      "Lesiones",
-      "Inmunidad baja"
-    ],
-    "lookFor": [
-      "Superficie áspera",
-      "Color de la piel",
-      "Puntos negros",
-      "Manos y pies"
-    ]
-  }
-},
   "precautions": {
     "title": "Precauciones y cuidado de la piel",
     "subtitle": "Siga estas pautas para mantener la piel sana y prevenir enfermedades de la piel.",
