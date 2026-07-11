@@ -9,7 +9,8 @@
     "disease": "Disease Info",
     "precautions": "Precautions",
     "profile": "My Profile",
-    "admin": "Admin Panel"
+    "admin": "Admin Panel",
+     "appointment": "Find Dermatologist"
   },
   "adminPanel": {
     "title": "Admin Panel",
@@ -70,9 +71,16 @@
       "less-than-week": "Less than a week",
       "weeks": "Weeks",
       "months": "Months"
-    }
+    },
+    "awaitingImages": "Awaiting Skin Images",
+    "awaitingSubtitle": "Upload image files or capture photos on the left. The AI analysis will appear here.",
+    "tipTitle": "Tips for Better Analysis",
+    "tip1": "Ensure good, bright lighting on the spot.",
+    "tip2": "Upload multiple angles or distances of the same skin area.",
+    "tip3": "Position spots clearly centered in the frame."
+  
   },
-  "prediction": {
+ "prediction": {
     "title": "AI Prediction Result",
     "condition": "DETECTED CONDITION",
     "confidence": "CONFIDENCE SCORE",
@@ -83,7 +91,10 @@
     "heatmap": "AI FOCUS HEATMAP",
     "heatmapPending": "Heatmap will appear here once Flask backend is connected",
     "disclaimer": "This is an AI prediction for awareness only. Please consult a certified dermatologist for proper diagnosis.",
-    "others": "Others"
+    "others": "Others",
+    "downloadReport": "Download Report",
+    "generatingReport": "Generating..."
+  
   },
   "diseaseInfo": {
     "title": "Disease Awareness",

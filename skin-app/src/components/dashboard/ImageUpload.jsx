@@ -780,17 +780,17 @@ const ImageUpload = ({ images, setImages, selectedImageId, setSelectedImageId })
                               {t('dashboard.scan.predictionSummary', 'Prediction Summary')}
                             </div>
                             <div className="flex justify-between text-xs text-slate-700 dark:text-slate-300">
-                              <span>Condition:</span>
-                              <span className="font-bold text-slate-900 dark:text-white">{activeImage.result.disease}</span>
-                            </div>
-                            <div className="flex justify-between text-xs text-slate-700 dark:text-slate-300">
-                              <span>Confidence:</span>
-                              <span className="font-bold text-slate-900 dark:text-white">{activeImage.result.confidence}%</span>
-                            </div>
-                            <div className="flex justify-between text-xs text-slate-700 dark:text-slate-300">
-                              <span>Risk Level:</span>
-                              <span className="font-bold text-slate-900 dark:text-white">{activeImage.result.severity}</span>
-                            </div>
+  <span>{t('dashboard.scan.conditionLabel', 'Condition')}:</span>
+  <span className="font-bold text-slate-900 dark:text-white">{activeImage.result.disease}</span>
+</div>
+<div className="flex justify-between text-xs text-slate-700 dark:text-slate-300">
+  <span>{t('dashboard.scan.confidenceLabel', 'Confidence')}:</span>
+  <span className="font-bold text-slate-900 dark:text-white">{activeImage.result.confidence}%</span>
+</div>
+<div className="flex justify-between text-xs text-slate-700 dark:text-slate-300">
+  <span>{t('dashboard.scan.riskLevelLabel', 'Risk Level')}:</span>
+  <span className="font-bold text-slate-900 dark:text-white">{activeImage.result.severity}</span>
+</div>
                           </div>
                         )}
                       </div>
