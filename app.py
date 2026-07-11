@@ -74,12 +74,19 @@ except Exception as e:
  
 if len(DISEASE_LABELS) != num_classes:
     print(f"WARNING: DISEASE_LABELS has {len(DISEASE_LABELS)} entries but model outputs {num_classes} classes")
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 349813a019d97b434268de7fcd13bbacca0bf3dc
 if model is not None:
     print(f"Model ready. Input: {model.input_shape}, Output: {model.output_shape}")
 else:
     print("No model loaded — running in mock mode")
+<<<<<<< HEAD
  
+=======
+>>>>>>> 349813a019d97b434268de7fcd13bbacca0bf3dc
 # ─── Helper Functions ─────────────────────────────────────────────────────────
  
 def preprocess_image(file_bytes):
@@ -253,4 +260,8 @@ def predict():
  
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 7860))
+<<<<<<< HEAD
     app.run(host="0.0.0.0", port=port, debug=False)
+=======
+    app.run(host="0.0.0.0", port=port, debug=False)
+>>>>>>> 349813a019d97b434268de7fcd13bbacca0bf3dc
