@@ -104,90 +104,240 @@
       "description": "A common skin condition where hair follicles become clogged with oil and dead skin cells, causing pimples, blackheads and whiteheads.",
       "visualLabel": "Red pimples and whiteheads",
       "visualDesc": "Inflamed red bumps or whiteheads commonly on face, chest and back",
-      "symptoms": ["Pimples and pustules", "Blackheads or whiteheads", "Oily skin", "Scarring after healing"],
-      "causes": ["Excess sebum production", "Bacterial infection", "Hormonal changes", "Clogged pores"],
-      "lookFor": ["Red inflamed bumps", "Whiteheads or blackheads", "Pustules with pus", "Primarily on face and back"]
+      "symptoms": [
+        "Pimples and pustules",
+        "Blackheads or whiteheads",
+        "Oily skin",
+        "Scarring after healing"
+      ],
+      "causes": [
+        "Excess sebum production",
+        "Bacterial infection",
+        "Hormonal changes",
+        "Clogged pores"
+      ],
+      "lookFor": [
+        "Red inflamed bumps",
+        "Whiteheads or blackheads",
+        "Pustules with pus",
+        "Primarily on face and back"
+      ]
     },
-    "actinicKeratosis": {
-      "name": "Actinic Keratosis",
-      "description": "Rough, scaly patch caused by years of sun exposure. Considered pre-cancerous and should be monitored.",
-      "visualLabel": "Rough, scaly red patch",
-      "visualDesc": "Dry, rough, scaly patch of skin — typically red, pink or brown",
-      "symptoms": ["Rough scaly patch", "Flat to raised", "Itching or burning", "Hard wart-like surface"],
-      "causes": ["UV exposure", "Tanning beds", "Weakened immunity"],
-      "lookFor": ["Scaly texture", "Pink to red color", "Rough when touched", "Flat or slightly raised"]
+    "athleteFoot": {
+      "name": "Athlete's Foot",
+      "description": "A contagious fungal infection that usually begins between the toes, common in people whose feet get sweaty inside tight footwear.",
+      "visualLabel": "Peeling, itchy skin between toes",
+      "visualDesc": "Scaly, cracked skin between the toes or on the soles, often with redness and itching",
+      "symptoms": [
+        "Itchy, scaly rash",
+        "Burning or stinging",
+        "Cracked, peeling skin",
+        "Blisters in some cases"
+      ],
+      "causes": [
+        "Fungal infection (Tinea pedis)",
+        "Sweaty or damp feet",
+        "Walking barefoot in public showers or pools",
+        "Tight, poorly ventilated shoes"
+      ],
+      "lookFor": [
+        "Peeling skin between toes",
+        "Redness and cracking",
+        "Itching or burning",
+        "Musty odor"
+      ]
     },
-    "basalCell": {
-      "name": "Basal Cell Carcinoma",
-      "description": "Most common skin cancer. Rarely spreads but needs treatment. Often looks like a pearly bump.",
-      "visualLabel": "Pearly, pinkish bump",
-      "visualDesc": "Shiny, translucent bump with a pearly or waxy appearance",
-      "symptoms": ["Pearly bump", "Flat scar-like lesion", "Bleeding sore", "Pink growth"],
-      "causes": ["Chronic sun exposure", "Radiation therapy", "Fair skin"],
-      "lookFor": ["Pearly surface", "Pink or skin-toned", "May have visible vessels", "Slow growing"]
+    "cellulitis": {
+      "name": "Cellulitis",
+      "description": "A bacterial infection of the deeper layers of skin that can spread quickly and requires prompt medical treatment.",
+      "visualLabel": "Spreading red, swollen skin",
+      "visualDesc": "Red, swollen, warm patch of skin with an indistinct border that can enlarge rapidly",
+      "symptoms": [
+        "Red, swollen, tender skin",
+        "Warmth in the affected area",
+        "Fever or chills",
+        "Skin dimpling or blistering"
+      ],
+      "causes": [
+        "Bacterial entry through a break in the skin",
+        "Cuts, insect bites, or wounds",
+        "Weakened immune system",
+        "Chronic skin conditions"
+      ],
+      "lookFor": [
+        "Spreading redness",
+        "Warmth and swelling",
+        "Tight, shiny skin",
+        "Fever"
+      ]
     },
     "eczema": {
       "name": "Eczema",
       "description": "A chronic inflammatory skin condition causing itchy, red and cracked skin. Often linked to allergies or asthma.",
       "visualLabel": "Red, itchy, inflamed patches",
       "visualDesc": "Dry, scaly and inflamed skin — commonly on hands, elbows and behind knees",
-      "symptoms": ["Intense itching", "Red inflamed skin", "Dry cracked skin", "Oozing or crusting"],
-      "causes": ["Immune system reaction", "Genetic factors", "Environmental triggers", "Allergens"],
-      "lookFor": ["Itchy red patches", "Dry flaky skin", "Skin thickening", "Common on folds of skin"]
+      "symptoms": [
+        "Intense itching",
+        "Red inflamed skin",
+        "Dry cracked skin",
+        "Oozing or crusting"
+      ],
+      "causes": [
+        "Immune system reaction",
+        "Genetic factors",
+        "Environmental triggers",
+        "Allergens"
+      ],
+      "lookFor": [
+        "Itchy red patches",
+        "Dry flaky skin",
+        "Skin thickening",
+        "Common on folds of skin"
+      ]
     },
-    "psoriasis": {
-      "name": "Psoriasis",
-      "description": "A chronic autoimmune condition causing rapid skin cell buildup, resulting in scaling and inflammation.",
-      "visualLabel": "Thick silver-white scales",
-      "visualDesc": "Red patches covered with thick silver or white scaly skin",
-      "symptoms": ["Red patches with scales", "Dry cracked skin", "Itching or burning", "Thickened nails"],
-      "causes": ["Autoimmune response", "Genetic predisposition", "Stress triggers", "Infections"],
-      "lookFor": ["Silver-white scales", "Red inflamed base", "Well-defined edges", "Common on elbows and knees"]
+    "impetigo": {
+      "name": "Impetigo",
+      "description": "A highly contagious bacterial skin infection common in children, causing sores that ooze and form a honey-colored crust.",
+      "visualLabel": "Honey-crusted sores",
+      "visualDesc": "Red sores, often around the nose and mouth, that rupture and form a yellowish-brown crust",
+      "symptoms": [
+        "Red sores that rupture easily",
+        "Yellowish-brown crust",
+        "Itching",
+        "Swollen lymph nodes"
+      ],
+      "causes": [
+        "Bacterial infection (staph or strep)",
+        "Skin-to-skin contact",
+        "Breaks in the skin",
+        "Close-contact settings like schools"
+      ],
+      "lookFor": [
+        "Honey-colored crusted sores",
+        "Red sores near nose or mouth",
+        "Itching",
+        "Fluid-filled blisters"
+      ]
     },
     "ringworm": {
       "name": "Ringworm",
       "description": "A fungal infection of the skin causing a ring-shaped red rash. Despite the name, it is not caused by a worm.",
       "visualLabel": "Ring-shaped red rash",
       "visualDesc": "Circular red ring with clearer skin in the middle — itchy and scaly",
-      "symptoms": ["Ring-shaped rash", "Scaly edges", "Itching", "Redness and inflammation"],
-      "causes": ["Fungal infection (Tinea)", "Contact with infected person", "Sharing personal items", "Warm moist environments"],
-      "lookFor": ["Circular ring shape", "Scaly outer edge", "Clear center", "Itchy red border"]
+      "symptoms": [
+        "Ring-shaped rash",
+        "Scaly edges",
+        "Itching",
+        "Redness and inflammation"
+      ],
+      "causes": [
+        "Fungal infection (Tinea)",
+        "Contact with infected person",
+        "Sharing personal items",
+        "Warm moist environments"
+      ],
+      "lookFor": [
+        "Circular ring shape",
+        "Scaly outer edge",
+        "Clear center",
+        "Itchy red border"
+      ]
     },
     "rosacea": {
       "name": "Rosacea",
       "description": "A chronic skin condition causing redness and visible blood vessels in the face, sometimes with acne-like bumps.",
       "visualLabel": "Facial redness and flushing",
       "visualDesc": "Persistent redness across nose and cheeks — may have small pus-filled bumps",
-      "symptoms": ["Facial redness", "Visible blood vessels", "Swollen bumps", "Eye irritation"],
-      "causes": ["Genetics", "Environmental triggers", "Sun exposure", "Hot drinks or spicy food"],
-      "lookFor": ["Redness on nose and cheeks", "Small red bumps", "Flushing easily", "Spider veins on face"]
+      "symptoms": [
+        "Facial redness",
+        "Visible blood vessels",
+        "Swollen bumps",
+        "Eye irritation"
+      ],
+      "causes": [
+        "Genetics",
+        "Environmental triggers",
+        "Sun exposure",
+        "Hot drinks or spicy food"
+      ],
+      "lookFor": [
+        "Redness on nose and cheeks",
+        "Small red bumps",
+        "Flushing easily",
+        "Spider veins on face"
+      ]
     },
-    "seborrheicKeratosis": {
-      "name": "Seborrheic Keratosis",
-      "description": "Common non-cancerous skin growths that appear with age. They look waxy or stuck-on and vary in color.",
-      "visualLabel": "Waxy, stuck-on patch",
-      "visualDesc": "Rough, waxy or scaly surface — looks like it is stuck on to the skin",
-      "symptoms": ["Waxy surface", "Stuck-on appearance", "Variable color", "Itching"],
-      "causes": ["Aging", "Sun exposure", "Genetics"],
-      "lookFor": ["Waxy texture", "Tan to dark brown", "Well-defined edge", "Stuck-on look"]
+    "shingles": {
+      "name": "Shingles",
+      "description": "A painful rash caused by reactivation of the chickenpox virus, usually appearing as a band on one side of the body.",
+      "visualLabel": "Painful blistering band",
+      "visualDesc": "Cluster of fluid-filled blisters in a band or strip, typically on one side of the torso or face",
+      "symptoms": [
+        "Burning or tingling pain",
+        "Red rash with blisters",
+        "Fever and fatigue",
+        "Sensitivity to touch or light"
+      ],
+      "causes": [
+        "Reactivation of the varicella-zoster virus",
+        "Weakened immune system",
+        "Older age",
+        "Stress"
+      ],
+      "lookFor": [
+        "Band-like rash on one side",
+        "Fluid-filled blisters",
+        "Pain before rash appears",
+        "Sensitivity to touch"
+      ]
+    },
+    "urticariaHives": {
+      "name": "Urticaria (Hives)",
+      "description": "Raised, itchy welts on the skin that appear suddenly, often as an allergic reaction, and can shift location within hours.",
+      "visualLabel": "Raised itchy welts",
+      "visualDesc": "Red or skin-colored welts that appear suddenly and may change shape or location",
+      "symptoms": [
+        "Itchy raised welts",
+        "Swelling",
+        "Welts that blanch when pressed",
+        "Burning sensation"
+      ],
+      "causes": [
+        "Allergic reactions (food, medication, insect bites)",
+        "Infections",
+        "Stress",
+        "Physical triggers like heat or pressure"
+      ],
+      "lookFor": [
+        "Raised welts",
+        "Sudden appearance",
+        "Welts that change shape or location",
+        "Itching or swelling"
+      ]
     },
     "vitiligo": {
       "name": "Vitiligo",
       "description": "A condition where skin loses its pigment cells, resulting in white patches on the skin.",
       "visualLabel": "White depigmented patches",
       "visualDesc": "Smooth white patches on skin — clearly defined edges where pigment is lost",
-      "symptoms": ["White patches on skin", "Premature hair graying", "Loss of color in mouth", "Symmetrical patches"],
-      "causes": ["Autoimmune disorder", "Genetic factors", "Nerve damage", "Oxidative stress"],
-      "lookFor": ["Chalk-white patches", "Sharp defined borders", "Symmetrical on body", "Hair in patch may be white"]
-    },
-    "warts": {
-      "name": "Warts",
-      "description": "Small rough growths on the skin caused by human papillomavirus (HPV). Common on hands and feet.",
-      "visualLabel": "Rough raised bumps",
-      "visualDesc": "Small rough bumps with a cauliflower-like texture — skin-colored or darker",
-      "symptoms": ["Rough raised bump", "Cauliflower texture", "Black dots inside", "May be painful on feet"],
-      "causes": ["HPV virus infection", "Direct skin contact", "Cuts or breaks in skin", "Weakened immunity"],
-      "lookFor": ["Rough grainy texture", "Flesh-colored bumps", "Black pinpoint dots", "Common on hands and feet"]
+      "symptoms": [
+        "White patches on skin",
+        "Premature hair graying",
+        "Loss of color in mouth",
+        "Symmetrical patches"
+      ],
+      "causes": [
+        "Autoimmune disorder",
+        "Genetic factors",
+        "Nerve damage",
+        "Oxidative stress"
+      ],
+      "lookFor": [
+        "Chalk-white patches",
+        "Sharp defined borders",
+        "Symmetrical on body",
+        "Hair in patch may be white"
+      ]
     }
   },
   "precautions": {
@@ -197,27 +347,57 @@
     "warningBody": "If you notice any rapidly changing skin lesion, immediately consult a certified dermatologist. Early detection saves lives.",
     "sun": {
       "title": "Sun Protection",
-      "tips": ["Apply SPF 30+ sunscreen daily", "Reapply every 2 hours outdoors", "Wear protective clothing and hats", "Avoid peak sun hours (10am–4pm)"]
+      "tips": [
+        "Apply SPF 30+ sunscreen daily",
+        "Reapply every 2 hours outdoors",
+        "Wear protective clothing and hats",
+        "Avoid peak sun hours (10am–4pm)"
+      ]
     },
     "checks": {
       "title": "Regular Skin Checks",
-      "tips": ["Check your skin monthly", "Look for new or changing moles", "Use the ABCDE rule for moles", "See a dermatologist annually"]
+      "tips": [
+        "Check your skin monthly",
+        "Look for new or changing moles",
+        "Use the ABCDE rule for moles",
+        "See a dermatologist annually"
+      ]
     },
     "hydration": {
       "title": "Skin Hydration",
-      "tips": ["Moisturize daily after bathing", "Drink at least 8 glasses of water", "Avoid hot showers — use warm water", "Use fragrance-free products"]
+      "tips": [
+        "Moisturize daily after bathing",
+        "Drink at least 8 glasses of water",
+        "Avoid hot showers — use warm water",
+        "Use fragrance-free products"
+      ]
     },
     "diet": {
       "title": "Healthy Diet",
-      "tips": ["Eat antioxidant-rich foods", "Include omega-3 fatty acids", "Reduce processed sugar intake", "Eat leafy greens and berries"]
+      "tips": [
+        "Eat antioxidant-rich foods",
+        "Include omega-3 fatty acids",
+        "Reduce processed sugar intake",
+        "Eat leafy greens and berries"
+      ]
     },
     "habits": {
       "title": "Avoid Harmful Habits",
-      "tips": ["Avoid smoking — damages skin", "Limit alcohol consumption", "Do not use tanning beds", "Avoid picking or scratching skin"]
+      "tips": [
+        "Avoid smoking — damages skin",
+        "Limit alcohol consumption",
+        "Do not use tanning beds",
+        "Avoid picking or scratching skin"
+      ]
     },
     "doctor": {
       "title": "When to See a Doctor",
-      "tips": ["Mole changes in size or color", "Sore that won't heal", "Itching or bleeding lesions", "Any skin change that worries you"]
+      "tips": [
+        "Mole changes in size or color",
+        "Sore that won't heal",
+        "Itching or bleeding lesions",
+        "Any skin change that worries you"
+      ]
     }
   },
   "profile": {
