@@ -23,12 +23,15 @@ import {
   Moon,
   ArrowRight,
   MapPin,
+  PanelLeftClose,
+  PanelLeftOpen,
 } from 'lucide-react';
 
 const Dashboard = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('scan');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false); // mobile slide-in
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true); // ✅ new — desktop collapse
   const [images, setImages] = useState([]);
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(
@@ -60,24 +63,33 @@ const Dashboard = () => {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex transition-colors duration-300">
 
       <aside className={`
-        fixed top-0 left-0 h-full z-40 w-64 bg-white dark:bg-slate-800
+        fixed top-0 left-0 h-full z-40 bg-white dark:bg-slate-800
         border-r border-slate-100 dark:border-slate-700
-        transform transition-transform duration-300 flex flex-col
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-        lg:translate-x-0 lg:static lg:flex
+        transform transition-all duration-300 flex flex-col
+        ${sidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full w-64'}
+        lg:translate-x-0 lg:static
+        ${desktopSidebarOpen ? 'lg:w-64 lg:flex' : 'lg:w-0 lg:overflow-hidden lg:border-r-0'}
       `}>
-        <div className="p-6 border-b border-slate-100 dark:border-slate-700">
-          <div className="flex items-center gap-2">
-            <Stethoscope className="w-7 h-7 text-blue-600 dark:text-blue-400" />
-            <span className="text-xl font-bold text-slate-800 dark:text-white">
+        <div className="p-6 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+          <div className="flex items-center gap-2 min-w-0">
+            <Stethoscope className="w-7 h-7 text-blue-600 dark:text-blue-400 shrink-0" />
+            <span className="text-xl font-bold text-slate-800 dark:text-white truncate">
               Derma<span className="text-blue-600">Lens</span>
             </span>
           </div>
+          {/* ✅ Collapse button, desktop only */}
+          <button
+            onClick={() => setDesktopSidebarOpen(false)}
+            className="hidden lg:flex w-8 h-8 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 items-center justify-center shrink-0"
+            title="Collapse sidebar"
+          >
+            <PanelLeftClose className="w-5 h-5" />
+          </button>
         </div>
 
         <div className="p-4 border-b border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300 font-bold text-lg">
+            <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300 font-bold text-lg shrink-0">
               {user?.displayName?.[0]?.toUpperCase() || user?.email?.[0]?.toUpperCase() || '?'}
             </div>
             <div className="overflow-hidden">
@@ -148,6 +160,16 @@ const Dashboard = () => {
             >
               <Menu className="w-6 h-6" />
             </button>
+            {/* ✅ Reopen button, desktop only, shown when collapsed */}
+            {!desktopSidebarOpen && (
+              <button
+                onClick={() => setDesktopSidebarOpen(true)}
+                className="hidden lg:flex w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-600 transition-all shrink-0"
+                title="Expand sidebar"
+              >
+                <PanelLeftOpen className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+              </button>
+            )}
             <div className="min-w-0">
               <h1 className="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2 truncate">
                 {activeNav && <activeNav.icon className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />}

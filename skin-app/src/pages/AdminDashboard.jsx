@@ -7,11 +7,15 @@ import StatsCards from '../components/admin/StatsCards';
 import PredictionsChart from '../components/admin/PredictionsChart';
 import UsersTable from '../components/admin/UsersTable';
 import RecentPredictions from '../components/admin/RecentPredictions';
-import { Stethoscope, Shield, BarChart3, Users, Microscope, LineChart, ArrowLeft, LogOut, Menu, Moon, Sun } from 'lucide-react';
+import {
+  Stethoscope, Shield, BarChart3, Users, Microscope, LineChart,
+  ArrowLeft, LogOut, Menu, Moon, Sun, PanelLeftClose, PanelLeftOpen
+} from 'lucide-react';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false); // mobile slide-in
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true); // ✅ new — desktop collapse
   const [isDarkMode, setIsDarkMode] = useState(
     document.documentElement.classList.contains('dark')
   );
@@ -41,19 +45,30 @@ const AdminDashboard = () => {
 
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 h-full z-40 w-64 bg-white dark:bg-slate-800
+        fixed top-0 left-0 h-full z-40 bg-white dark:bg-slate-800
         border-r border-slate-100 dark:border-slate-700
-        transform transition-transform duration-300 flex flex-col
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-        lg:translate-x-0 lg:static lg:flex
+        transform transition-all duration-300 flex flex-col
+        ${sidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full w-64'}
+        lg:translate-x-0 lg:static
+        ${desktopSidebarOpen ? 'lg:w-64 lg:flex' : 'lg:w-0 lg:overflow-hidden lg:border-r-0'}
       `}>
         {/* Logo */}
         <div className="p-6 border-b border-slate-100 dark:border-slate-700">
-          <div className="flex items-center gap-2 mb-2">
-            <Stethoscope className="w-7 h-7 text-blue-600 dark:text-blue-400" />
-            <span className="text-xl font-bold text-slate-800 dark:text-white">
-              Derma<span className="text-blue-600">Lens</span>
-            </span>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2 min-w-0">
+              <Stethoscope className="w-7 h-7 text-blue-600 dark:text-blue-400 shrink-0" />
+              <span className="text-xl font-bold text-slate-800 dark:text-white truncate">
+                Derma<span className="text-blue-600">Lens</span>
+              </span>
+            </div>
+            {/* ✅ Collapse button, desktop only */}
+            <button
+              onClick={() => setDesktopSidebarOpen(false)}
+              className="hidden lg:flex w-8 h-8 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 items-center justify-center shrink-0"
+              title="Collapse sidebar"
+            >
+              <PanelLeftClose className="w-5 h-5" />
+            </button>
           </div>
           <span className="inline-flex items-center gap-1 text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-lg font-semibold">
             <Shield className="w-3 h-3 text-red-500" /> Admin Panel
@@ -121,6 +136,16 @@ const AdminDashboard = () => {
             >
               <Menu className="w-6 h-6" />
             </button>
+            {/* ✅ Reopen button, desktop only, shown when collapsed */}
+            {!desktopSidebarOpen && (
+              <button
+                onClick={() => setDesktopSidebarOpen(true)}
+                className="hidden lg:flex w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-600 transition-all shrink-0"
+                title="Expand sidebar"
+              >
+                <PanelLeftOpen className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+              </button>
+            )}
             <div>
               <h1 className="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2">
                 {(() => {

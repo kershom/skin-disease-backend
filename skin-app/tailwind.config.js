@@ -18,7 +18,11 @@ module.exports = {
           light: '#e0f2fe',
           DEFAULT: '#0ea5e9',
           dark: '#0284c7',
-        }
+        },
+        canvas: '#EEF2F8',
+        surface: '#FFFFFF',
+        'surface-alt': '#F6F8FC',
+        'border-subtle': '#DDE4EE',
       },
     },
   },
