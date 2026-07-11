@@ -431,7 +431,7 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🎯</span>
+            <Target size={20} className="text-blue-600 dark:text-blue-400" />
             <h2 className="text-lg font-bold text-slate-800 dark:text-white">{t('dashboard.prediction.title')}</h2>
           </div>
           <button
@@ -474,17 +474,17 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
             <div className="text-xs font-semibold mb-1 opacity-70">{t('dashboard.prediction.severity')}</div>
             <div className="text-lg font-bold">{t('dashboard.severity.risk', { level: severityLabel })}</div>
             <div className="text-xs mt-1 opacity-70">
-              {data.severity === 'Low' && '✅ '}
-              {data.severity === 'Medium' && '⚠️ '}
-              {data.severity === 'High' && '🚨 '}
+              {data.severity === 'Low' && <CheckCircle2 size={14} className="inline mr-1" />}
+              {data.severity === 'Medium' && <AlertTriangle size={14} className="inline mr-1" />}
+              {data.severity === 'High' && <CircleAlert size={14} className="inline mr-1" />}
               {severityHint}
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">
-            📊 {t('dashboard.prediction.probabilities')}
+          <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3 flex items-center gap-2">
+            <BarChart3 size={16} /> {t('dashboard.prediction.probabilities')}
           </h3>
           <div className="space-y-3">
             {data.probabilities.map((item, index) => (
@@ -506,7 +506,7 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       </div>
 
       <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-2xl p-4 flex gap-3">
-        <span className="text-xl">⚠️</span>
+        <AlertTriangle size={20} className="shrink-0 text-amber-600 dark:text-amber-400" />
         <p className="text-amber-700 dark:text-amber-400 text-sm">
           {t('dashboard.prediction.disclaimer')}
         </p>

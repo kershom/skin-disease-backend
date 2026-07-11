@@ -1,6 +1,6 @@
 export const knowledgeBase = {
   welcome: `
-# 👋 Welcome to DermaLens
+# Welcome to DermaLens
 
 I'm your AI Skin Disease Assistant.
 

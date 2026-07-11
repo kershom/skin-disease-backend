@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { auth } from './firebase/firebase';
 import i18n from './i18n';
 import { onAuthStateChanged } from 'firebase/auth';
+import { Activity, ShieldBan } from 'lucide-react';
 import { isAdmin } from './firebase/admins';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -27,7 +28,9 @@ function App() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900">
         <div className="text-center">
-          <div className="text-5xl mb-4">🩺</div>
+          <div className="mb-4 flex justify-center text-slate-600 dark:text-slate-300">
+            <Activity size={44} className="animate-pulse" />
+          </div>
           <div className="text-slate-500 dark:text-slate-400 text-sm">
             {i18n.t('app.loading')}
           </div>
@@ -84,7 +87,9 @@ const Unauthorized = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-10 text-center shadow-xl max-w-md w-full border border-slate-100 dark:border-slate-700">
-        <div className="text-6xl mb-4">🚫</div>
+        <div className="mb-4 flex justify-center text-rose-500">
+          <ShieldBan size={48} />
+        </div>
         <h1 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">
           Access Denied
         </h1>

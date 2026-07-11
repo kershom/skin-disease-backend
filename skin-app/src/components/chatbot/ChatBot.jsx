@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
+import {
+  Bot,
+  CircleUserRound,
+  LoaderCircle,
+  Stethoscope,
+  X,
+} from "lucide-react";
 import { getBotReply } from "./chatbotUtils";
 import "../ChatBot.css";
 
@@ -10,7 +17,7 @@ const ChatBot = () => {
     {
       sender: "bot",
       text:
-        "# 👋 Welcome to DermaLens\n\nI'm your **AI Skin Disease Assistant**.\n\nYou can ask me about:\n\n• Skin Diseases\n• Image Upload\n• AI Prediction\n• Login & Registration\n• Reports\n• Privacy\n• Website Features",
+        "# Welcome to DermaLens\n\nI'm your **AI Skin Disease Assistant**.\n\nYou can ask me about:\n\n• Skin Diseases\n• Image Upload\n• AI Prediction\n• Login & Registration\n• Reports\n• Privacy\n• Website Features",
       time: new Date().toLocaleTimeString([], {
         hour: "2-digit",
         minute: "2-digit",
@@ -80,6 +87,7 @@ const ChatBot = () => {
       <button
         className="chat-toggle"
         onClick={() => setOpen(!open)}
+        aria-label="Toggle chat assistant"
       >
         💬
       </button>
@@ -90,15 +98,20 @@ const ChatBot = () => {
           {/* Header */}
           <div className="chat-header">
             <div>
-              <h3>🩺 DermaLens Assistant</h3>
-              <small>🟢 Online</small>
+              <h3 className="flex items-center gap-2">
+                <Stethoscope size={18} /> DermaLens Assistant
+              </h3>
+              <small className="flex items-center gap-1">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" /> Online
+              </small>
             </div>
 
             <button
               className="close-btn"
               onClick={() => setOpen(false)}
+              aria-label="Close chat"
             >
-              ✕
+              <X size={16} />
             </button>
           </div>
 
@@ -131,10 +144,11 @@ const ChatBot = () => {
                   <div
                     style={{
                       marginRight: "8px",
-                      fontSize: "22px",
+                      display: "flex",
+                      alignItems: "center",
                     }}
                   >
-                    🤖
+                    <Bot size={20} />
                   </div>
                 )}
 
@@ -161,10 +175,11 @@ const ChatBot = () => {
                   <div
                     style={{
                       marginLeft: "8px",
-                      fontSize: "22px",
+                      display: "flex",
+                      alignItems: "center",
                     }}
                   >
-                    👤
+                    <CircleUserRound size={20} />
                   </div>
                 )}
 
@@ -173,8 +188,8 @@ const ChatBot = () => {
 
             {typing && (
               <div className="bot-msg">
-                <span className="typing">
-                  🤖 AI is typing...
+                <span className="typing flex items-center gap-2">
+                  <LoaderCircle size={16} className="animate-spin" /> AI is typing...
                 </span>
               </div>
             )}

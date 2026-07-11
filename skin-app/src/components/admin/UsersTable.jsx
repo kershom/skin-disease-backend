@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { db } from '../../firebase/firebase';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { AlertCircle, LoaderCircle, RefreshCw, Search, Users } from 'lucide-react';
 
 const UsersTable = () => {
   const [users, setUsers]       = useState([]);
@@ -52,8 +53,9 @@ const UsersTable = () => {
       <div className="p-6 border-b border-slate-100 dark:border-slate-700">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h3 className="font-bold text-slate-800 dark:text-white">
-              👥 Registered Users
+            <h3 className="font-bold text-slate-800 dark:text-white flex items-center gap-2">
+              <Users size={18} className="text-blue-600 dark:text-blue-400" />
+              <span>Registered Users</span>
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
               All users from Firebase Authentication
@@ -67,21 +69,23 @@ const UsersTable = () => {
             {/* Refresh button */}
             <button
               onClick={fetchUsers}
-              className="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 text-xs font-medium px-3 py-1.5 rounded-lg transition-all"
+              className="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 text-xs font-medium px-3 py-1.5 rounded-lg transition-all flex items-center gap-2"
             >
-              🔄 Refresh
+              <RefreshCw size={14} />
+              <span>Refresh</span>
             </button>
           </div>
         </div>
 
         {/* Search bar */}
-        <div className="mt-4">
+        <div className="mt-4 relative">
+          <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="🔍 Search by name or email..."
-            className="w-full border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-sm bg-white dark:bg-slate-700 text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-700"
+            placeholder="Search by name or email..."
+            className="w-full border border-slate-200 dark:border-slate-600 rounded-xl pl-9 pr-4 py-2.5 text-sm bg-white dark:bg-slate-700 text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-700"
           />
         </div>
       </div>
@@ -89,7 +93,9 @@ const UsersTable = () => {
       {/* Loading state */}
       {loading && (
         <div className="p-12 text-center">
-          <div className="text-4xl mb-3 animate-pulse">👥</div>
+          <div className="mb-3 flex justify-center text-blue-500">
+            <LoaderCircle size={28} className="animate-spin" />
+          </div>
           <p className="text-slate-400 text-sm">Loading users from Firebase...</p>
         </div>
       )}
@@ -98,7 +104,7 @@ const UsersTable = () => {
       {error && !loading && (
         <div className="p-6">
           <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 flex gap-3">
-            <span>❌</span>
+            <AlertCircle size={18} className="shrink-0 text-red-500 mt-0.5" />
             <div>
               <p className="text-red-700 dark:text-red-400 text-sm font-medium">{error}</p>
               <button
@@ -115,7 +121,9 @@ const UsersTable = () => {
       {/* Empty state */}
       {!loading && !error && filtered.length === 0 && (
         <div className="p-12 text-center">
-          <div className="text-4xl mb-3">🔍</div>
+          <div className="mb-3 flex justify-center text-slate-400">
+            <Search size={28} />
+          </div>
           <p className="text-slate-500 dark:text-slate-400 text-sm">
             {search ? 'No users match your search' : 'No users registered yet'}
           </p>

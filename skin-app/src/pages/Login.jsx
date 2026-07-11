@@ -9,6 +9,15 @@ import {
   updateProfile
 } from 'firebase/auth';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import {
+  AlertTriangle,
+  ArrowLeft,
+  Eye,
+  EyeOff,
+  MoonStar,
+  Stethoscope,
+  SunMedium,
+} from 'lucide-react';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -165,17 +174,17 @@ const Login = () => {
         onClick={() => navigate('/')}
         className="fixed top-4 left-4 z-50 flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-600 px-4 py-2 rounded-xl hover:bg-white dark:hover:bg-slate-800 shadow-sm transition-all"
       >
-        <span aria-hidden>←</span>
+        <ArrowLeft size={16} />
         {t('login.backToHome')}
       </button>
 
       <button
         type="button"
         onClick={toggleDarkMode}
-        className="fixed top-4 right-4 w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 flex items-center justify-center text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm z-50"
+        className="fixed top-4 right-4 w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm z-50"
         title={darkMode ? t('nav.switchToLight') : t('nav.switchToDark')}
       >
-        {darkMode ? '☀️' : '🌙'}
+        {darkMode ? <SunMedium size={16} className="text-yellow-400" /> : <MoonStar size={16} className="text-blue-500" />}
       </button>
 
       <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl w-full max-w-md p-8 transition-colors duration-300">
@@ -185,7 +194,9 @@ const Login = () => {
           onClick={() => navigate('/')}
           className="w-full text-center mb-6 group cursor-pointer"
         >
-          <div className="text-4xl mb-2 group-hover:scale-105 transition-transform">🩺</div>
+          <div className="mb-2 flex justify-center text-blue-600 dark:text-blue-400 group-hover:scale-105 transition-transform">
+            <Stethoscope size={32} />
+          </div>
           <h1 className="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
             Derma<span className="text-blue-600 dark:text-blue-400">Lens</span>
           </h1>
@@ -218,8 +229,9 @@ const Login = () => {
         </div>
 
         {error && (
-          <div className="bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-sm p-3 rounded-lg mb-4 border border-red-100 dark:border-red-800">
-            ⚠️ {error}
+          <div className="bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-sm p-3 rounded-lg mb-4 border border-red-100 dark:border-red-800 flex items-start gap-2">
+            <AlertTriangle size={16} className="mt-0.5 shrink-0" />
+            <span>{error}</span>
           </div>
         )}
 
@@ -254,8 +266,9 @@ const Login = () => {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-3 text-slate-400 text-sm"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
-                  {showPassword ? '🙈' : '👁️'}
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </div>
@@ -348,8 +361,9 @@ const Login = () => {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-3 text-slate-400 text-sm"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
-                  {showPassword ? '🙈' : '👁️'}
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </div>

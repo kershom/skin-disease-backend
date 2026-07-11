@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { db } from '../../firebase/firebase';
 import { collection, getCountFromServer, query, where } from 'firebase/firestore';
+import { AlertTriangle, BarChart3, Camera, GitMerge, Microscope, Users } from 'lucide-react';
 
 const StatsCards = () => {
   const [userCount, setUserCount] = useState('...');
@@ -50,7 +51,7 @@ const StatsCards = () => {
 
   const stats = [
     {
-      icon: '👥',
+      icon: <Users size={20} className="text-blue-600 dark:text-blue-400" />,
       label: 'Total Users',
       value: userCount,
       change: 'Registered accounts',
@@ -60,7 +61,7 @@ const StatsCards = () => {
       border: 'border-blue-100 dark:border-blue-800',
     },
     {
-      icon: '🔬',
+      icon: <Microscope size={20} className="text-purple-600 dark:text-purple-400" />,
       label: 'Total Predictions',
       value: predictionCount,
       change: 'Realtime analysis count',
@@ -70,7 +71,7 @@ const StatsCards = () => {
       border: 'border-purple-100 dark:border-purple-800',
     },
     {
-      icon: '📊',
+      icon: <BarChart3 size={20} className="text-green-600 dark:text-green-400" />,
       label: 'Average Scans / User',
       value: averageScans,
       change: 'Usage density',
@@ -80,7 +81,7 @@ const StatsCards = () => {
       border: 'border-green-100 dark:border-green-800',
     },
     {
-      icon: '⚠️',
+      icon: <AlertTriangle size={20} className="text-red-600 dark:text-red-400" />,
       label: 'High Risk Cases',
       value: highRiskCount,
       change: 'High severity actions',
@@ -90,7 +91,7 @@ const StatsCards = () => {
       border: 'border-red-100 dark:border-red-800',
     },
     {
-      icon: '📷',
+      icon: <Camera size={20} className="text-cyan-600 dark:text-cyan-400" />,
       label: 'Webcam Scans',
       value: webcamCount,
       change: 'Captured via camera',
@@ -100,7 +101,7 @@ const StatsCards = () => {
       border: 'border-cyan-100 dark:border-cyan-800',
     },
     {
-      icon: '🤝',
+      icon: <GitMerge size={20} className="text-amber-600 dark:text-amber-400" />,
       label: 'Consensus Predictions',
       value: consensusCount,
       change: 'Multi-image reviews',
