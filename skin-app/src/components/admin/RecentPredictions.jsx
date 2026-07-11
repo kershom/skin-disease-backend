@@ -97,7 +97,7 @@ const RecentPredictions = () => {
 
   useEffect(() => {
     fetchPredictions(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   const filteredPredictions = predictions.filter(item => {

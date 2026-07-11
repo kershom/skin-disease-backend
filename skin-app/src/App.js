@@ -10,7 +10,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
-
+import ChatBot from './components/chatbot/ChatBot';
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -37,9 +37,12 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Toaster position="top-right" />
-      <Routes>
+  <BrowserRouter>
+    <Toaster position="top-right" />
+
+    <ChatBot />
+
+    <Routes>
         {/* Public */}
         <Route path="/" element={<Home />} />
         <Route
