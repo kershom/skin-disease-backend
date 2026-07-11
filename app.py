@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 from flask import Flask, request, jsonify, send_from_directory
@@ -74,19 +73,12 @@ except Exception as e:
  
 if len(DISEASE_LABELS) != num_classes:
     print(f"WARNING: DISEASE_LABELS has {len(DISEASE_LABELS)} entries but model outputs {num_classes} classes")
-<<<<<<< HEAD
  
-=======
-
->>>>>>> 349813a019d97b434268de7fcd13bbacca0bf3dc
 if model is not None:
     print(f"Model ready. Input: {model.input_shape}, Output: {model.output_shape}")
 else:
     print("No model loaded — running in mock mode")
-<<<<<<< HEAD
- 
-=======
->>>>>>> 349813a019d97b434268de7fcd13bbacca0bf3dc
+
 # ─── Helper Functions ─────────────────────────────────────────────────────────
  
 def preprocess_image(file_bytes):
@@ -243,25 +235,13 @@ def predict():
  
         if top_confidence < MIN_CONFIDENCE:
             return jsonify({
-                'error':      'not_skin',
-                'message':    f'This does not appear to be a skin image. Confidence too low ({top_confidence:.1f}%). Please upload a clear close-up photo of affected skin.',
-                'confidence': round(top_confidence, 2)
-            }), 400
- 
-        response = build_response(predictions, arr)
-        return jsonify(response), 200
- 
+                "disease": "Unknown / Unrecognized",
+                "confidence": round(top_confidence, 1),
+                "status": "Low confidence score"
+            })
+            
+        res_data = build_response(predictions, arr)
+        return jsonify(res_data)
+        
     except Exception as e:
-        app.logger.exception("Prediction failed")
-        return jsonify({"error": f"Prediction failed: {str(e)}"}), 500
- 
- 
-# ─── Entry Point ──────────────────────────────────────────────────────────────
- 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 7860))
-<<<<<<< HEAD
-    app.run(host="0.0.0.0", port=port, debug=False)
-=======
-    app.run(host="0.0.0.0", port=port, debug=False)
->>>>>>> 349813a019d97b434268de7fcd13bbacca0bf3dc
+        return jsonify({"error": str(e)}), 500
