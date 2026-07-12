@@ -369,7 +369,131 @@
         "Points noirs",
         "Mains et pieds"
       ]
-    }
+    },
+    "athleteFoot": {
+  "name": "Pied d'athlète",
+  "description": "Il s'agit d'une infection fongique qui commence généralement entre les orteils. Elle est fréquente chez les personnes dont les pieds restent humides ou transpirent beaucoup.",
+  "visualLabel": "Démangeaisons et peau qui pèle entre les orteils",
+  "visualDesc": "Peau rouge, squameuse et irritée entre les orteils ou sur la plante du pied.",
+  "symptoms": [
+    "Démangeaisons",
+    "Sensation de brûlure",
+    "Peau qui pèle",
+    "Parfois des cloques"
+  ],
+  "causes": [
+    "Infection fongique (Tinea pedis)",
+    "Pieds humides ou en sueur",
+    "Marcher pieds nus dans les douches ou piscines publiques",
+    "Port de chaussures serrées"
+  ],
+  "lookFor": [
+    "Peau qui pèle entre les orteils",
+    "Rougeur et fissures",
+    "Démangeaisons ou brûlure",
+    "Mauvaise odeur"
+  ]
+},
+
+"cellulitis": {
+  "name": "Cellulite infectieuse",
+  "description": "Il s'agit d'une infection bactérienne des couches profondes de la peau. Elle peut se propager rapidement et nécessite un traitement médical immédiat.",
+  "visualLabel": "Peau rouge et enflée qui s'étend",
+  "visualDesc": "Zone rouge, chaude et enflée qui s'étend rapidement.",
+  "symptoms": [
+    "Rougeur et douleur",
+    "Chaleur de la zone touchée",
+    "Fièvre ou frissons",
+    "Cloques"
+  ],
+  "causes": [
+    "Entrée de bactéries par une plaie",
+    "Coupures ou piqûres d'insectes",
+    "Système immunitaire affaibli",
+    "Maladies chroniques de la peau"
+  ],
+  "lookFor": [
+    "Rougeur qui s'étend",
+    "Gonflement et chaleur",
+    "Peau tendue",
+    "Fièvre"
+  ]
+},
+
+"impetigo": {
+  "name": "Impétigo",
+  "description": "L'impétigo est une infection bactérienne très contagieuse, fréquente chez les enfants. Elle provoque des plaies qui forment des croûtes couleur miel.",
+  "visualLabel": "Croûtes couleur miel",
+  "visualDesc": "Plaies rouges autour du nez et de la bouche qui se transforment en croûtes jaune-brun.",
+  "symptoms": [
+    "Plaies rouges qui éclatent facilement",
+    "Croûtes couleur miel",
+    "Démangeaisons",
+    "Ganglions enflés"
+  ],
+  "causes": [
+    "Infection par des bactéries Staphylococcus ou Streptococcus",
+    "Contact direct avec la peau",
+    "Blessures cutanées",
+    "Lieux très fréquentés comme les écoles"
+  ],
+  "lookFor": [
+    "Croûtes couleur miel",
+    "Plaies rouges autour du nez ou de la bouche",
+    "Démangeaisons",
+    "Cloques remplies de liquide"
+  ]
+},
+
+"shingles": {
+  "name": "Zona",
+  "description": "Le zona est une éruption cutanée douloureuse causée par la réactivation du virus de la varicelle. Il apparaît généralement sur un seul côté du corps.",
+  "visualLabel": "Grappe de cloques douloureuses",
+  "visualDesc": "Cloques remplies de liquide apparaissant sur un seul côté du corps.",
+  "symptoms": [
+    "Douleur intense",
+    "Sensation de brûlure",
+    "Cloques remplies de liquide",
+    "Fièvre"
+  ],
+  "causes": [
+    "Réactivation du virus varicelle-zona",
+    "Vieillissement",
+    "Système immunitaire affaibli",
+    "Stress"
+  ],
+  "lookFor": [
+    "Éruption d'un seul côté du corps",
+    "Cloques remplies de liquide",
+    "Douleur",
+    "Rougeur"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Urticaire",
+  "description": "L'urticaire est une réaction cutanée provoquant des plaques rouges, surélevées et très prurigineuses, souvent dues à une allergie.",
+  "visualLabel": "Plaques rouges et démangeaisons",
+  "visualDesc": "Plaques rouges ou pâles, surélevées, de tailles variables apparaissant soudainement.",
+  "symptoms": [
+    "Démangeaisons intenses",
+    "Plaques surélevées",
+    "Éruptions qui apparaissent et disparaissent",
+    "Parfois un gonflement"
+  ],
+  "causes": [
+    "Réaction allergique",
+    "Certains médicaments",
+    "Allergies alimentaires",
+    "Exposition au chaud ou au froid"
+  ],
+  "lookFor": [
+    "Plaques surélevées",
+    "Démangeaisons importantes",
+    "Plaques changeant de taille",
+    "Apparition et disparition rapides"
+  ]
+}
   },
   "precautions": {
     "title": "Précautions et soins de la peau",

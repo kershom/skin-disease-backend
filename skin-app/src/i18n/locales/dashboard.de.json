@@ -437,7 +437,131 @@
         "Schwarze Punkte",
         "Hände und Füße"
       ]
-    }
+    },
+    "athleteFoot": {
+  "name": "Fußpilz",
+  "description": "Fußpilz ist eine Pilzinfektion, die meist zwischen den Zehen beginnt. Sie tritt häufig bei Menschen auf, deren Füße stark schwitzen oder lange feucht bleiben.",
+  "visualLabel": "Juckreiz und schuppige Haut zwischen den Zehen",
+  "visualDesc": "Gerötete, juckende und schuppige Haut zwischen den Zehen oder an der Fußsohle.",
+  "symptoms": [
+    "Juckreiz",
+    "Brennendes Gefühl",
+    "Schuppige Haut",
+    "Manchmal Bläschen"
+  ],
+  "causes": [
+    "Pilzinfektion (Tinea pedis)",
+    "Feuchte oder verschwitzte Füße",
+    "Barfußlaufen in öffentlichen Duschen oder Schwimmbädern",
+    "Enge Schuhe tragen"
+  ],
+  "lookFor": [
+    "Schuppige Haut zwischen den Zehen",
+    "Rötung und Risse",
+    "Juckreiz oder Brennen",
+    "Unangenehmer Geruch"
+  ]
+},
+
+"cellulitis": {
+  "name": "Zellulitis",
+  "description": "Zellulitis ist eine bakterielle Infektion der tieferen Hautschichten. Sie kann sich schnell ausbreiten und erfordert eine sofortige medizinische Behandlung.",
+  "visualLabel": "Sich ausbreitende gerötete und geschwollene Haut",
+  "visualDesc": "Schnell ausbreitende, gerötete, warme und geschwollene Haut.",
+  "symptoms": [
+    "Rötung und schmerzhafte Schwellung",
+    "Wärmegefühl im betroffenen Bereich",
+    "Fieber oder Schüttelfrost",
+    "Bläschen"
+  ],
+  "causes": [
+    "Bakterien gelangen durch eine Wunde in die Haut",
+    "Schnittverletzungen oder Insektenstiche",
+    "Geschwächtes Immunsystem",
+    "Chronische Hauterkrankungen"
+  ],
+  "lookFor": [
+    "Sich ausbreitende Rötung",
+    "Schwellung und Wärme",
+    "Spannende Haut",
+    "Fieber"
+  ]
+},
+
+"impetigo": {
+  "name": "Impetigo",
+  "description": "Impetigo ist eine hoch ansteckende bakterielle Hautinfektion, die besonders häufig bei Kindern vorkommt. Typisch sind honiggelbe Krusten.",
+  "visualLabel": "Honiggelbe Krusten",
+  "visualDesc": "Rote Wunden um Nase und Mund, die gelblich-braune Krusten bilden.",
+  "symptoms": [
+    "Leicht platzende rote Wunden",
+    "Honiggelbe Krusten",
+    "Juckreiz",
+    "Geschwollene Lymphknoten"
+  ],
+  "causes": [
+    "Infektion mit Staphylokokken oder Streptokokken",
+    "Direkter Hautkontakt",
+    "Hautverletzungen",
+    "Überfüllte Orte wie Schulen"
+  ],
+  "lookFor": [
+    "Honiggelbe Krusten",
+    "Rote Wunden um Nase oder Mund",
+    "Juckreiz",
+    "Flüssigkeitsgefüllte Bläschen"
+  ]
+},
+
+"shingles": {
+  "name": "Gürtelrose",
+  "description": "Gürtelrose ist eine schmerzhafte Hauterkrankung, die durch die Reaktivierung des Windpockenvirus verursacht wird. Sie tritt meist nur auf einer Körperseite auf.",
+  "visualLabel": "Gruppe schmerzhafter Bläschen",
+  "visualDesc": "Flüssigkeitsgefüllte Bläschen erscheinen auf einer Körperseite.",
+  "symptoms": [
+    "Starke Schmerzen",
+    "Brennendes Gefühl",
+    "Flüssigkeitsgefüllte Bläschen",
+    "Fieber"
+  ],
+  "causes": [
+    "Reaktivierung des Varizella-Zoster-Virus",
+    "Höheres Alter",
+    "Geschwächtes Immunsystem",
+    "Stress"
+  ],
+  "lookFor": [
+    "Ausschlag auf einer Körperseite",
+    "Flüssigkeitsgefüllte Bläschen",
+    "Schmerzen",
+    "Rötung"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Nesselsucht",
+  "description": "Nesselsucht ist eine Hautreaktion mit juckenden, erhabenen Quaddeln, die häufig durch Allergien oder andere Auslöser verursacht wird.",
+  "visualLabel": "Juckende, erhabene Quaddeln",
+  "visualDesc": "Plötzlich auftretende rote oder blasse, unterschiedlich große Quaddeln.",
+  "symptoms": [
+    "Starker Juckreiz",
+    "Erhabene Quaddeln",
+    "Ausschlag, der kommt und geht",
+    "Manchmal Schwellungen"
+  ],
+  "causes": [
+    "Allergische Reaktion",
+    "Bestimmte Medikamente",
+    "Lebensmittelallergien",
+    "Hitze oder Kälte"
+  ],
+  "lookFor": [
+    "Erhabene Quaddeln",
+    "Starker Juckreiz",
+    "Größenveränderung der Quaddeln",
+    "Plötzliches Auftreten und Verschwinden"
+  ]
+}
   },
   "precautions": {
     "title": "Vorsichtsmaßnahmen & Hautpflege",

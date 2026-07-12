@@ -369,7 +369,131 @@
         "Pontinhos pretos",
         "Mãos e pés"
       ]
-    }
+    },
+    "athleteFoot": {
+  "name": "Pé de Atleta",
+  "description": "O pé de atleta é uma infecção fúngica que geralmente começa entre os dedos dos pés. É comum em pessoas cujos pés permanecem úmidos ou suam excessivamente.",
+  "visualLabel": "Coceira e descamação entre os dedos",
+  "visualDesc": "Pele avermelhada, descamando e com coceira entre os dedos ou na sola do pé.",
+  "symptoms": [
+    "Coceira",
+    "Sensação de queimação",
+    "Descamação da pele",
+    "Às vezes surgem bolhas"
+  ],
+  "causes": [
+    "Infecção fúngica (Tinea pedis)",
+    "Pés úmidos ou suados",
+    "Andar descalço em chuveiros ou piscinas públicas",
+    "Uso de sapatos apertados"
+  ],
+  "lookFor": [
+    "Descamação entre os dedos",
+    "Vermelhidão e rachaduras",
+    "Coceira ou ardor",
+    "Mau cheiro"
+  ]
+},
+
+"cellulitis": {
+  "name": "Celulite Infecciosa",
+  "description": "A celulite infecciosa é uma infecção bacteriana das camadas profundas da pele. Pode se espalhar rapidamente e requer tratamento médico imediato.",
+  "visualLabel": "Pele avermelhada e inchada em expansão",
+  "visualDesc": "Área vermelha, quente e inchada que aumenta rapidamente.",
+  "symptoms": [
+    "Vermelhidão e dor",
+    "Calor na área afetada",
+    "Febre ou calafrios",
+    "Bolhas"
+  ],
+  "causes": [
+    "Entrada de bactérias por um ferimento",
+    "Cortes ou picadas de insetos",
+    "Sistema imunológico enfraquecido",
+    "Doenças crônicas da pele"
+  ],
+  "lookFor": [
+    "Vermelhidão que se espalha",
+    "Inchaço e calor",
+    "Pele esticada",
+    "Febre"
+  ]
+},
+
+"impetigo": {
+  "name": "Impetigo",
+  "description": "O impetigo é uma infecção bacteriana altamente contagiosa da pele, comum em crianças. Provoca feridas que formam crostas de cor de mel.",
+  "visualLabel": "Crostas cor de mel",
+  "visualDesc": "Feridas vermelhas ao redor do nariz e da boca que formam crostas amarelo-acastanhadas.",
+  "symptoms": [
+    "Feridas vermelhas que se rompem facilmente",
+    "Crostas cor de mel",
+    "Coceira",
+    "Gânglios linfáticos inchados"
+  ],
+  "causes": [
+    "Infecção por bactérias Staphylococcus ou Streptococcus",
+    "Contato direto com a pele",
+    "Lesões na pele",
+    "Locais movimentados, como escolas"
+  ],
+  "lookFor": [
+    "Crostas cor de mel",
+    "Feridas ao redor do nariz ou da boca",
+    "Coceira",
+    "Bolhas cheias de líquido"
+  ]
+},
+
+"shingles": {
+  "name": "Herpes Zóster",
+  "description": "O herpes zóster é uma doença dolorosa da pele causada pela reativação do vírus da catapora. Geralmente aparece apenas em um lado do corpo.",
+  "visualLabel": "Grupo de bolhas dolorosas",
+  "visualDesc": "Bolhas cheias de líquido que aparecem em apenas um lado do corpo.",
+  "symptoms": [
+    "Dor intensa",
+    "Sensação de queimação",
+    "Bolhas cheias de líquido",
+    "Febre"
+  ],
+  "causes": [
+    "Reativação do vírus varicela-zóster",
+    "Idade avançada",
+    "Sistema imunológico enfraquecido",
+    "Estresse"
+  ],
+  "lookFor": [
+    "Erupção em um lado do corpo",
+    "Bolhas cheias de líquido",
+    "Dor",
+    "Vermelhidão"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Urticária",
+  "description": "A urticária é uma reação da pele que causa vergões elevados e com coceira, geralmente provocados por alergias ou outros fatores.",
+  "visualLabel": "Vergões elevados com coceira",
+  "visualDesc": "Vergões vermelhos ou pálidos, elevados e de tamanhos variados que surgem de repente.",
+  "symptoms": [
+    "Coceira intensa",
+    "Vergões elevados",
+    "Erupções que aparecem e desaparecem",
+    "Às vezes inchaço"
+  ],
+  "causes": [
+    "Reação alérgica",
+    "Alguns medicamentos",
+    "Alergias alimentares",
+    "Exposição ao calor ou frio"
+  ],
+  "lookFor": [
+    "Vergões elevados",
+    "Coceira intensa",
+    "Vergões que mudam de tamanho",
+    "Aparecem e desaparecem rapidamente"
+  ]
+}
   },
   "profile": {
     "title": "Meu Perfil",

@@ -370,7 +370,131 @@
         "Puntos negros",
         "Manos y pies"
       ]
-    }
+    },
+    "athleteFoot": {
+  "name": "Pie de atleta",
+  "description": "Es una infección por hongos que generalmente comienza entre los dedos de los pies. Es común en personas cuyos pies permanecen húmedos o sudan mucho.",
+  "visualLabel": "Picazón y descamación entre los dedos",
+  "visualDesc": "Piel roja, escamosa y con picazón entre los dedos de los pies o en la planta del pie.",
+  "symptoms": [
+    "Picazón",
+    "Sensación de ardor",
+    "Descamación de la piel",
+    "A veces ampollas"
+  ],
+  "causes": [
+    "Infección por hongos (Tiña del pie)",
+    "Pies húmedos o sudorosos",
+    "Caminar descalzo en duchas o piscinas públicas",
+    "Usar zapatos ajustados"
+  ],
+  "lookFor": [
+    "Descamación entre los dedos",
+    "Enrojecimiento y grietas",
+    "Picazón o ardor",
+    "Mal olor"
+  ]
+},
+
+"cellulitis": {
+  "name": "Celulitis",
+  "description": "Es una infección bacteriana que afecta las capas profundas de la piel. Puede propagarse rápidamente y requiere tratamiento médico inmediato.",
+  "visualLabel": "Piel roja e inflamada que se extiende",
+  "visualDesc": "Zona roja, caliente e hinchada que se expande rápidamente.",
+  "symptoms": [
+    "Enrojecimiento y dolor",
+    "Calor en la zona afectada",
+    "Fiebre o escalofríos",
+    "Ampollas"
+  ],
+  "causes": [
+    "Entrada de bacterias por una herida",
+    "Cortes o picaduras de insectos",
+    "Sistema inmunológico debilitado",
+    "Enfermedades crónicas de la piel"
+  ],
+  "lookFor": [
+    "Enrojecimiento que se expande",
+    "Hinchazón y calor",
+    "Piel tensa",
+    "Fiebre"
+  ]
+},
+
+"impetigo": {
+  "name": "Impétigo",
+  "description": "Es una infección bacteriana de la piel altamente contagiosa, frecuente en niños. Produce llagas que forman costras de color miel.",
+  "visualLabel": "Costras color miel",
+  "visualDesc": "Llagas rojas alrededor de la nariz y la boca que forman costras amarillas o marrones.",
+  "symptoms": [
+    "Llagas rojas que se rompen fácilmente",
+    "Costras color miel",
+    "Picazón",
+    "Ganglios linfáticos inflamados"
+  ],
+  "causes": [
+    "Infección por bacterias Staphylococcus o Streptococcus",
+    "Contacto directo con la piel",
+    "Lesiones en la piel",
+    "Lugares concurridos como escuelas"
+  ],
+  "lookFor": [
+    "Costras color miel",
+    "Llagas alrededor de la nariz o la boca",
+    "Picazón",
+    "Ampollas llenas de líquido"
+  ]
+},
+
+"shingles": {
+  "name": "Herpes zóster",
+  "description": "Es una enfermedad dolorosa de la piel causada por la reactivación del virus de la varicela. Generalmente aparece en un solo lado del cuerpo.",
+  "visualLabel": "Grupo de ampollas dolorosas",
+  "visualDesc": "Ampollas llenas de líquido que aparecen en un solo lado del cuerpo.",
+  "symptoms": [
+    "Dolor intenso",
+    "Sensación de ardor",
+    "Ampollas llenas de líquido",
+    "Fiebre"
+  ],
+  "causes": [
+    "Reactivación del virus varicela-zóster",
+    "Edad avanzada",
+    "Sistema inmunológico debilitado",
+    "Estrés"
+  ],
+  "lookFor": [
+    "Erupción en un solo lado del cuerpo",
+    "Ampollas llenas de líquido",
+    "Dolor",
+    "Enrojecimiento"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Urticaria",
+  "description": "La urticaria es una reacción de la piel que provoca ronchas elevadas y con picazón, generalmente causada por una reacción alérgica.",
+  "visualLabel": "Ronchas elevadas con picazón",
+  "visualDesc": "Ronchas rojas o pálidas, elevadas y de diferentes tamaños que aparecen repentinamente.",
+  "symptoms": [
+    "Picazón intensa",
+    "Ronchas elevadas",
+    "Lesiones que aparecen y desaparecen",
+    "A veces hinchazón"
+  ],
+  "causes": [
+    "Reacción alérgica",
+    "Algunos medicamentos",
+    "Alergias alimentarias",
+    "Exposición al calor o al frío"
+  ],
+  "lookFor": [
+    "Ronchas elevadas",
+    "Picazón intensa",
+    "Ronchas que cambian de tamaño",
+    "Aparición y desaparición repentina"
+  ]
+}
   },
   "precautions": {
     "title": "Precauciones y cuidado de la piel",
