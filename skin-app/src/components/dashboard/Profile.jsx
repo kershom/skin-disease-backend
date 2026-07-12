@@ -5,7 +5,7 @@ import { updateProfile } from 'firebase/auth';
 import { query, collection, where, orderBy, getDocs } from 'firebase/firestore';
 import toast from 'react-hot-toast';
 import { DISEASE_API_KEYS, SEVERITY_KEYS } from '../../i18n/diseaseKeys';
-import { User, Save, History, Loader2, X, ChevronRight, Calendar, Activity, CheckCircle2, AlertTriangle, AlertOctagon, BarChart3, Camera, Upload, Microscope } from 'lucide-react';
+import { User, Save, History, Loader2, X, ChevronRight, Calendar, Activity, CheckCircle2, AlertTriangle, AlertOctagon, BarChart3, Camera, Upload, Microscope, RefreshCw } from 'lucide-react';
 
 const severityColor = {
   Low: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
@@ -39,6 +39,40 @@ const Profile = () => {
   const [history, setHistory] = useState([]);
   const [loadingHistory, setLoadingHistory] = useState(true);
   const [selectedPrediction, setSelectedPrediction] = useState(null);
+
+  const handleRefreshHistory = async () => {
+    setLoadingHistory(true);
+    try {
+      if (!user) return;
+      const q = query(
+        collection(db, 'predictions'),
+        where('userId', '==', user.uid),
+        orderBy('createdAt', 'desc')
+      );
+      const snapshot = await getDocs(q);
+      const list = snapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          date: data.createdAt?.toDate().toLocaleDateString('en-IN') || 'N/A',
+          time: data.createdAt?.toDate().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) || '',
+          disease: data.disease,
+          confidence: data.confidence,
+          severity: data.severity,
+          isConsensus: data.isConsensus || false,
+          probabilities: data.probabilities || [],
+          source: data.source || 'upload',
+        };
+      });
+      setHistory(list);
+      toast.success('History refreshed');
+    } catch (err) {
+      console.error("Error refreshing history:", err);
+      toast.error('Failed to refresh history');
+    } finally {
+      setLoadingHistory(false);
+    }
+  };
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -163,6 +197,14 @@ const Profile = () => {
               {history.length} scans
             </span>
           )}
+          <button
+            onClick={handleRefreshHistory}
+            disabled={loadingHistory}
+            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all disabled:opacity-50"
+            title="Refresh history"
+          >
+            <RefreshCw className={`w-4 h-4 text-purple-600 dark:text-purple-400 ${loadingHistory ? 'animate-spin' : ''}`} />
+          </button>
         </div>
 
         {loadingHistory ? (
