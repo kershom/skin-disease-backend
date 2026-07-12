@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Target, CheckCircle2, AlertTriangle, CircleAlert, BarChart3 } from 'lucide-react';
 import { auth } from '../../firebase/firebase';
 import { DISEASE_API_KEYS, SEVERITY_KEYS } from '../../i18n/diseaseKeys';
 
@@ -10,31 +11,32 @@ const severityColor = {
 };
 
 // ── Hardcoded disease data for PDF ──────────────────────────────────────────
+// Keys must match app.py's DISEASE_LABELS exactly (the model's 10 output classes).
 const DISEASE_INFO = {
   'Acne': {
     precautions: ['Wash face twice daily with mild cleanser', 'Avoid touching or popping pimples', 'Use non-comedogenic moisturizers', 'Stay hydrated and maintain a balanced diet'],
     treatments: ['Topical benzoyl peroxide or salicylic acid', 'Retinoid creams (adapalene, tretinoin)', 'Oral antibiotics for severe cases', 'Consult dermatologist for prescription medication'],
     doctorAdvice: 'See a dermatologist if acne is severe, leaves scars, or does not improve after 2-3 months of home treatment.',
   },
-  'Actinic Keratosis': {
-    precautions: ['Apply SPF 30+ sunscreen daily', 'Wear protective clothing and hats outdoors', 'Avoid sun exposure during peak hours (10am-4pm)', 'Regularly monitor affected skin areas'],
-    treatments: ['Cryotherapy (freezing with liquid nitrogen)', 'Topical fluorouracil or imiquimod cream', 'Photodynamic therapy', 'Chemical peels or laser resurfacing'],
-    doctorAdvice: 'Consult a dermatologist immediately — Actinic Keratosis can progress to skin cancer if left untreated.',
+  "Athlete's Foot": {
+    precautions: ['Keep feet clean and thoroughly dry, especially between toes', 'Wear breathable socks and rotate shoes daily', 'Avoid walking barefoot in public showers or pools', 'Use antifungal foot powder in shoes'],
+    treatments: ['Topical antifungal creams (clotrimazole, terbinafine)', 'Oral antifungals for persistent or severe cases', 'Keep affected area dry and aired out', 'Continue treatment for 1-2 weeks after symptoms clear'],
+    doctorAdvice: 'See a doctor if the infection spreads, causes severe cracking/pain, or does not improve after 2 weeks of treatment.',
   },
-  'Basal Cell Carcinoma': {
-    precautions: ['Use broad-spectrum SPF 50+ sunscreen', 'Avoid tanning beds completely', 'Perform regular self-skin examinations', 'Wear UV-protective clothing'],
-    treatments: ['Surgical excision (most common)', 'Mohs micrographic surgery', 'Radiation therapy for inoperable cases', 'Topical imiquimod for superficial cases'],
-    doctorAdvice: 'Seek immediate medical attention. Basal Cell Carcinoma requires professional treatment — do not delay.',
+  'Cellulitis': {
+    precautions: ['Keep any wounds or cuts clean and covered', 'Do not delay treatment — this can spread quickly', 'Elevate the affected limb if swollen', 'Monitor for fever or spreading redness'],
+    treatments: ['Oral or IV antibiotics (prescribed by a doctor)', 'Pain relief and anti-inflammatory medication as advised', 'Rest and elevation of the affected area', 'Hospitalization may be required for severe cases'],
+    doctorAdvice: 'Seek medical attention promptly — Cellulitis can spread rapidly and become a serious infection if untreated.',
   },
   'Eczema': {
     precautions: ['Moisturize skin at least twice daily', 'Avoid known triggers (soaps, detergents, stress)', 'Wear soft, breathable cotton clothing', 'Keep nails short to prevent scratching'],
     treatments: ['Topical corticosteroid creams', 'Calcineurin inhibitors (tacrolimus)', 'Antihistamines for itching relief', 'Dupilumab injections for severe cases'],
     doctorAdvice: 'See a doctor if eczema is widespread, infected, or severely affects sleep and daily activities.',
   },
-  'Psoriasis': {
-    precautions: ['Keep skin well moisturized', 'Avoid triggers like stress, alcohol, and smoking', 'Get moderate sun exposure (with care)', 'Use gentle, fragrance-free skin products'],
-    treatments: ['Topical corticosteroids and vitamin D analogs', 'Methotrexate or cyclosporine for severe cases', 'Biologic drugs (adalimumab, etanercept)', 'Phototherapy (UVB light treatment)'],
-    doctorAdvice: 'Consult a dermatologist for a proper treatment plan — psoriasis is a chronic condition requiring long-term management.',
+  'Impetigo': {
+    precautions: ['Keep affected area clean and covered', 'Avoid scratching to prevent spreading', 'Wash hands frequently, especially after touching sores', 'Do not share towels, razors, or clothing'],
+    treatments: ['Topical antibiotic ointment (mupirocin) for mild cases', 'Oral antibiotics for widespread infection', 'Gently clean sores with soap and water before applying treatment', 'Keep child home from school until no longer contagious'],
+    doctorAdvice: 'See a doctor promptly, especially for children — Impetigo is contagious and needs antibiotic treatment.',
   },
   'Ringworm': {
     precautions: ['Keep affected area clean and dry', 'Do not share towels, clothing, or combs', 'Wash hands frequently', 'Disinfect shared surfaces and sportswear'],
@@ -46,20 +48,20 @@ const DISEASE_INFO = {
     treatments: ['Topical metronidazole or azelaic acid', 'Oral antibiotics (doxycycline) for flare-ups', 'Laser or light therapy for redness', 'Brimonidine gel to reduce flushing'],
     doctorAdvice: 'Consult a dermatologist for diagnosis confirmation and to create a long-term management plan.',
   },
-  'Seborrheic Keratosis': {
-    precautions: ['Monitor lesions for sudden changes in size or color', 'Avoid irritating affected areas', 'Protect skin from excessive sun exposure', 'Keep skin moisturized'],
-    treatments: ['Cryotherapy for removal if desired', 'Electrosurgery or curettage', 'Laser treatment for cosmetic removal', 'No treatment needed if asymptomatic'],
-    doctorAdvice: 'See a doctor if a lesion rapidly changes, bleeds, or becomes painful to rule out malignancy.',
+  'Shingles': {
+    precautions: ['Keep the rash clean, dry, and covered', 'Avoid contact with pregnant women, newborns, and immunocompromised people until sores crust over', 'Avoid scratching to prevent secondary infection', 'Get plenty of rest during recovery'],
+    treatments: ['Antiviral medication (acyclovir, valacyclovir) — most effective if started within 72 hours', 'Pain relief medication as advised by a doctor', 'Cool compresses to soothe the rash', 'Calamine lotion for itching relief'],
+    doctorAdvice: 'See a doctor as soon as possible, especially if the rash is near the eyes — early antiviral treatment reduces complications.',
+  },
+  'Urticaria (Hives)': {
+    precautions: ['Identify and avoid the triggering allergen if known', 'Avoid hot showers, tight clothing, and scratching', 'Keep a symptom diary to help identify triggers', 'Use fragrance-free, gentle skincare products'],
+    treatments: ['Oral antihistamines (cetirizine, loratadine)', 'Cool compresses to reduce itching and swelling', 'Oral corticosteroids for severe flare-ups', 'Epinephrine if accompanied by breathing difficulty (seek emergency care)'],
+    doctorAdvice: 'Seek urgent care if hives are accompanied by difficulty breathing, swelling of the face/throat, or dizziness — this can signal a severe allergic reaction.',
   },
   'Vitiligo': {
     precautions: ['Use SPF 50+ sunscreen on depigmented areas', 'Avoid skin trauma to affected areas', 'Use camouflage makeup if desired', 'Manage stress through relaxation techniques'],
     treatments: ['Topical corticosteroids or calcineurin inhibitors', 'Narrowband UVB phototherapy', 'Skin grafting for stable vitiligo', 'Ruxolitinib cream (FDA approved 2022)'],
     doctorAdvice: 'Consult a dermatologist to confirm diagnosis and explore treatment options for repigmentation.',
-  },
-  'Warts': {
-    precautions: ['Avoid touching warts and then other body parts', 'Keep warts covered with a bandage', 'Do not share personal items', 'Wash hands thoroughly after touching warts'],
-    treatments: ['Salicylic acid topical treatment', 'Cryotherapy (liquid nitrogen freezing)', 'Electrosurgery or laser removal', 'Immunotherapy for resistant warts'],
-    doctorAdvice: 'See a doctor if warts are painful, spreading rapidly, on the face/genitals, or do not respond to home treatment.',
   },
 };
 
@@ -143,13 +145,12 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       pdf.setFillColor(37, 99, 235);
       pdf.rect(0, 0, pageW, 42, 'F');
 
-      // DermaLens logo text
       pdf.setFont('helvetica', 'bold');
       pdf.setFontSize(22);
       pdf.setTextColor(255, 255, 255);
       pdf.text('Derma', margin, 18);
       const dermaW = pdf.getTextWidth('Derma');
-      pdf.setTextColor(147, 197, 253); // blue-300
+      pdf.setTextColor(147, 197, 253);
       pdf.text('Lens', margin + dermaW, 18);
 
       pdf.setFont('helvetica', 'normal');
@@ -157,7 +158,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       pdf.setTextColor(186, 230, 253);
       pdf.text('AI-Powered Skin Disease Detection Report', margin, 25);
 
-      // Report ID + date on right
       pdf.setFontSize(7.5);
       pdf.setTextColor(186, 230, 253);
       pdf.text(`Report ID: ${reportId}`, pageW - margin, 13, { align: 'right' });
@@ -175,7 +175,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
 
       y = 50;
 
-      // ── PATIENT INFO ────────────────────────────────────────────────────────
       drawRect(margin, y, contentW, 18, 3, [241, 245, 249], [226, 232, 240]);
       pdf.setFont('helvetica', 'bold');
       pdf.setFontSize(7);
@@ -191,10 +190,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       pdf.text(isConsensus ? 'Multi-Image Consensus' : 'Single Image Scan', margin + contentW * 0.72, y + 13);
       y += 24;
 
-      // ── SCANNED IMAGE(S) ─────────────────────────────────────────────────────
-      // For consensus reports, `images` holds every analyzed spot image and all
-      // of them are drawn in a grid. For single-image reports, fall back to the
-      // single `image` prop.
       const allImages = (images && images.length > 0) ? images : (image ? [image] : []);
 
       if (allImages.length > 0) {
@@ -223,7 +218,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
             y += 30;
           }
         } else {
-          // Grid layout: up to 3 columns, wrapping to additional rows/pages as needed.
           const cols = Math.min(3, allImages.length);
           const gap = 4;
           const cellW = (contentW - gap * (cols - 1)) / cols;
@@ -265,19 +259,16 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
         }
       }
 
-      // ── PREDICTION SUMMARY ───────────────────────────────────────────────────
       sectionTitle('Prediction Summary');
       const cardH = 30;
       const cardW = (contentW - 8) / 3;
 
-      // Condition
       drawRect(margin, y, cardW, cardH, 3, [239, 246, 255], [191, 219, 254]);
       pdf.setFontSize(7); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(37, 99, 235);
       pdf.text('CONDITION', margin + 4, y + 7);
       pdf.setFontSize(10); pdf.setTextColor(15, 23, 42);
       pdf.text(pdf.splitTextToSize(data.disease, cardW - 8)[0], margin + 4, y + 17);
 
-      // Confidence
       const confX = margin + cardW + 4;
       drawRect(confX, y, cardW, cardH, 3, [245, 243, 255], [221, 214, 254]);
       pdf.setFontSize(7); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(109, 40, 217);
@@ -287,9 +278,8 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       pdf.setFillColor(221, 214, 254);
       pdf.roundedRect(confX + 4, y + 22, cardW - 12, 3, 1, 1, 'F');
       pdf.setFillColor(139, 92, 246);
-      pdf.roundedRect(confX + 4, y + 22, Math.max((cardW - 12) * (data.confidence / 100), 1), 3, 1, 1, 'F');
+      pdf.roundedRect(confX + 4, y + 22, Math.max((cardW - 12) * (data.confidence / 100), 1), 3, 1, 'F');
 
-      // Severity
       const sevX = margin + (cardW + 4) * 2;
       const sevBg = data.severity === 'Low' ? [240, 253, 244] : data.severity === 'Medium' ? [255, 251, 235] : [254, 242, 242];
       const sevBorder = data.severity === 'Low' ? [187, 247, 208] : data.severity === 'Medium' ? [253, 230, 138] : [254, 202, 202];
@@ -305,7 +295,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       );
       y += cardH + 10;
 
-      // ── PROBABILITY BREAKDOWN ─────────────────────────────────────────────────
       sectionTitle('Probability Breakdown');
       data.probabilities.forEach((item, index) => {
         addPageIfNeeded(13);
@@ -323,7 +312,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       });
       y += 4;
 
-      // ── PRECAUTIONS ───────────────────────────────────────────────────────────
       sectionTitle('Precautions & Self-Care');
       drawRect(margin, y, contentW, 4 + diseaseInfo.precautions.length * 9, 3, [240, 253, 244], [187, 247, 208]);
       diseaseInfo.precautions.forEach((p, i) => {
@@ -337,7 +325,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       });
       y += 6;
 
-      // ── TREATMENTS ────────────────────────────────────────────────────────────
       sectionTitle('Common Treatments');
       drawRect(margin, y, contentW, 4 + diseaseInfo.treatments.length * 9, 3, [239, 246, 255], [191, 219, 254]);
       diseaseInfo.treatments.forEach((tr, i) => {
@@ -351,7 +338,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       });
       y += 6;
 
-      // ── WHEN TO SEE A DOCTOR ──────────────────────────────────────────────────
       addPageIfNeeded(30);
       sectionTitle('When to See a Doctor');
       const doctorBoxH = 18;
@@ -363,7 +349,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       pdf.text(doctorLines, margin + 5, y + 13);
       y += doctorBoxH + 8;
 
-      // ── GRAD-CAM ──────────────────────────────────────────────────────────────
       if (data.gradcam_url) {
         sectionTitle('Grad-CAM Heatmap');
         pdf.setFont('helvetica', 'normal'); pdf.setFontSize(8); pdf.setTextColor(100, 116, 139);
@@ -391,7 +376,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
         }
       }
 
-      // ── DISCLAIMER ────────────────────────────────────────────────────────────
       addPageIfNeeded(26);
       drawRect(margin, y, contentW, 22, 4, [255, 251, 235], [253, 230, 138]);
       pdf.setFontSize(8); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(146, 64, 14);
@@ -401,7 +385,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       pdf.text(pdf.splitTextToSize(disc, contentW - 10), margin + 5, y + 13);
       y += 26;
 
-      // ── FOOTER on every page ──────────────────────────────────────────────────
       const totalPages = pdf.internal.getNumberOfPages();
       for (let p = 1; p <= totalPages; p++) {
         pdf.setPage(p);
@@ -414,7 +397,6 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
         pdf.text(`Page ${p} of ${totalPages}`, pageW - margin, pageH - 5, { align: 'right' });
       }
 
-      // ── SAVE ─────────────────────────────────────────────────────────────────
       pdf.save(`DermaLens_${data.disease.replace(/\s+/g, '_')}_${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}.pdf`);
 
     } catch (err) {
