@@ -122,12 +122,12 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
         }
       };
 
-      const drawRect = (x, ry, w, h, r = 3, fillColor = null, strokeColor = null) => {
+      const drawRect = (x, y, w, h, r = 3, fillColor = null, strokeColor = null) => {
         if (fillColor) pdf.setFillColor(...fillColor);
         if (strokeColor) pdf.setDrawColor(...strokeColor);
-        if (fillColor && strokeColor) pdf.roundedRect(x, ry, w, h, r, r, 'FD');
-        else if (fillColor) pdf.roundedRect(x, ry, w, h, r, r, 'F');
-        else pdf.roundedRect(x, ry, w, h, r, r, 'S');
+        if (fillColor && strokeColor) pdf.roundedRect(x, y, w, h, r, r, 'FD');
+        else if (fillColor) pdf.roundedRect(x, y, w, h, r, r, 'F');
+        else pdf.roundedRect(x, y, w, h, r, r, 'S');
       };
 
       const sectionTitle = (title) => {
@@ -278,7 +278,7 @@ const PredictionResult = ({ data, image, images, isConsensus = false }) => {
       pdf.setFillColor(221, 214, 254);
       pdf.roundedRect(confX + 4, y + 22, cardW - 12, 3, 1, 1, 'F');
       pdf.setFillColor(139, 92, 246);
-      pdf.roundedRect(confX + 4, y + 22, Math.max((cardW - 12) * (data.confidence / 100), 1), 3, 1, 'F');
+      pdf.roundedRect(confX + 4, y + 22, Math.max((cardW - 12) * (data.confidence / 100), 1), 3, 1, 1, 'F');
 
       const sevX = margin + (cardW + 4) * 2;
       const sevBg = data.severity === 'Low' ? [240, 253, 244] : data.severity === 'Medium' ? [255, 251, 235] : [254, 242, 242];

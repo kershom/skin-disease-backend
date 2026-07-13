@@ -43,7 +43,7 @@ Backend:
 
 Database:
 - Firebase Firestore (NoSQL)
-- Stores users, predictions, appointments
+- Stores users, predictions
 
 API Integration:
 - Google Generative AI (installed but not used—chatbot uses knowledge base)
