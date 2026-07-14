@@ -96,7 +96,7 @@ export const getBotReply = (question) => {
     q.includes("many image") ||
     q.includes("two images")
   ) {
-    return knowledgeBase.multipleImages;
+    return knowledgeBase.uploadmultiple;
   }
 
   // Accuracy

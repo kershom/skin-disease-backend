@@ -114,7 +114,7 @@ After prediction you can:
 
 • Save the report
 
-• Download report (if enabled)
+• Download report 
 `,
 
   privacy: `
@@ -145,27 +145,26 @@ DermaLens currently supports:
 
 • Ringworm
 
-• Psoriasis
+• Hives
 
-• Melanoma
+• Atheletes Foot
 
-• Basal Cell Carcinoma
+• Impetigo
 
-• Benign Keratosis
+• cellulitis
 
-• Dermatofibroma
+• Rosacea
 
-• Melanocytic Nevus
+• Shingles
 
-• Vascular Lesion
+• Vitiligo
 `,
 
-  multipleImages: `
+  uploadmultiple: `
 # Multiple Images
 
-Currently DermaLens analyzes one image at a time.
-
-This provides better prediction accuracy.
+For higher-confidence results, users can upload multiple images of the same concern.
+Each image is analysed independently by the model, and the frontend combines the individual predictions into a consensus result, increasing confidence when multiple images agree.
 `,
 
   accuracy: `
