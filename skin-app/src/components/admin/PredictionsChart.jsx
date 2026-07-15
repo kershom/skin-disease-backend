@@ -7,20 +7,18 @@ import { db } from '../../firebase/firebase';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { BarChart3, Loader2 } from 'lucide-react';
 
+// Updated to match the current dataset (see /diseases folder)
 const DISEASE_NAMES_CONFIG = {
   'Acne': { label: 'Acne', color: '#6366f1' },
-  'Actinic Keratosis': { label: 'Actinic K.', color: '#ec4899' },
-  'Basal Cell Carcinoma': { label: 'Basal Cell', color: '#f97316' },
-  'Benign Keratosis': { label: 'Ben. Kerat.', color: '#eab308' },
-  'Dermatofibroma': { label: 'Dermato.', color: '#a855f7' },
+  "Athlete's Foot": { label: "Athlete's Foot", color: '#ec4899' },
+  'Cellulitis': { label: 'Cellulitis', color: '#f97316' },
   'Eczema': { label: 'Eczema', color: '#10b981' },
-  'Melanocytic Nevi': { label: 'Mel. Nevi', color: '#4f46e5' },
-  'Melanoma': { label: 'Melanoma', color: '#ef4444' },
-  'Psoriasis': { label: 'Psoriasis', color: '#f43f5e' },
+  'Impetigo': { label: 'Impetigo', color: '#a855f7' },
   'Ringworm': { label: 'Ringworm', color: '#06b6d4' },
   'Rosacea': { label: 'Rosacea', color: '#84cc16' },
-  'Vascular Lesion': { label: 'Vascular', color: '#3b82f6' },
-  'Warts': { label: 'Warts', color: '#14b8a6' },
+  'Shingles': { label: 'Shingles', color: '#ef4444' },
+  'Urticaria (Hives)': { label: 'Urticaria (Hives)', color: '#f43f5e' },
+  'Vitiligo': { label: 'Vitiligo', color: '#3b82f6' },
   'Others': { label: 'Others', color: '#64748b' }
 };
 
@@ -35,16 +33,16 @@ const PredictionsChart = () => {
     try {
       const q = query(collection(db, 'predictions'), orderBy('createdAt', 'asc'));
       const snapshot = await getDocs(q);
-      
+
       const counts = {};
       Object.keys(DISEASE_NAMES_CONFIG).forEach(k => counts[k] = 0);
-      
+
       const monthlyMap = {};
 
       snapshot.docs.forEach(doc => {
         const data = doc.data();
         const disease = data.disease || 'Others';
-        
+
         // Group by disease
         if (counts[disease] !== undefined) {
           counts[disease] += 1;
@@ -58,7 +56,7 @@ const PredictionsChart = () => {
           const monthName = date.toLocaleString('en-US', { month: 'short' });
           const year = date.getFullYear();
           const key = `${monthName} ${year}`;
-          
+
           if (!monthlyMap[key]) {
             monthlyMap[key] = {
               month: key,
@@ -80,13 +78,14 @@ const PredictionsChart = () => {
           name: DISEASE_NAMES_CONFIG[key].label,
           predictions: counts[key],
           fill: DISEASE_NAMES_CONFIG[key].color
-        }))
-        // Only show categories with predictions if there is at least one prediction in the system,
-        // otherwise show all to keep the chart schema visible.
-        const totalPredictions = snapshot.docs.length;
-        const filteredDiseaseData = totalPredictions > 0 
-          ? finalDiseaseData.filter(d => d.predictions > 0)
-          : finalDiseaseData;
+        }));
+
+      // Only show categories with predictions if there is at least one prediction in the system,
+      // otherwise show all to keep the chart schema visible.
+      const totalPredictions = snapshot.docs.length;
+      const filteredDiseaseData = totalPredictions > 0
+        ? finalDiseaseData.filter(d => d.predictions > 0)
+        : finalDiseaseData;
 
       // Construct monthly data
       const finalMonthlyData = Object.values(monthlyMap)
@@ -123,7 +122,7 @@ const PredictionsChart = () => {
           </h3>
           <p className="text-xs text-slate-400 mt-0.5">Prediction statistics overview</p>
         </div>
-        
+
         {/* Controls */}
         <div className="flex items-center gap-3">
           <button
@@ -133,7 +132,7 @@ const PredictionsChart = () => {
           >
             🔄 Refresh
           </button>
-          
+
           <div className="flex bg-slate-100 dark:bg-slate-700 rounded-xl p-1">
             <button
               onClick={() => setActiveChart('disease')}
