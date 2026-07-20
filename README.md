@@ -65,15 +65,25 @@ For improved reliability, users can upload multiple images of the same skin cond
 
 ---
 
-#Deployment
--Frontend — Render
-The React application is built with React Scripts and deployed as a static site on Render. Render builds the production bundle and serves it over HTTPS, giving the frontend an independent deployment lifecycle from the ML backend.
+## Deployment
 
--Backend — Hugging Face Spaces
-The Flask ML API is containerised with a python:3.10-slim base image, installs requirements.txt, and is deployed as a Docker-based Space on Hugging Face. The container runs Gunicorn on port 7860 (gunicorn app:app --bind 0.0.0.0:7860 --timeout 120 --workers 1), which keeps the deployment configuration consistent between local development and production.
+### Frontend — Render
 
--Firebase
-Firebase Authentication and Firestore are used directly from the frontend as managed cloud services, requiring no separate deployment step beyond project configuration and security rules.
+The React frontend is deployed as a static web service on **Render**. Render automatically builds the application from the GitHub repository and serves the optimized production build over HTTPS, ensuring fast and reliable access.
+
+### Backend — Hugging Face Spaces
+
+The Flask-based machine learning API is deployed on **Hugging Face Spaces** using Docker. The application is built on a `python:3.10-slim` image, installs all dependencies from `requirements.txt`, and runs using Gunicorn on port **7860**.
+
+```bash
+gunicorn app:app --bind 0.0.0.0:7860 --timeout 120 --workers 1
+```
+
+This deployment setup provides a consistent environment between local development and production while serving real-time AI predictions.
+
+### Firebase
+
+**Firebase Authentication** and **Cloud Firestore** are integrated directly with the frontend. Firebase handles user authentication (Email/Password and Google Sign-In) and securely stores user profiles and prediction history, eliminating the need for separate backend deployment for these services.
 
 -Configuration
 •	CORS is enabled on the Flask API (flask-cors) so the Render-hosted frontend can call the Hugging-Face-hosted backend across origins.
