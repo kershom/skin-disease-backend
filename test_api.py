@@ -6,7 +6,7 @@ Run with:  python test_api.py path/to/any_skin_image.jpg
 import sys
 import requests
 
-URL = "http://localhost:5000"
+URL = "http://localhost:7860"
 
 def test_health():
     r = requests.get(f"{URL}/health")
