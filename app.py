@@ -1,9 +1,20 @@
 import os
+# Configure environment variables to limit threading BEFORE importing numpy or tensorflow
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["TF_NUM_INTRAOP_THREADS"] = "1"
+os.environ["TF_NUM_INTEROP_THREADS"] = "1"
+
 import numpy as np
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from PIL import Image
 import tensorflow as tf
+
+# Limit TensorFlow CPU threading
+tf.config.threading.set_inter_op_parallelism_threads(1)
+tf.config.threading.set_intra_op_parallelism_threads(1)
+
 import cv2
 import io
 import base64
@@ -196,6 +207,11 @@ def build_response(predictions, img_array=None):
  
 @app.route('/')
 def home():
+    return send_from_directory('static', 'index.html')
+
+
+@app.route('/info')
+def info():
     return jsonify({
         'app':           'DermaLens API',
         'status':        'running',
