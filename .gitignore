@@ -5,4 +5,4 @@ __pycache__/
 *.dll
 static/gradcam/*.jpg
 .env
-*.log
+*.loglog.txt 
