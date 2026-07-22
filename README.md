@@ -68,12 +68,29 @@ Response keys:
 - `gradcam_url`: base64-encoded Grad-CAM image
 - `mock_mode`: false when a real model is loaded
 
-## Model Details
+## Model 
 
 - The app expects a packaged Keras model file in `model/skin_disease_efficientnet.keras`.
 - The model outputs one of 10 disease labels.
 - Input images are resized to the model input shape and passed to the model as raw pixel arrays in `[0, 255]`.
 - The code avoids additional TensorFlow preprocessing because the model already contains rescaling/normalization layers.
+
+## Model Training
+
+The skin disease classification model was developed using EfficientNet.
+
+### Model Details
+- Architecture: EfficientNet
+- Input Size: 224 × 224 × 3
+- Output Classes: 10 skin diseases
+- Framework: TensorFlow / Keras
+
+### Training Process
+- Dataset preprocessing and cleaning
+- Data augmentation
+- Model training and validation
+- Performance evaluation using confusion matrix and classification report
+- Exported trained model for Flask backend integration
 
 ## Supported Diseases
 
