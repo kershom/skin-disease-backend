@@ -1,0 +1,16 @@
+                 precision    recall  f1-score   support
+
+           acne       0.94      0.92      0.93       194
+   athlete_foot       1.00      1.00      1.00      1209
+     cellulitis       1.00      1.00      1.00      1213
+         eczema       0.98      0.96      0.97       992
+       impetigo       1.00      1.00      1.00      1223
+       ringworm       1.00      1.00      1.00      1220
+        rosacea       0.93      0.99      0.96       147
+       shingles       1.00      1.00      1.00      1213
+urticaria_hives       0.97      0.99      0.98      1199
+       vitiligo       0.97      0.91      0.94       149
+
+       accuracy                           0.99      8759
+      macro avg       0.98      0.98      0.98      8759
+   weighted avg       0.99      0.99      0.99      8759
