@@ -1,0 +1,151 @@
+{
+  "app": {
+    "tagline": "Detección de enfermedades de la piel impulsada por IA",
+    "loading": "Cargando DermaLens..."
+  },
+  "languages": {
+    "en": "Inglés",
+    "hi": "Hindi",
+    "ml": "Malayalan",
+    "ta": "Tamil",
+    "te": "Telugu",
+    "kn": "Canadés",
+    "bn": "Bengalí",
+    "mr": "Marathi",
+    "gu": "Gujarati",
+    "pa": "Punyabí",
+    "or": "Odia",
+    "ur": "Urdu",
+    "fr": "Francés",
+    "es": "Español",
+    "ar": "Árabe",
+    "zh": "Chino",
+    "ja": "Japonés",
+    "ko": "Coreano",
+    "ru": "Ruso",
+    "de": "German",
+    "pt": "Portuguese"
+  },
+  "nav": {
+    "features": "Características",
+    "howItWorks": "Cómo funciona",
+    "awareness": "Concientización",
+    "login": "Iniciar sesión",
+    "indianLanguages": "Lenguajes de la India",
+    "internationalLanguages": "Idiomas Internacionales",
+    "switchToLight": "Cambiar a Modo Luz",
+    "switchToDark": "Cambiar al modo oscuro"
+  },
+  "hero": {
+    "badge": "Atención médica impulsada por IA",
+    "titleLine1": "Con tecnología de IA",
+    "titleLine2": "Enfermedad de la Piel",
+    "titleLine3": "Sistema de detección:",
+    "subtitle": "Cargue o escanee su imagen de la piel y reciba predicciones instantáneas impulsadas por IA, información sobre enfermedades y precauciones de expertos.",
+    "getStarted": "Comencemos",
+    "scanNow": "Escanear ahora",
+    "statDiseases": "Enfermedades detectadas",
+    "statAccuracy": "Tasa de precisión",
+    "statInstant": "Resultados de IA",
+    "statInstantValue": "Conciliación",
+    "aiAnalysis": "Análisis de IA",
+    "badgeAccurate": "95% de precisión",
+    "badgeResults": "Resultados instantáneos",
+    "badgeSecure": "SEGURO | PRIVADO"
+  },
+  "features": {
+    "badge": "¿Qué ofrecemos?",
+    "title": "Características Potentes",
+    "subtitle": "Todo lo que necesitas para la detección de enfermedades de la piel impulsada por IA en una sola plataforma.",
+    "aiPrediction": {
+      "title": "Predicción de IA",
+      "description": "El modelo CNN entrenado en el conjunto de datos HAM10000 detecta 7 tipos de enfermedades de la piel con alta precisión."
+    },
+    "webcam": {
+      "title": "Detección de cámara web en directo",
+      "description": "Utiliza la cámara de tu dispositivo para capturar y analizar imágenes de la piel en tiempo real."
+    },
+    "awareness": {
+      "title": "Disease Awareness",
+      "description": "Información detallada sobre los síntomas, las causas, la gravedad y la prevención de cada enfermedad."
+    },
+    "gradcam": {
+      "title": "Visualización Grad-CAM",
+      "description": "Vea exactamente dónde se centró la IA en su imagen utilizando superposiciones de mapas de calor."
+    },
+    "multilingual": {
+      "title": "Soporte multilingüe La interfaz del",
+      "description": "Disponible en inglés, hindi, malayalam, tamil y muchos más idiomas para una mayor accesibilidad."
+    },
+    "secure": {
+      "title": "Perfiles de usuario seguros",
+      "description": "Sus datos están protegidos con autenticación de Firebase y almacenamiento seguro en la nube."
+    }
+  },
+  "howItWorks": {
+    "badge": "Proceso sencillo",
+    "title": "Cómo funciona",
+    "subtitle": "Obtenga su análisis de piel con IA en 3 sencillos pasos, sin necesidad de conocimientos médicos.",
+    "stepLabel": "PASO",
+    "step1": {
+      "title": "Subir o escanear imagen",
+      "description": "Arrastre y suelte una imagen de la piel o use su cámara web en vivo para capturar una directamente."
+    },
+    "step2": {
+      "title": "La IA analiza la imagen",
+      "description": "Nuestro modelo CNN procesa la imagen y la ejecuta a través del modelo entrenado HAM10000."
+    },
+    "step3": {
+      "title": "Obtenga resultados y precauciones",
+      "description": "Recibir la enfermedad predicha, la puntuación de confianza, el mapa de calor Grad-CAM y las precauciones."
+    }
+  },
+  "awareness": {
+    "disclaimerTitle": "Descargo de responsabilidad médica",
+    "disclaimerBody": "Las predicciones de IA no son un reemplazo para el diagnóstico médico profesional. Esta herramienta está destinada únicamente a la concienciación y la detección temprana. Siempre consulte a un dermatólogo certificado para un diagnóstico y tratamiento adecuados.",
+    "ctaTitle": "¿Está Listo Para Comenzar?",
+    "ctaSubtitle": "Únete a miles de usuarios que utilizan la IA para estar al tanto de la salud de su piel.",
+    "ctaButton": "Prueba DermaLens gratis"
+  },
+  "footer": {
+    "tagline": "Sistema de detección de enfermedades de la piel impulsado por IA",
+    "copyright": "© 2025 DermaLens. Solo para fines de concienciación. No sustituye el consejo médico."
+  },
+  "login": {
+    "backToHome": "Volver al Inicio",
+    "tagline": "Detección de enfermedades de la piel impulsada por IA",
+    "loginTab": "Iniciar sesión",
+    "signupTab": "Regístrate",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "fullName": "Nombre y Apellidos",
+    "phone": "Número de teléfono",
+    "phoneOptional": "(opcional)",
+    "confirmPassword": "Confirmar nueva contraseña",
+    "savePassword": "Guardar contraseña",
+    "loggingIn": "Iniciando sesión…",
+    "loginButton": "Iniciar sesión",
+    "creatingAccount": "Creando cuenta...",
+    "createAccount": "Crear cuenta",
+    "or": "o",
+    "continueGoogle": "Continuar con Google",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "phonePlaceholder": "Número 10 dígitos",
+    "passwordMinPlaceholder": "'(mín. 6 caracteres)'",
+    "confirmPlaceholder": "Vuelva a introducir la contraseña",
+    "errors": {
+      "fillAll": "Por favor, rellene todos los campos.",
+      "fillRequired": "Por favor, completa todos los campos obligatorios.",
+      "passwordMin": "La contraseña debe tener al menos 6 caracteres.",
+      "passwordMismatch": "Contraseñas no se corresponden",
+      "phoneInvalid": "Por favor ingrese un número válido de 10 dígitos.",
+      "userNotFound": "No se ha encontrado ninguna cuenta con esta dirección de correo electrónico.",
+      "wrongPassword": "Contraseña incorrecta",
+      "invalidEmail": "Correo electrónico inválido.",
+      "emailInUse": "La cuenta con este correo electrónico ya existe"
+    },
+    "successLogin": "Inicio de sesión correcto",
+    "successSignup": "¡Cuenta creada con éxito! Por favor, inicie sesión.",
+    "successGoogle": "¡Inició sesión con Google!"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "app": {
+    "tagline": "AI搭載の皮膚疾患検出",
+    "loading": "DermaLensを読み込んでいます..."
+  },
+  "languages": {
+    "en": "英語",
+    "hi": "Japanese",
+    "ml": "マラヤーラム語",
+    "ta": "タミル語",
+    "te": "テルグ語",
+    "kn": "カンナダ語",
+    "bn": "ベンガル語",
+    "mr": "マラーティー語",
+    "gu": "グジャラート語",
+    "pa": "パンジャーブ語",
+    "or": "オディア料理",
+    "ur": "ウルドゥー語",
+    "fr": "フランス語",
+    "es": "スペイン語",
+    "ar": "アラビア語",
+    "zh": "中国語",
+    "ja": "日本語",
+    "ko": "韓国語",
+    "ru": "ロシア語",
+    "de": "ドイツ語",
+    "pt": "ポルトガル語"
+  },
+  "nav": {
+    "features": "特長",
+    "howItWorks": "仕組み",
+    "awareness": "意識/認識",
+    "login": "ログイン",
+    "indianLanguages": "インドの言語",
+    "internationalLanguages": "国際言語",
+    "switchToLight": "ライトモードに切り替える",
+    "switchToDark": "ダークモードに切り替える"
+  },
+  "hero": {
+    "badge": "AIを活用したヘルスケア",
+    "titleLine1": "AI搭載",
+    "titleLine2": "皮膚付属器官疾患",
+    "titleLine3": "検出システム",
+    "subtitle": "肌の画像をアップロードまたはスキャンして、AIによる即時予測、疾患情報、専門家による予防措置を受け取ります。",
+    "getStarted": "使い始める",
+    "scanNow": "今すぐスキャン",
+    "statDiseases": "検出された疾患",
+    "statAccuracy": "精度率",
+    "statInstant": "AI結果",
+    "statInstantValue": "ｲﾝｽﾀﾝﾄ",
+    "aiAnalysis": "AI分析",
+    "badgeAccurate": "95%の精度",
+    "badgeResults": "速報値",
+    "badgeSecure": "安全に保護"
+  },
+  "features": {
+    "badge": "カフェの特徴",
+    "title": "パワフルな機能",
+    "subtitle": "AI搭載の皮膚疾患検出に必要なすべてを1つのプラットフォームで。",
+    "aiPrediction": {
+      "title": "AI予測",
+      "description": "HAM 10000データセットでトレーニングされたCNNモデルは、7種類の皮膚疾患を高精度に検出します。"
+    },
+    "webcam": {
+      "title": "ライブウェブカメラ検出",
+      "description": "デバイスカメラを使用して、肌の画像をリアルタイムでキャプチャおよび分析します。"
+    },
+    "awareness": {
+      "title": "疾病への意識",
+      "description": "各疾患の症状、原因、重症度、予防に関する詳細情報。"
+    },
+    "gradcam": {
+      "title": "Grad - CAMの可視化",
+      "description": "ヒートマップオーバーレイを使用して、AIが画像に焦点を当てた場所を正確に確認します。"
+    },
+    "multilingual": {
+      "title": "多言語サポート",
+      "description": "英語、ヒンディー語、マラヤーラム語、タミル語など、より幅広い言語でご利用いただけます。"
+    },
+    "secure": {
+      "title": "安全なユーザープロファイル",
+      "description": "お客様のデータは、Firebase認証と安全なクラウドストレージで保護されます。"
+    }
+  },
+  "howItWorks": {
+    "badge": "シンプルなプロセス",
+    "title": "仕組み",
+    "subtitle": "3つの簡単なステップでAIスキン分析を取得—医学的知識は必要ありません。",
+    "stepLabel": "ステップ",
+    "step1": {
+      "title": "画像をアップロードまたはスキャン",
+      "description": "スキン画像をドラッグアンドドロップするか、ライブウェブカメラを使用して直接スキン画像をキャプチャします。"
+    },
+    "step2": {
+      "title": "AIが画像を分析",
+      "description": "当社のCNNモデルは、画像を処理し、HAM 10000トレーニング済みモデルを介して実行します。"
+    },
+    "step3": {
+      "title": "結果と注意事項を取得する",
+      "description": "予測された疾患、信頼スコア、Grad - CAMヒートマップ、および予防措置を受け取る。"
+    }
+  },
+  "awareness": {
+    "disclaimerTitle": "医療に関する免責事項",
+    "disclaimerBody": "AI予測は、専門的な医療診断の代わりにはなりません。このツールは、認識と早期発見のみを目的としています。適切な診断と治療については、必ず認定された皮膚科医に相談してください。",
+    "ctaTitle": "始めませんか？",
+    "ctaSubtitle": "AIを使用して何千人ものユーザーと一緒に、肌の健康を意識しましょう。",
+    "ctaButton": "DermaLensを無料でお試しください"
+  },
+  "footer": {
+    "tagline": "AI搭載の皮膚疾患検出システム",
+    "copyright": "© 2025 DermaLens。意識向上のみを目的としています。医師の助言に代わるものではありません。"
+  },
+  "login": {
+    "backToHome": "ホームに戻る",
+    "tagline": "AI搭載の皮膚疾患検出",
+    "loginTab": "ログイン",
+    "signupTab": "サインアップ",
+    "email": "メール",
+    "password": "パスワード",
+    "fullName": "氏名",
+    "phone": "電話番号",
+    "phoneOptional": "（オプション）",
+    "confirmPassword": "パスワードを確認",
+    "savePassword": "パスワードの保存",
+    "loggingIn": "ログイン中...",
+    "loginButton": "ログイン",
+    "creatingAccount": "アカウントの作成中…",
+    "createAccount": "アカウントを作成",
+    "or": "または",
+    "continueGoogle": "Googleで続行",
+    "emailPlaceholder": "you@example.com",
+    "phonePlaceholder": "10桁の数字",
+    "passwordMinPlaceholder": "最低6文字",
+    "confirmPlaceholder": "パスワードの再入力",
+    "errors": {
+      "fillAll": "すべての項目を入力してください。",
+      "fillRequired": "必須項目に記入してください。",
+      "passwordMin": "パスワードは6文字以上でなければなりません。",
+      "passwordMismatch": "パスワードが一致しません",
+      "phoneInvalid": "有効な電話番号を入力してください。",
+      "userNotFound": "そのメールでアカウントが見つかりません。",
+      "wrongPassword": "パスワードが正しくありません。",
+      "invalidEmail": "メールアドレスが無効です。",
+      "emailInUse": "この電子メールアドレスのアカウントがすでに存在しています"
+    },
+    "successLogin": "ログインしました",
+    "successSignup": "アカウントが正常に作成されました！ログインしてください。",
+    "successGoogle": "Googleでログインしました！"
+  }
+}

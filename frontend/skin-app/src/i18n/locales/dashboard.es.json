@@ -1,0 +1,589 @@
+{
+  "language": "Lenguaje",
+  "user": "Usuario",
+  "adminBadge": "Administrador",
+  "logout": "Cerrar sesión",
+  "welcomeBack": "Te damos la bienvenida de nuevo, {{name}}",
+  "nav": {
+    "scan": "Escanear y predecir",
+    "disease": "Información de la enfermedad",
+    "precautions": "Precauciones",
+    "profile": "Mi perfil",
+    "admin": "Panel de admin",
+    "appointment": "Encontrar un dermatólogo"
+    
+  },
+  "adminPanel": {
+    "title": "Panel de admin",
+    "description": "Accede al panel de administración completo para gestionar usuarios, ver análisis y predicciones.",
+    "open": "El panel de control de administrador"
+  },
+  "severity": {
+    "low": "Baja",
+    "medium": "Medio",
+    "high": "Alto",
+    "risk": "{{level}} Riesgo",
+    "benign": "Son generalmente benignos.",
+    "monitor": "Monitoree de cerca. ",
+    "urgent": "ACUDA AL MÉDICO PRONTO"
+  },
+ "scan": {
+  "title": "Análisis de imagen de la piel",
+  "subtitle": "Sube una imagen o utiliza tu cámara web en vivo para un análisis instantáneo de la piel con IA.",
+  "upload": "Subir",
+  "webcam": "Cámara web",
+  "dropHere": "¡Suelta aquí!",
+  "dragDrop": "Arrastra y suelta tu imagen aquí",
+  "browse": "O haz clic para seleccionar un archivo",
+  "chooseImage": "Elegir imagen",
+  "fileTypes": "Compatible con JPG, PNG y WebP — Máximo 10 MB",
+  "ready": "Listo para el análisis",
+  "chooseDifferent": "Elegir otra imagen",
+  "analyzing": "Analizando...",
+  "analyze": "Analizar imagen",
+  "cameraDenied": "Acceso a la cámara denegado",
+  "cameraHint": "Permite el acceso a la cámara en la configuración de tu navegador y vuelve a intentarlo.",
+  "tryAgain": "Intentar de nuevo",
+  "startingCamera": "Iniciando la cámara...",
+  "live": "En vivo",
+  "flip": "Voltear",
+  "tip": "Para obtener una mayor precisión, mantén el área afectada de la piel dentro del encuadre y asegúrate de tener buena iluminación.",
+  "capture": "Capturar imagen",
+  "captured": "Imagen capturada",
+  "retake": "Volver a tomar",
+  "loadingTitle": "Analizando los patrones de la piel...",
+  "loadingSubtitle": "El modelo CNN está procesando tu imagen. Por favor, espera.",
+  "loadingModel": "Ejecutando el modelo de aprendizaje profundo...",
+  "associatedSymptoms": "Síntomas asociados",
+  "developmentNote": "Modo de demostración",
+  "fusionTitle": "La integración de decisiones basada en síntomas aún está en desarrollo",
+  "fusionDesc": "Actualmente, la predicción se basa únicamente en la imagen cargada. En futuras actualizaciones, estos síntomas se combinarán con el análisis de la imagen para mejorar la precisión.",
+  "durationLabel": "Duración de los síntomas",
+  "symptoms": {
+    "itching": "Picazón",
+    "pain": "Dolor",
+    "fever": "Fiebre",
+    "bleeding": "Sangrado",
+    "burningSensation": "Sensación de ardor",
+    "scaling": "Descamación de la piel",
+    "growthInSize": "Aumento de tamaño"
+  },
+  "duration": {
+    "less-than-week": "Menos de una semana",
+    "weeks": "Semanas",
+    "months": "Meses"
+  },
+  "awaitingImages": "Esperando imágenes de la piel",
+  "awaitingSubtitle": "Sube imágenes o toma una foto en el lado izquierdo. El análisis con IA aparecerá aquí.",
+  "tipTitle": "Consejos para un mejor análisis",
+  "tip1": "Asegúrate de que el área afectada tenga buena iluminación.",
+  "tip2": "Sube varias imágenes de la misma zona de la piel desde diferentes ángulos o distancias.",
+  "tip3": "Coloca claramente la lesión o el área afectada en el centro del encuadre.",
+  "spotsList": "Imágenes de lesiones cargadas",
+  "clearAll": "Eliminar todo",
+  "analyzeMultiple": "Analizar lesiones listas ({{count}})",
+  "consensusReport": "Resultado combinado",
+  "individualSpots": "Lesiones individuales",
+  "consensusActive": "Resumen combinado de múltiples imágenes",
+  "consensusDesc": "Preparado combinando los resultados de {{count}} imágenes de lesiones.",
+  "spotDetails": "Detalles de la lesión",
+  "webcamSnap": "Captura de la cámara web",
+  "uploadedImage": "Imagen cargada",
+  "status": "Estado del análisis",
+  "readyToScan": "Listo para analizar",
+  "analyzingLabel": "Análisis con IA en progreso...",
+  "analyzed": "Análisis completado con éxito",
+  "failed": "El análisis falló",
+  "readyExpl": "Esta lesión aún no ha sido analizada.",
+  "runScan": "Iniciar análisis con IA",
+  "defaultError": "La predicción falló. Inténtalo de nuevo.",
+  "retry": "Analizar de nuevo",
+  "predictionSummary": "Resumen de la predicción",
+  "conditionLabel": "Condición",
+  "confidenceLabel": "Nivel de confianza",
+  "riskLevelLabel": "Nivel de riesgo"
+
+  },
+ "prediction": {
+    "title": "Resultado de la Predicción IA",
+    "condition": "AFECCIÓN DETECTADA",
+    "confidence": "PUNTUACIÓN DE CONFIANZA",
+    "severity": "NIVEL DE GRAVEDAD",
+    "probabilities": "Probabilidades de Predicción",
+    "gradcamTitle": "Visualización Grad-CAM",
+    "original": "IMAGEN ORIGINAL",
+    "heatmap": "MAPA DE CALOR IA",
+    "heatmapPending": "El mapa de calor aparecerá aquí una vez que el backend de Flask esté conectado",
+    "disclaimer": "Esta es una predicción de IA solo con fines informativos. Consulte a un dermatólogo certificado para un diagnóstico adecuado.",
+    "others": "Otros",
+    "downloadReport": "Descargar Informe",
+    "generatingReport": "Generando..."
+  
+  },
+  "diseaseInfo": {
+    "title": "Disease Awareness",
+    "subtitle": "Conozca las 10 enfermedades de la piel detectadas por DermaLens. Haga clic en cualquier tarjeta para ver todos los detalles.",
+    "more": "Más",
+    "less": "Menos",
+    "medicalRef": "Referencia Médica",
+    "lookFor": "Qué es lo que hay que notar",
+    "symptoms": "Síntomas",
+    "causes": "Causas",
+    "highWarning": "Riesgo alto: consulte a un dermatólogo de inmediato si nota estos síntomas.",
+    "mediumWarning": "Riesgo medio: vigile con regularidad y consulte a un médico si los síntomas empeoran.",
+    "disclaimer": "Las imágenes que se muestran son ilustraciones de referencia médica. Siempre consulte a un dermatólogo certificado para un diagnóstico adecuado."
+  },
+  "diseases": {
+    "acne": {
+      "name": "Acné",
+      "description": "Una afección cutánea común causada por la obstrucción de los poros debido al exceso de grasa y células muertas.",
+      "visualLabel": "Granos rojos",
+      "visualDesc": "Granitos rojos que aparecen en la cara, el pecho y la espalda",
+      "symptoms": [
+        "Granos",
+        "Puntos negros",
+        "Piel grasa",
+        "Cicatrices"
+      ],
+      "causes": [
+        "Exceso de grasa",
+        "Bacterias",
+        "Cambios hormonales",
+        "Poros obstruidos"
+      ],
+      "lookFor": [
+        "Granitos rojos",
+        "Puntos blancos",
+        "Pústulas",
+        "Cara y espalda"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "Queratosis actínica",
+      "description": "Una lesión cutánea áspera y escamosa causada por años de exposición al sol. Se considera precancerosa.",
+      "visualLabel": "Parche rojo áspero y escamoso",
+      "visualDesc": "Parche seco, áspero y escamoso, generalmente rojo, rosado o marrón",
+      "symptoms": [
+        "Parche áspero y escamoso",
+        "Lesión plana o elevada",
+        "Picazón o ardor",
+        "Superficie dura similar a una verruga"
+      ],
+      "causes": [
+        "Exposición a los rayos UV",
+        "Camas de bronceado",
+        "Sistema inmunitario debilitado"
+      ],
+      "lookFor": [
+        "Textura escamosa",
+        "Color rosado o rojo",
+        "Áspera al tacto",
+        "Plana o ligeramente elevada"
+      ]
+    },
+    "basalCell": {
+      "name": "Carcinoma basocelular",
+      "description": "El cáncer de piel más común. Rara vez se propaga, pero requiere tratamiento.",
+      "visualLabel": "Bulto perlado y rosado",
+      "visualDesc": "Bulto brillante y translúcido con apariencia perlada o cerosa",
+      "symptoms": [
+        "Bulto perlado",
+        "Lesión plana similar a una cicatriz",
+        "Llaga que sangra",
+        "Crecimiento rosado"
+      ],
+      "causes": [
+        "Exposición crónica al sol",
+        "Radioterapia",
+        "Piel clara"
+      ],
+      "lookFor": [
+        "Superficie perlada",
+        "Color rosado o color piel",
+        "Puede tener vasos visibles",
+        "Crecimiento lento"
+      ]
+    },
+    "eczema": {
+      "name": "Eccema",
+      "description": "Una enfermedad crónica de la piel que causa picazón e inflamación.",
+      "visualLabel": "Parches rojos y con picazón",
+      "visualDesc": "Piel seca, roja e inflamada",
+      "symptoms": [
+        "Picazón",
+        "Enrojecimiento",
+        "Piel seca",
+        "Descamación"
+      ],
+      "causes": [
+        "Sistema inmunitario",
+        "Genética",
+        "Factores ambientales",
+        "Alergias"
+      ],
+      "lookFor": [
+        "Parches rojos",
+        "Piel seca",
+        "Piel engrosada",
+        "Pliegues cutáneos"
+      ]
+    },
+    "psoriasis": {
+      "name": "Psoriasis",
+      "description": "Una enfermedad autoinmune que provoca un rápido crecimiento de las células de la piel.",
+      "visualLabel": "Placas blancas escamosas",
+      "visualDesc": "Placas rojas cubiertas con escamas blancas",
+      "symptoms": [
+        "Parches rojos",
+        "Picazón",
+        "Piel seca",
+        "Cambios en las uñas"
+      ],
+      "causes": [
+        "Trastorno autoinmune",
+        "Genética",
+        "Estrés",
+        "Infecciones"
+      ],
+      "lookFor": [
+        "Escamas plateadas",
+        "Base roja",
+        "Bordes definidos",
+        "Rodillas y codos"
+      ]
+    },
+    "ringworm": {
+      "name": "Tiña",
+      "description": "Una infección por hongos en la piel.",
+      "visualLabel": "Mancha roja circular",
+      "visualDesc": "Anillo rojo con un centro más claro",
+      "symptoms": [
+        "Manchas circulares",
+        "Picazón",
+        "Descamación",
+        "Enrojecimiento"
+      ],
+      "causes": [
+        "Infección por hongos",
+        "Contacto directo",
+        "Objetos compartidos",
+        "Humedad"
+      ],
+      "lookFor": [
+        "Forma circular",
+        "Bordes escamosos",
+        "Centro claro",
+        "Picazón"
+      ]
+    },
+    "rosacea": {
+      "name": "Rosácea",
+      "description": "Una enfermedad crónica que causa enrojecimiento facial.",
+      "visualLabel": "Enrojecimiento facial",
+      "visualDesc": "Enrojecimiento persistente en mejillas y nariz",
+      "symptoms": [
+        "Enrojecimiento facial",
+        "Vasos sanguíneos visibles",
+        "Pequeños bultos",
+        "Irritación ocular"
+      ],
+      "causes": [
+        "Genética",
+        "Factores ambientales",
+        "Exposición al sol",
+        "Comidas picantes"
+      ],
+      "lookFor": [
+        "Mejillas rojas",
+        "Pequeños bultos",
+        "Rubor frecuente",
+        "Vasos visibles"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "Queratosis seborreica",
+      "description": "Un crecimiento benigno de la piel que aparece comúnmente con la edad.",
+      "visualLabel": "Parche ceroso",
+      "visualDesc": "Lesión rugosa y cerosa que parece adherida a la piel",
+      "symptoms": [
+        "Superficie cerosa",
+        "Cambios de color",
+        "Picazón",
+        "Comezón"
+      ],
+      "causes": [
+        "Envejecimiento",
+        "Exposición al sol",
+        "Genética"
+      ],
+      "lookFor": [
+        "Textura cerosa",
+        "Color marrón",
+        "Bordes definidos",
+        "Aspecto adherido"
+      ]
+    },
+    "vitiligo": {
+      "name": "Vitíligo",
+      "description": "Una afección en la que la piel pierde su pigmentación.",
+      "visualLabel": "Manchas blancas",
+      "visualDesc": "Áreas blancas claramente definidas",
+      "symptoms": [
+        "Manchas blancas",
+        "Blanqueamiento del cabello",
+        "Pérdida de pigmento",
+        "Parches simétricos"
+      ],
+      "causes": [
+        "Trastorno autoinmune",
+        "Genética",
+        "Daño nervioso",
+        "Estrés oxidativo"
+      ],
+      "lookFor": [
+        "Áreas blancas",
+        "Bordes definidos",
+        "Simetría",
+        "Cabello blanco"
+      ]
+    },
+    "warts": {
+      "name": "Verrugas",
+      "description": "Pequeños crecimientos en la piel causados por el virus del VPH.",
+      "visualLabel": "Pequeños bultos ásperos",
+      "visualDesc": "Pequeños crecimientos con apariencia de coliflor",
+      "symptoms": [
+        "Bultos",
+        "Puntos negros",
+        "Dolor",
+        "Puede doler en los pies"
+      ],
+      "causes": [
+        "Virus del VPH",
+        "Contacto directo",
+        "Lesiones",
+        "Inmunidad baja"
+      ],
+      "lookFor": [
+        "Superficie áspera",
+        "Color de la piel",
+        "Puntos negros",
+        "Manos y pies"
+      ]
+    },
+    "athleteFoot": {
+  "name": "Pie de atleta",
+  "description": "Es una infección por hongos que generalmente comienza entre los dedos de los pies. Es común en personas cuyos pies permanecen húmedos o sudan mucho.",
+  "visualLabel": "Picazón y descamación entre los dedos",
+  "visualDesc": "Piel roja, escamosa y con picazón entre los dedos de los pies o en la planta del pie.",
+  "symptoms": [
+    "Picazón",
+    "Sensación de ardor",
+    "Descamación de la piel",
+    "A veces ampollas"
+  ],
+  "causes": [
+    "Infección por hongos (Tiña del pie)",
+    "Pies húmedos o sudorosos",
+    "Caminar descalzo en duchas o piscinas públicas",
+    "Usar zapatos ajustados"
+  ],
+  "lookFor": [
+    "Descamación entre los dedos",
+    "Enrojecimiento y grietas",
+    "Picazón o ardor",
+    "Mal olor"
+  ]
+},
+
+"cellulitis": {
+  "name": "Celulitis",
+  "description": "Es una infección bacteriana que afecta las capas profundas de la piel. Puede propagarse rápidamente y requiere tratamiento médico inmediato.",
+  "visualLabel": "Piel roja e inflamada que se extiende",
+  "visualDesc": "Zona roja, caliente e hinchada que se expande rápidamente.",
+  "symptoms": [
+    "Enrojecimiento y dolor",
+    "Calor en la zona afectada",
+    "Fiebre o escalofríos",
+    "Ampollas"
+  ],
+  "causes": [
+    "Entrada de bacterias por una herida",
+    "Cortes o picaduras de insectos",
+    "Sistema inmunológico debilitado",
+    "Enfermedades crónicas de la piel"
+  ],
+  "lookFor": [
+    "Enrojecimiento que se expande",
+    "Hinchazón y calor",
+    "Piel tensa",
+    "Fiebre"
+  ]
+},
+
+"impetigo": {
+  "name": "Impétigo",
+  "description": "Es una infección bacteriana de la piel altamente contagiosa, frecuente en niños. Produce llagas que forman costras de color miel.",
+  "visualLabel": "Costras color miel",
+  "visualDesc": "Llagas rojas alrededor de la nariz y la boca que forman costras amarillas o marrones.",
+  "symptoms": [
+    "Llagas rojas que se rompen fácilmente",
+    "Costras color miel",
+    "Picazón",
+    "Ganglios linfáticos inflamados"
+  ],
+  "causes": [
+    "Infección por bacterias Staphylococcus o Streptococcus",
+    "Contacto directo con la piel",
+    "Lesiones en la piel",
+    "Lugares concurridos como escuelas"
+  ],
+  "lookFor": [
+    "Costras color miel",
+    "Llagas alrededor de la nariz o la boca",
+    "Picazón",
+    "Ampollas llenas de líquido"
+  ]
+},
+
+"shingles": {
+  "name": "Herpes zóster",
+  "description": "Es una enfermedad dolorosa de la piel causada por la reactivación del virus de la varicela. Generalmente aparece en un solo lado del cuerpo.",
+  "visualLabel": "Grupo de ampollas dolorosas",
+  "visualDesc": "Ampollas llenas de líquido que aparecen en un solo lado del cuerpo.",
+  "symptoms": [
+    "Dolor intenso",
+    "Sensación de ardor",
+    "Ampollas llenas de líquido",
+    "Fiebre"
+  ],
+  "causes": [
+    "Reactivación del virus varicela-zóster",
+    "Edad avanzada",
+    "Sistema inmunológico debilitado",
+    "Estrés"
+  ],
+  "lookFor": [
+    "Erupción en un solo lado del cuerpo",
+    "Ampollas llenas de líquido",
+    "Dolor",
+    "Enrojecimiento"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Urticaria",
+  "description": "La urticaria es una reacción de la piel que provoca ronchas elevadas y con picazón, generalmente causada por una reacción alérgica.",
+  "visualLabel": "Ronchas elevadas con picazón",
+  "visualDesc": "Ronchas rojas o pálidas, elevadas y de diferentes tamaños que aparecen repentinamente.",
+  "symptoms": [
+    "Picazón intensa",
+    "Ronchas elevadas",
+    "Lesiones que aparecen y desaparecen",
+    "A veces hinchazón"
+  ],
+  "causes": [
+    "Reacción alérgica",
+    "Algunos medicamentos",
+    "Alergias alimentarias",
+    "Exposición al calor o al frío"
+  ],
+  "lookFor": [
+    "Ronchas elevadas",
+    "Picazón intensa",
+    "Ronchas que cambian de tamaño",
+    "Aparición y desaparición repentina"
+  ]
+}
+  },
+  "precautions": {
+    "title": "Precauciones y cuidado de la piel",
+    "subtitle": "Siga estas pautas para mantener la piel sana y prevenir enfermedades de la piel.",
+    "warningTitle": "Advertencia Importante",
+    "warningBody": "Si observa cualquier lesión cutánea que cambie rápidamente, consulte inmediatamente a un dermatólogo certificado. La detección temprana salva vidas.",
+    "sun": {
+      "title": "Protección Solar",
+      "tips": [
+        "Aplique protector solar SPF 30+ todos los días",
+        "Volver a aplicar cada 2 horas al aire libre",
+        "Use ropa protectora y sombreros",
+        "Evite las horas pico de sol (10:00 a. m. a 4:00 p. m."
+      ]
+    },
+    "checks": {
+      "title": "Chequeos regulares de la piel",
+      "tips": [
+        "Revise su piel mensualmente",
+        "Look for new or changing moles",
+        "Utilice la regla ABCDE para los lunares",
+        "Ver a un dermatólogo anualmente"
+      ]
+    },
+    "hydration": {
+      "title": "hidratación de la piel",
+      "tips": [
+        "Hidratar diariamente después del baño",
+        "Beba por lo menos 8 vasos de agua al día.",
+        "Evite las duchas calientes: use agua tibia",
+        "Usar productos sin fragancias"
+      ]
+    },
+    "diet": {
+      "title": "Dieta saludable",
+      "tips": [
+        "<subtitle> Alimentos ricos en antioxidantes",
+        "Ácidos grasos Omega-3",
+        "Reducir la ingesta de azúcar procesada",
+        "Come verduras de hoja verde y bayas"
+      ]
+    },
+    "habits": {
+      "title": "Evita los hábitos nocivos",
+      "tips": [
+        "Evitar fumar: daña la piel",
+        "Limite el consumo de alcohol",
+        "No utilice camas de bronceado. ",
+        "Evite rascarse o rascarse la piel"
+      ]
+    },
+    "doctor": {
+      "title": "Cuándo consultar a un médico",
+      "tips": [
+        "Cambios de topo en tamaño o color",
+        "Una herida que no sana.",
+        "Picazón o lesiones sangrantes",
+        "Cualquier cambio de piel que te preocupe"
+      ]
+    }
+  },
+  "profile": {
+    "title": "Mi perfil",
+    "displayName": "Nombre mostrado",
+    "email": "Dirección de correo electrónico",
+    "saving": "Guardando...",
+    "save": "Guardar cambios",
+    "updateSuccess": "Perfil actualizado con éxito",
+    "updateError": "No se logró actualizar el perfil.",
+    "historyTitle": "Historial de predicciones",
+    "historyNote": "El historial completo estará disponible una vez que se conecte el backend"
+  },
+  "appointment": {
+  "title": "Encontrar un dermatólogo",
+  "subtitle": "Busque utilizando su ubicación o GPS",
+  "useGps": "Usar GPS",
+  "manualPlaceholder": "Ingrese su zona, ciudad o código postal",
+  "search": "Buscar",
+  "detectedLocation": "Ubicación",
+  "verifyOnMap": "Ver en el mapa",
+  "startPrompt": "Ingrese su ciudad o zona, o utilice el GPS para encontrar dermatólogos cercanos.",
+  "locating": "Obteniendo ubicación...",
+  "searching": "Buscando dermatólogos cercanos...",
+  "empty": "No se encontraron dermatólogos cercanos.",
+  "dermBadge": "Dermatólogo",
+  "noAddress": "Dirección no disponible",
+  "away": "Distancia",
+  "directions": "Cómo llegar",
+  "call": "Llamar",
+  "disclaimer": "Estos datos provienen de OpenStreetMap. Verifique la información antes de acudir."
+}
+}

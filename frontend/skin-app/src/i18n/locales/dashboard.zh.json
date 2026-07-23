@@ -1,0 +1,588 @@
+{
+  "language": "语言",
+  "user": "用户",
+  "adminBadge": "管理员",
+  "logout": "注销",
+  "welcomeBack": "欢迎回来， __ PH0 __",
+  "nav": {
+    "scan": "扫描和预测",
+    "disease": "疾病信息",
+    "precautions": "预防措施",
+    "profile": "我的个人资料",
+    "admin": "管理",
+    "appointment": "查找皮肤科医生"
+  },
+  "adminPanel": {
+    "title": "管理",
+    "description": "访问完整的管理面板以管理用户、查看分析和预测。",
+    "open": "管理控制面板"
+  },
+  "severity": {
+    "low": "低",
+    "medium": "中等",
+    "high": "高",
+    "risk": "__ PH0 __风险",
+    "benign": "一般良性",
+    "monitor": "密切监控",
+    "urgent": "看医生"
+  },
+  "scan": {
+  "title": "皮肤图像分析",
+  "subtitle": "上传图片或使用实时网络摄像头，立即进行 AI 皮肤分析。",
+  "upload": "上传",
+  "webcam": "网络摄像头",
+  "dropHere": "拖放到此处！",
+  "dragDrop": "将您的图片拖放到这里",
+  "browse": "或点击选择文件",
+  "chooseImage": "选择图片",
+  "fileTypes": "支持 JPG、PNG、WebP —— 最大 10MB",
+  "ready": "已准备好分析",
+  "chooseDifferent": "选择另一张图片",
+  "analyzing": "正在分析...",
+  "analyze": "分析图片",
+  "cameraDenied": "相机访问被拒绝",
+  "cameraHint": "请在浏览器设置中允许相机访问，然后重试。",
+  "tryAgain": "重试",
+  "startingCamera": "正在启动相机...",
+  "live": "实时",
+  "flip": "翻转",
+  "tip": "为了获得更高的准确性，请确保受影响的皮肤区域位于画面内，并保持充足的光线。",
+  "capture": "拍摄图片",
+  "captured": "已拍摄",
+  "retake": "重新拍摄",
+  "loadingTitle": "正在分析皮肤纹理...",
+  "loadingSubtitle": "CNN 模型正在处理您的图片，请稍候。",
+  "loadingModel": "深度学习模型正在运行...",
+  "associatedSymptoms": "相关症状",
+  "developmentNote": "演示模式",
+  "fusionTitle": "基于症状的决策融合功能仍在开发中",
+  "fusionDesc": "目前，预测仅基于上传的图片。未来更新将结合症状信息与图像分析，以提高准确率。",
+  "durationLabel": "症状持续时间",
+  "symptoms": {
+    "itching": "瘙痒",
+    "pain": "疼痛",
+    "fever": "发烧",
+    "bleeding": "出血",
+    "burningSensation": "灼热感",
+    "scaling": "皮肤脱屑",
+    "growthInSize": "面积增大"
+  },
+  "duration": {
+    "less-than-week": "少于一周",
+    "weeks": "数周",
+    "months": "数月"
+  },
+  "awaitingImages": "等待皮肤图片",
+  "awaitingSubtitle": "请在左侧上传图片或拍摄照片。AI 分析结果将在此显示。",
+  "tipTitle": "获得更佳分析结果的小提示",
+  "tip1": "确保受影响区域有充足的光线。",
+  "tip2": "从不同角度或距离上传同一区域的多张图片。",
+  "tip3": "将病变或受影响区域清晰地置于画面中央。",
+  "spotsList": "已上传的病变图片",
+  "clearAll": "全部清除",
+  "analyzeMultiple": "分析已准备好的病变（{{count}}）",
+  "consensusReport": "综合结果",
+  "individualSpots": "单个病变",
+  "consensusActive": "多图综合摘要",
+  "consensusDesc": "通过合并 {{count}} 张病变图片的分析结果生成。",
+  "spotDetails": "病变详情",
+  "webcamSnap": "网络摄像头拍摄",
+  "uploadedImage": "已上传图片",
+  "status": "分析状态",
+  "readyToScan": "准备扫描",
+  "analyzingLabel": "AI 正在分析...",
+  "analyzed": "扫描成功",
+  "failed": "扫描失败",
+  "readyExpl": "该病变尚未进行扫描。",
+  "runScan": "开始 AI 扫描",
+  "defaultError": "预测失败，请重试。",
+  "retry": "重新分析",
+  "predictionSummary": "预测摘要",
+  "conditionLabel": "状况",
+  "confidenceLabel": "置信度",
+  "riskLevelLabel": "风险等级"
+
+  },
+  "prediction": {
+    "title": "AI 预测结果",
+    "condition": "检测到的病症",
+    "confidence": "置信度分数",
+    "severity": "严重程度",
+    "probabilities": "预测概率",
+    "gradcamTitle": "Grad-CAM 可视化",
+    "original": "原始图像",
+    "heatmap": "AI 关注热力图",
+    "heatmapPending": "连接 Flask 后端后，热力图将显示在此处",
+    "disclaimer": "此为仅供参考的 AI 预测结果。如需准确诊断，请咨询认证皮肤科医生。",
+    "others": "其他",
+    "downloadReport": "下载报告",
+    "generatingReport": "生成中..."
+  
+  },
+  "diseaseInfo": {
+    "title": "疾病意识",
+    "subtitle": "了解DermaLens检测到的10种皮肤疾病。点击任意卡片查看完整详细信息。",
+    "more": "更多",
+    "less": "更少",
+    "medicalRef": "医学参考",
+    "lookFor": "寻找什么",
+    "symptoms": "症状",
+    "causes": "原因",
+    "highWarning": "高风险—如果您发现这些症状，请立即咨询皮肤科医生。",
+    "mediumWarning": "中度风险—定期监测，如果症状恶化，就去看医生。",
+    "disclaimer": "所示图像为医学参考图示。始终咨询经过认证的皮肤科医生进行正确的诊断。"
+  },
+  "diseases": {
+    "acne": {
+      "name": "痤疮",
+      "description": "一种常见的皮肤病，由毛孔堵塞和油脂分泌过多引起。",
+      "visualLabel": "红色丘疹",
+      "visualDesc": "面部、胸部和背部出现红色丘疹",
+      "symptoms": [
+        "粉刺",
+        "黑头",
+        "油性皮肤",
+        "疤痕"
+      ],
+      "causes": [
+        "油脂分泌过多",
+        "细菌感染",
+        "激素变化",
+        "毛孔堵塞"
+      ],
+      "lookFor": [
+        "红色丘疹",
+        "白头粉刺",
+        "脓疱",
+        "面部和背部"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "光化性角化病",
+      "description": "由于长期日晒引起的粗糙鳞屑性皮肤病变，被认为是癌前病变。",
+      "visualLabel": "粗糙的红色鳞屑斑块",
+      "visualDesc": "干燥、粗糙、带鳞屑的皮肤斑块，通常呈红色、粉红色或棕色",
+      "symptoms": [
+        "粗糙鳞屑斑块",
+        "平坦或略微隆起",
+        "瘙痒或灼热感",
+        "疣状硬表面"
+      ],
+      "causes": [
+        "紫外线暴露",
+        "日光浴床",
+        "免疫力低下"
+      ],
+      "lookFor": [
+        "鳞屑质地",
+        "粉红色至红色",
+        "触摸时粗糙",
+        "平坦或略微隆起"
+      ]
+    },
+    "basalCell": {
+      "name": "基底细胞癌",
+      "description": "最常见的皮肤癌，很少扩散，但需要治疗。通常表现为珍珠状肿块。",
+      "visualLabel": "珍珠状粉红色肿块",
+      "visualDesc": "有光泽、半透明、珍珠状或蜡状外观的肿块",
+      "symptoms": [
+        "珍珠状肿块",
+        "扁平疤痕样病变",
+        "出血性溃疡",
+        "粉红色增生"
+      ],
+      "causes": [
+        "长期日晒",
+        "放射治疗",
+        "浅色皮肤"
+      ],
+      "lookFor": [
+        "珍珠样表面",
+        "粉红色或肤色",
+        "可见血管",
+        "生长缓慢"
+      ]
+    },
+    "eczema": {
+      "name": "湿疹",
+      "description": "一种导致皮肤瘙痒和炎症的慢性皮肤病。",
+      "visualLabel": "红色瘙痒斑块",
+      "visualDesc": "皮肤干燥、发红和发炎",
+      "symptoms": [
+        "瘙痒",
+        "发红",
+        "皮肤干燥",
+        "脱屑"
+      ],
+      "causes": [
+        "免疫系统异常",
+        "遗传因素",
+        "环境因素",
+        "过敏"
+      ],
+      "lookFor": [
+        "红色斑块",
+        "干燥皮肤",
+        "皮肤增厚",
+        "皮肤褶皱处"
+      ]
+    },
+    "psoriasis": {
+      "name": "银屑病",
+      "description": "一种自身免疫性疾病，会导致皮肤细胞快速生长。",
+      "visualLabel": "白色鳞屑斑块",
+      "visualDesc": "覆盖白色鳞屑的红色斑块",
+      "symptoms": [
+        "红色斑块",
+        "瘙痒",
+        "皮肤干燥",
+        "指甲改变"
+      ],
+      "causes": [
+        "自身免疫疾病",
+        "遗传",
+        "压力",
+        "感染"
+      ],
+      "lookFor": [
+        "银白色鳞屑",
+        "红色底部",
+        "边界清晰",
+        "膝盖和肘部"
+      ]
+    },
+    "ringworm": {
+      "name": "癣",
+      "description": "一种真菌性皮肤感染。",
+      "visualLabel": "圆形红斑",
+      "visualDesc": "中心较浅的红色环状病变",
+      "symptoms": [
+        "环状斑块",
+        "瘙痒",
+        "脱屑",
+        "发红"
+      ],
+      "causes": [
+        "真菌感染",
+        "直接接触",
+        "共用物品",
+        "潮湿环境"
+      ],
+      "lookFor": [
+        "环形外观",
+        "鳞屑边缘",
+        "中心较浅",
+        "瘙痒"
+      ]
+    },
+    "rosacea": {
+      "name": "酒糟鼻",
+      "description": "一种导致面部持续发红的慢性疾病。",
+      "visualLabel": "面部发红",
+      "visualDesc": "脸颊和鼻子持续发红",
+      "symptoms": [
+        "面部发红",
+        "可见血管",
+        "小肿块",
+        "眼部刺激"
+      ],
+      "causes": [
+        "遗传",
+        "环境因素",
+        "日晒",
+        "辛辣食物"
+      ],
+      "lookFor": [
+        "红脸颊",
+        "小肿块",
+        "频繁潮红",
+        "可见血管"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "脂溢性角化病",
+      "description": "一种常见于老年人的良性皮肤增生。",
+      "visualLabel": "蜡样斑块",
+      "visualDesc": "粗糙、蜡样，看起来像粘附在皮肤上的病变",
+      "symptoms": [
+        "蜡样表面",
+        "颜色变化",
+        "瘙痒",
+        "癢"
+      ],
+      "causes": [
+        "衰老",
+        "日晒",
+        "遗传"
+      ],
+      "lookFor": [
+        "蜡样质地",
+        "棕色",
+        "边界清晰",
+        "粘附样外观"
+      ]
+    },
+    "vitiligo": {
+      "name": "白癜风",
+      "description": "一种导致皮肤失去色素的疾病。",
+      "visualLabel": "白色斑块",
+      "visualDesc": "边界清晰的白色区域",
+      "symptoms": [
+        "白色斑块",
+        "头发变白",
+        "色素丧失",
+        "对称贴片"
+      ],
+      "causes": [
+        "自身免疫疾病",
+        "遗传",
+        "神经损伤",
+        "氧化应激"
+      ],
+      "lookFor": [
+        "白色区域",
+        "边界清晰",
+        "对称分布",
+        "白发"
+      ]
+    },
+    "warts": {
+      "name": "疣",
+      "description": "由人乳头瘤病毒（HPV）引起的小型皮肤增生。",
+      "visualLabel": "粗糙小肿块",
+      "visualDesc": "类似花椰菜的小型皮肤增生",
+      "symptoms": [
+        "肿块",
+        "黑点",
+        "疼痛",
+        "脚上可能疼痛"
+      ],
+      "causes": [
+        "HPV病毒",
+        "直接接触",
+        "皮肤损伤",
+        "免疫力低下"
+      ],
+      "lookFor": [
+        "粗糙表面",
+        "肤色",
+        "黑点",
+        "手和脚"
+      ]
+    },
+    "athleteFoot": {
+  "name": "足癣",
+  "description": "足癣是一种真菌感染，通常从脚趾之间开始，常见于脚部长时间潮湿或容易出汗的人群。",
+  "visualLabel": "脚趾间瘙痒和脱皮",
+  "visualDesc": "脚趾之间或脚底出现发红、瘙痒和脱皮。",
+  "symptoms": [
+    "瘙痒",
+    "灼热感",
+    "皮肤脱皮",
+    "有时会出现水疱"
+  ],
+  "causes": [
+    "真菌感染（足癣）",
+    "脚部长时间潮湿或出汗",
+    "赤脚走在公共浴室或游泳池",
+    "穿过紧的鞋子"
+  ],
+  "lookFor": [
+    "脚趾间脱皮",
+    "发红和裂纹",
+    "瘙痒或灼热感",
+    "异味"
+  ]
+},
+
+"cellulitis": {
+  "name": "蜂窝织炎",
+  "description": "蜂窝织炎是一种影响皮肤深层组织的细菌感染，可迅速扩散，需要及时治疗。",
+  "visualLabel": "扩散性红肿皮肤",
+  "visualDesc": "皮肤出现迅速扩散的红肿、发热区域。",
+  "symptoms": [
+    "皮肤红肿疼痛",
+    "患处发热",
+    "发烧或寒战",
+    "水疱"
+  ],
+  "causes": [
+    "细菌通过伤口进入皮肤",
+    "割伤或昆虫叮咬",
+    "免疫力低下",
+    "慢性皮肤疾病"
+  ],
+  "lookFor": [
+    "红肿范围扩大",
+    "肿胀和发热",
+    "皮肤紧绷",
+    "发烧"
+  ]
+},
+
+"impetigo": {
+  "name": "脓疱病",
+  "description": "脓疱病是一种高度传染性的细菌性皮肤感染，儿童中较为常见，可形成蜂蜜色痂皮。",
+  "visualLabel": "蜂蜜色痂皮",
+  "visualDesc": "鼻子和嘴巴周围出现红色溃疡，随后形成黄褐色痂皮。",
+  "symptoms": [
+    "容易破裂的红色溃疡",
+    "蜂蜜色痂皮",
+    "瘙痒",
+    "淋巴结肿大"
+  ],
+  "causes": [
+    "葡萄球菌或链球菌感染",
+    "皮肤直接接触传播",
+    "皮肤损伤",
+    "学校等人员密集场所"
+  ],
+  "lookFor": [
+    "蜂蜜色痂皮",
+    "鼻子或嘴巴周围的红色溃疡",
+    "瘙痒",
+    "充满液体的水疱"
+  ]
+},
+
+"shingles": {
+  "name": "带状疱疹",
+  "description": "带状疱疹是由水痘-带状疱疹病毒重新激活引起的疼痛性皮肤病，通常只出现在身体一侧。",
+  "visualLabel": "疼痛性成簇水疱",
+  "visualDesc": "身体一侧出现成簇、充满液体的水疱。",
+  "symptoms": [
+    "剧烈疼痛",
+    "灼热感",
+    "充满液体的水疱",
+    "发烧"
+  ],
+  "causes": [
+    "水痘-带状疱疹病毒重新激活",
+    "年龄增长",
+    "免疫力下降",
+    "压力过大"
+  ],
+  "lookFor": [
+    "身体一侧出现皮疹",
+    "成簇水疱",
+    "疼痛",
+    "发红"
+  ]
+},
+
+"urticariaHives": {
+  "name": "荨麻疹",
+  "description": "荨麻疹是一种常见的皮肤反应，会突然出现瘙痒性风团，通常由过敏或其他诱因引起。",
+  "visualLabel": "瘙痒性风团",
+  "visualDesc": "突然出现大小不一的红色或苍白色隆起斑块。",
+  "symptoms": [
+    "剧烈瘙痒",
+    "隆起的风团",
+    "皮疹反复出现和消失",
+    "有时伴有肿胀"
+  ],
+  "causes": [
+    "过敏反应",
+    "某些药物",
+    "食物过敏",
+    "冷热刺激"
+  ],
+  "lookFor": [
+    "隆起的风团",
+    "剧烈瘙痒",
+    "大小变化的皮疹",
+    "突然出现又消失"
+  ]
+}
+  },
+  "precautions": {
+    "title": "预防措施和皮肤护理",
+    "subtitle": "遵守这些准则，以保持皮肤健康并防止皮肤疾病。",
+    "warningTitle": "重要警告",
+    "warningBody": "如果您发现任何快速变化的皮肤病变，请立即咨询认证皮肤科医生。早期检测可挽救生命。",
+    "sun": {
+      "title": "防晒",
+      "tips": [
+        "每天使用SPF 30 +防晒霜",
+        "每2小时在户外重新涂抹一次",
+        "穿戴防护服和帽子",
+        "避免日照高峰时段（上午10点至下午4点）"
+      ]
+    },
+    "checks": {
+      "title": "定期皮肤检查",
+      "tips": [
+        "每月检查皮肤",
+        "寻找新的或更换的痣",
+        "对痣使用ABCDE规则",
+        "每年去看皮肤科医生"
+      ]
+    },
+    "hydration": {
+      "title": "皮肤水润",
+      "tips": [
+        "洗澡后每天保湿",
+        "至少喝8杯水",
+        "避免热水淋浴—使用温水",
+        "使用无香精产品"
+      ]
+    },
+    "diet": {
+      "title": "健康饮食",
+      "tips": [
+        "吃富含抗氧化剂的食物",
+        "Omega-3脂肪酸",
+        "减少加工糖的摄入量",
+        "吃绿叶蔬菜和浆果"
+      ]
+    },
+    "habits": {
+      "title": "避免有害习惯",
+      "tips": [
+        "避免吸烟—损害皮肤",
+        "限制饮酒量。",
+        "不要使用人工晒肤床。",
+        "避免采摘或刮伤皮肤"
+      ]
+    },
+    "doctor": {
+      "title": "什么时候需要就医",
+      "tips": [
+        "痣的大小或颜色变化",
+        "无法愈合的疼痛",
+        "瘙痒或出血病灶",
+        "任何令您担忧的皮肤变化"
+      ]
+    }
+  },
+  "profile": {
+    "title": "我的个人资料",
+    "displayName": "显示名称",
+    "email": "电子邮箱地址",
+    "saving": "正在保存…",
+    "save": "保存修改",
+    "updateSuccess": "个人资料更新成功",
+    "updateError": "更新个人资料失败。",
+    "historyTitle": "预测历史记录",
+    "historyNote": "连接后端后，完整历史记录将可用"
+  },
+  "appointment": {
+  "title": "查找皮肤科医生",
+  "subtitle": "使用您的位置或 GPS 进行搜索",
+  "useGps": "使用 GPS",
+  "manualPlaceholder": "输入您的地区、城市或邮政编码",
+  "search": "搜索",
+  "detectedLocation": "当前位置",
+  "verifyOnMap": "在地图上查看",
+  "startPrompt": "请输入您的城市或地区，或使用 GPS 查找附近的皮肤科医生。",
+  "locating": "正在获取位置...",
+  "searching": "正在搜索附近的皮肤科医生...",
+  "empty": "附近未找到皮肤科医生。",
+  "dermBadge": "皮肤科医生",
+  "noAddress": "地址不可用",
+  "away": "距离",
+  "directions": "导航",
+  "call": "拨打电话",
+  "disclaimer": "这些列表来自 OpenStreetMap。前往之前请核实相关信息。"
+}
+}

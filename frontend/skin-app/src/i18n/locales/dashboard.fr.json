@@ -1,0 +1,588 @@
+{
+  "language": "Langue",
+  "user": "Utilisateur",
+  "adminBadge": "Admin",
+  "logout": "Déconnexion",
+  "welcomeBack": "Heureux de vous revoir, {{name}}",
+  "nav": {
+    "scan": "Numériser et prédire",
+    "disease": "Infos sur la maladie",
+    "precautions": "Mesures de précaution",
+    "profile": "Mon profil",
+    "admin": "BACKOFFICE",
+    "appointment": "Trouver un dermatologue"
+  },
+  "adminPanel": {
+    "title": "BACKOFFICE",
+    "description": "Accédez au tableau de bord d'administration complet pour gérer les utilisateurs, afficher les analyses et les prévisions.",
+    "open": "INTERFACE D'ADMINISTRATION"
+  },
+  "severity": {
+    "low": "Faible",
+    "medium": "Moyen",
+    "high": "Elevé",
+    "risk": "{{level}} Risque",
+    "benign": "Généralement bénin",
+    "monitor": "surveiller de près / étroitement",
+    "urgent": "Consulter un médecin"
+  },
+  "scan": {
+  "title": "Analyse d'image de la peau",
+  "subtitle": "Téléversez une image ou utilisez votre webcam en direct pour une analyse instantanée de la peau par IA.",
+  "upload": "Téléverser",
+  "webcam": "Webcam",
+  "dropHere": "Déposez ici !",
+  "dragDrop": "Glissez-déposez votre image ici",
+  "browse": "Ou cliquez pour sélectionner un fichier",
+  "chooseImage": "Choisir une image",
+  "fileTypes": "JPG, PNG, WebP pris en charge — 10 Mo maximum",
+  "ready": "Prêt pour l'analyse",
+  "chooseDifferent": "Choisir une autre image",
+  "analyzing": "Analyse en cours...",
+  "analyze": "Analyser l'image",
+  "cameraDenied": "Accès à la caméra refusé",
+  "cameraHint": "Veuillez autoriser l'accès à la caméra dans les paramètres de votre navigateur, puis réessayez.",
+  "tryAgain": "Réessayer",
+  "startingCamera": "Démarrage de la caméra...",
+  "live": "En direct",
+  "flip": "Retourner",
+  "tip": "Pour une meilleure précision, gardez la zone de peau concernée dans le cadre et assurez-vous d'avoir un bon éclairage.",
+  "capture": "Capturer l'image",
+  "captured": "Image capturée",
+  "retake": "Reprendre",
+  "loadingTitle": "Analyse des motifs de la peau...",
+  "loadingSubtitle": "Le modèle CNN traite votre image. Veuillez patienter.",
+  "loadingModel": "Exécution du modèle d'apprentissage profond...",
+  "associatedSymptoms": "Symptômes associés",
+  "developmentNote": "Mode démonstration",
+  "fusionTitle": "La fusion des décisions basée sur les symptômes est en cours de développement",
+  "fusionDesc": "Actuellement, la prédiction est basée uniquement sur l'image téléchargée. Les futures mises à jour combineront ces symptômes avec l'analyse de l'image afin d'améliorer la précision.",
+  "durationLabel": "Durée des symptômes",
+  "symptoms": {
+    "itching": "Démangeaisons",
+    "pain": "Douleur",
+    "fever": "Fièvre",
+    "bleeding": "Saignement",
+    "burningSensation": "Sensation de brûlure",
+    "scaling": "Desquamation de la peau",
+    "growthInSize": "Augmentation de la taille"
+  },
+  "duration": {
+    "less-than-week": "Moins d'une semaine",
+    "weeks": "Semaines",
+    "months": "Mois"
+  },
+  "awaitingImages": "En attente d'images de la peau",
+  "awaitingSubtitle": "Téléversez des images ou prenez une photo à gauche. L'analyse par IA apparaîtra ici.",
+  "tipTitle": "Conseils pour une meilleure analyse",
+  "tip1": "Assurez-vous que la zone affectée est bien éclairée.",
+  "tip2": "Téléversez plusieurs images de la même zone de peau sous différents angles ou distances.",
+  "tip3": "Placez clairement la lésion ou la zone affectée au centre du cadre.",
+  "spotsList": "Images des lésions téléversées",
+  "clearAll": "Tout supprimer",
+  "analyzeMultiple": "Analyser les lésions prêtes ({{count}})",
+  "consensusReport": "Résultat combiné",
+  "individualSpots": "Lésions individuelles",
+  "consensusActive": "Résumé combiné de plusieurs images",
+  "consensusDesc": "Préparé en combinant les résultats de {{count}} images de lésions.",
+  "spotDetails": "Détails de la lésion",
+  "webcamSnap": "Capture webcam",
+  "uploadedImage": "Image téléversée",
+  "status": "État de l'analyse",
+  "readyToScan": "Prêt à analyser",
+  "analyzingLabel": "Analyse par IA en cours...",
+  "analyzed": "Analyse réussie",
+  "failed": "Échec de l'analyse",
+  "readyExpl": "Cette lésion n'a pas encore été analysée.",
+  "runScan": "Lancer l'analyse IA",
+  "defaultError": "La prédiction a échoué. Veuillez réessayer.",
+  "retry": "Analyser à nouveau",
+  "predictionSummary": "Résumé de la prédiction",
+  "conditionLabel": "État",
+  "confidenceLabel": "Niveau de confiance",
+  "riskLevelLabel": "Niveau de risque"
+
+  },
+  "prediction": {
+    "title": "Résultat de la Prédiction IA",
+    "condition": "AFFECTION DÉTECTÉE",
+    "confidence": "SCORE DE CONFIANCE",
+    "severity": "NIVEAU DE GRAVITÉ",
+    "probabilities": "Probabilités de Prédiction",
+    "gradcamTitle": "Visualisation Grad-CAM",
+    "original": "IMAGE ORIGINALE",
+    "heatmap": "CARTE THERMIQUE IA",
+    "heatmapPending": "La carte thermique apparaîtra ici une fois le backend Flask connecté",
+    "disclaimer": "Ceci est une prédiction IA à titre informatif uniquement. Veuillez consulter un dermatologue certifié pour un diagnostic approprié.",
+    "others": "Autres",
+    "downloadReport": "Télécharger le Rapport",
+    "generatingReport": "Génération en cours..."
+  
+  },
+  "diseaseInfo": {
+    "title": "Sensibilisation à la maladie",
+    "subtitle": "Découvrez les 10 maladies de la peau détectées par DermaLens. Cliquez sur n'importe quelle carte pour voir tous les détails.",
+    "less": "Moins",
+    "medicalRef": "Référent·e médical",
+    "lookFor": "Quoi rechercher",
+    "symptoms": "Symptômes ",
+    "causes": "Causes",
+    "highWarning": "Risque élevé — consultez immédiatement un dermatologue si vous remarquez ces symptômes.",
+    "mediumWarning": "Risque moyen — surveillez régulièrement et consultez un médecin si les symptômes s'aggravent.",
+    "disclaimer": "Les images présentées sont des illustrations de référence médicale. Consultez toujours un dermatologue certifié pour un diagnostic approprié.",
+    "more": "Plus"
+  },
+  "diseases": {
+    "acne": {
+      "name": "Acné",
+      "description": "Une affection cutanée courante causée par l'obstruction des pores par le sébum et les cellules mortes.",
+      "visualLabel": "Boutons rouges",
+      "visualDesc": "Boutons rouges apparaissant sur le visage, la poitrine et le dos",
+      "symptoms": [
+        "Boutons",
+        "Points noirs",
+        "Peau grasse",
+        "Cicatrices"
+      ],
+      "causes": [
+        "Excès de sébum",
+        "Bactéries",
+        "Changements hormonaux",
+        "Pores obstrués"
+      ],
+      "lookFor": [
+        "Boutons rouges",
+        "Points blancs",
+        "Pustules",
+        "Visage et dos"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "Kératose actinique",
+      "description": "Plaque rugueuse et squameuse causée par des années d'exposition au soleil. Considérée comme précancéreuse.",
+      "visualLabel": "Plaque rouge squameuse",
+      "visualDesc": "Zone sèche, rugueuse et squameuse, généralement rouge, rose ou brune",
+      "symptoms": [
+        "Plaque rugueuse",
+        "Surface squameuse",
+        "Démangeaisons",
+        "Sensation de brûlure"
+      ],
+      "causes": [
+        "Exposition aux UV",
+        "Cabines de bronzage",
+        "Immunité affaiblie"
+      ],
+      "lookFor": [
+        "Texture rugueuse",
+        "Couleur rouge ou rose",
+        "Surface squameuse",
+        "Légèrement surélevée"
+      ]
+    },
+    "basalCell": {
+      "name": "Carcinome basocellulaire",
+      "description": "Le cancer de la peau le plus fréquent. Il se propage rarement mais nécessite un traitement.",
+      "visualLabel": "Bosse rosée nacrée",
+      "visualDesc": "Bosse brillante et translucide avec un aspect nacré",
+      "symptoms": [
+        "Bosse nacrée",
+        "Lésion plate",
+        "Saignement",
+        "Croissance rosée"
+      ],
+      "causes": [
+        "Exposition prolongée au soleil",
+        "Radiothérapie",
+        "Peau claire"
+      ],
+      "lookFor": [
+        "Surface nacrée",
+        "Couleur rose",
+        "Vaisseaux visibles",
+        "Croissance lente"
+      ]
+    },
+    "eczema": {
+      "name": "Eczéma",
+      "description": "Une maladie chronique de la peau provoquant des démangeaisons et une inflammation.",
+      "visualLabel": "Plaques rouges et irritées",
+      "visualDesc": "Peau sèche, rouge et enflammée",
+      "symptoms": [
+        "Démangeaisons",
+        "Rougeur",
+        "Peau sèche",
+        "Desquamation"
+      ],
+      "causes": [
+        "Système immunitaire",
+        "Génétique",
+        "Environnement",
+        "Allergies"
+      ],
+      "lookFor": [
+        "Plaques rouges",
+        "Peau sèche",
+        "Peau épaissie",
+        "Plis cutanés"
+      ]
+    },
+    "psoriasis": {
+      "name": "Psoriasis",
+      "description": "Une maladie auto-immune entraînant une croissance rapide des cellules cutanées.",
+      "visualLabel": "Plaques squameuses blanches",
+      "visualDesc": "Plaques rouges recouvertes de squames blanches",
+      "symptoms": [
+        "Plaques rouges",
+        "Démangeaisons",
+        "Peau sèche",
+        "Modifications des ongles"
+      ],
+      "causes": [
+        "Maladie auto-immune",
+        "Génétique",
+        "Stress",
+        "Infections"
+      ],
+      "lookFor": [
+        "Squames argentées",
+        "Fond rouge",
+        "Bordures nettes",
+        "Genoux et coudes"
+      ]
+    },
+    "ringworm": {
+      "name": "Teigne",
+      "description": "Une infection fongique de la peau.",
+      "visualLabel": "Plaque rouge circulaire",
+      "visualDesc": "Anneau rouge avec un centre plus clair",
+      "symptoms": [
+        "Plaques circulaires",
+        "Démangeaisons",
+        "Desquamation",
+        "Rougeur"
+      ],
+      "causes": [
+        "Infection fongique",
+        "Contact direct",
+        "Objets partagés",
+        "Humidité"
+      ],
+      "lookFor": [
+        "Forme circulaire",
+        "Bords squameux",
+        "Centre clair",
+        "Démangeaisons"
+      ]
+    },
+    "rosacea": {
+      "name": "Rosacée",
+      "description": "Une maladie chronique provoquant des rougeurs du visage.",
+      "visualLabel": "Rougeur faciale",
+      "visualDesc": "Rougeur persistante des joues et du nez",
+      "symptoms": [
+        "Rougeur du visage",
+        "Vaisseaux visibles",
+        "Petites bosses",
+        "Irritation des yeux"
+      ],
+      "causes": [
+        "Génétique",
+        "Environnement",
+        "Exposition solaire",
+        "Aliments épicés"
+      ],
+      "lookFor": [
+        "Joues rouges",
+        "Petites bosses",
+        "Rougeurs fréquentes",
+        "Vaisseaux visibles"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "Kératose séborrhéique",
+      "description": "Une excroissance cutanée bénigne fréquente avec l'âge.",
+      "visualLabel": "Plaque cireuse",
+      "visualDesc": "Lésion rugueuse et cireuse semblant collée à la peau",
+      "symptoms": [
+        "Surface cireuse",
+        "Variation de couleur",
+        "Démangeaisons",
+        "Démangeaisons"
+      ],
+      "causes": [
+        "Vieillissement",
+        "Exposition solaire",
+        "Génétique"
+      ],
+      "lookFor": [
+        "Texture cireuse",
+        "Couleur brune",
+        "Bord net",
+        "Aspect collé"
+      ]
+    },
+    "vitiligo": {
+      "name": "Vitiligo",
+      "description": "Une maladie entraînant une perte de pigmentation de la peau.",
+      "visualLabel": "Taches blanches",
+      "visualDesc": "Zones blanches bien délimitées",
+      "symptoms": [
+        "Taches blanches",
+        "Blanchiment des cheveux",
+        "Perte de pigmentation",
+        "Patchs symétriques"
+      ],
+      "causes": [
+        "Maladie auto-immune",
+        "Génétique",
+        "Atteinte nerveuse",
+        "Stress oxydant"
+      ],
+      "lookFor": [
+        "Zones blanches",
+        "Bordures nettes",
+        "Symétrie",
+        "Cheveux blancs"
+      ]
+    },
+    "warts": {
+      "name": "Verrues",
+      "description": "Petites excroissances cutanées causées par le virus HPV.",
+      "visualLabel": "Petites bosses rugueuses",
+      "visualDesc": "Petites excroissances ressemblant à un chou-fleur",
+      "symptoms": [
+        "Bosses",
+        "Points noirs",
+        "Douleur",
+        "Peut être douloureux aux pieds"
+      ],
+      "causes": [
+        "Virus HPV",
+        "Contact direct",
+        "Blessures",
+        "Faible immunité"
+      ],
+      "lookFor": [
+        "Surface rugueuse",
+        "Couleur de peau",
+        "Points noirs",
+        "Mains et pieds"
+      ]
+    },
+    "athleteFoot": {
+  "name": "Pied d'athlète",
+  "description": "Il s'agit d'une infection fongique qui commence généralement entre les orteils. Elle est fréquente chez les personnes dont les pieds restent humides ou transpirent beaucoup.",
+  "visualLabel": "Démangeaisons et peau qui pèle entre les orteils",
+  "visualDesc": "Peau rouge, squameuse et irritée entre les orteils ou sur la plante du pied.",
+  "symptoms": [
+    "Démangeaisons",
+    "Sensation de brûlure",
+    "Peau qui pèle",
+    "Parfois des cloques"
+  ],
+  "causes": [
+    "Infection fongique (Tinea pedis)",
+    "Pieds humides ou en sueur",
+    "Marcher pieds nus dans les douches ou piscines publiques",
+    "Port de chaussures serrées"
+  ],
+  "lookFor": [
+    "Peau qui pèle entre les orteils",
+    "Rougeur et fissures",
+    "Démangeaisons ou brûlure",
+    "Mauvaise odeur"
+  ]
+},
+
+"cellulitis": {
+  "name": "Cellulite infectieuse",
+  "description": "Il s'agit d'une infection bactérienne des couches profondes de la peau. Elle peut se propager rapidement et nécessite un traitement médical immédiat.",
+  "visualLabel": "Peau rouge et enflée qui s'étend",
+  "visualDesc": "Zone rouge, chaude et enflée qui s'étend rapidement.",
+  "symptoms": [
+    "Rougeur et douleur",
+    "Chaleur de la zone touchée",
+    "Fièvre ou frissons",
+    "Cloques"
+  ],
+  "causes": [
+    "Entrée de bactéries par une plaie",
+    "Coupures ou piqûres d'insectes",
+    "Système immunitaire affaibli",
+    "Maladies chroniques de la peau"
+  ],
+  "lookFor": [
+    "Rougeur qui s'étend",
+    "Gonflement et chaleur",
+    "Peau tendue",
+    "Fièvre"
+  ]
+},
+
+"impetigo": {
+  "name": "Impétigo",
+  "description": "L'impétigo est une infection bactérienne très contagieuse, fréquente chez les enfants. Elle provoque des plaies qui forment des croûtes couleur miel.",
+  "visualLabel": "Croûtes couleur miel",
+  "visualDesc": "Plaies rouges autour du nez et de la bouche qui se transforment en croûtes jaune-brun.",
+  "symptoms": [
+    "Plaies rouges qui éclatent facilement",
+    "Croûtes couleur miel",
+    "Démangeaisons",
+    "Ganglions enflés"
+  ],
+  "causes": [
+    "Infection par des bactéries Staphylococcus ou Streptococcus",
+    "Contact direct avec la peau",
+    "Blessures cutanées",
+    "Lieux très fréquentés comme les écoles"
+  ],
+  "lookFor": [
+    "Croûtes couleur miel",
+    "Plaies rouges autour du nez ou de la bouche",
+    "Démangeaisons",
+    "Cloques remplies de liquide"
+  ]
+},
+
+"shingles": {
+  "name": "Zona",
+  "description": "Le zona est une éruption cutanée douloureuse causée par la réactivation du virus de la varicelle. Il apparaît généralement sur un seul côté du corps.",
+  "visualLabel": "Grappe de cloques douloureuses",
+  "visualDesc": "Cloques remplies de liquide apparaissant sur un seul côté du corps.",
+  "symptoms": [
+    "Douleur intense",
+    "Sensation de brûlure",
+    "Cloques remplies de liquide",
+    "Fièvre"
+  ],
+  "causes": [
+    "Réactivation du virus varicelle-zona",
+    "Vieillissement",
+    "Système immunitaire affaibli",
+    "Stress"
+  ],
+  "lookFor": [
+    "Éruption d'un seul côté du corps",
+    "Cloques remplies de liquide",
+    "Douleur",
+    "Rougeur"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Urticaire",
+  "description": "L'urticaire est une réaction cutanée provoquant des plaques rouges, surélevées et très prurigineuses, souvent dues à une allergie.",
+  "visualLabel": "Plaques rouges et démangeaisons",
+  "visualDesc": "Plaques rouges ou pâles, surélevées, de tailles variables apparaissant soudainement.",
+  "symptoms": [
+    "Démangeaisons intenses",
+    "Plaques surélevées",
+    "Éruptions qui apparaissent et disparaissent",
+    "Parfois un gonflement"
+  ],
+  "causes": [
+    "Réaction allergique",
+    "Certains médicaments",
+    "Allergies alimentaires",
+    "Exposition au chaud ou au froid"
+  ],
+  "lookFor": [
+    "Plaques surélevées",
+    "Démangeaisons importantes",
+    "Plaques changeant de taille",
+    "Apparition et disparition rapides"
+  ]
+}
+  },
+  "precautions": {
+    "title": "Précautions et soins de la peau",
+    "subtitle": "Suivez ces directives pour maintenir une peau saine et prévenir les maladies de la peau.",
+    "warningTitle": "Avertissement important",
+    "warningBody": "Si vous remarquez une lésion cutanée évoluant rapidement, consultez immédiatement un dermatologue certifié. La détection précoce sauve des vies.",
+    "sun": {
+      "title": "Protections solaires",
+      "tips": [
+        "Appliquer un écran solaire SPF 30+ par jour",
+        "Renouvelez toutes les 2h",
+        "Porter des vêtements et des chapeaux de protection",
+        "Évitez les heures de pointe du soleil (10h-16h)"
+      ]
+    },
+    "checks": {
+      "title": "Contrôles cutanés réguliers",
+      "tips": [
+        "Vérifiez votre peau tous les mois",
+        "Recherchez des taupes nouvelles ou changeantes",
+        "Utilisez la règle ABCDE pour les taupes",
+        "Consulter un dermatologue chaque année"
+      ]
+    },
+    "hydration": {
+      "title": "Hydratation de la peau",
+      "tips": [
+        "Hydrater tous les jours après le bain",
+        "Buvez au moins 8 verres d'eau",
+        "Évitez les douches chaudes — utilisez de l'eau chaude",
+        "Utilisez des produits sans parfum"
+      ]
+    },
+    "diet": {
+      "title": "Un régime sain",
+      "tips": [
+        "Mangez des aliments riches en antioxydants",
+        "Acides gras Oméga-3 ",
+        "Réduire la consommation de sucre transformé",
+        "Mangez des légumes-feuilles et des baies"
+      ]
+    },
+    "habits": {
+      "title": "Évitez les habitudes nocives",
+      "tips": [
+        "Éviter de fumer — endommage la peau",
+        "limitez votre consommation d'alcool;",
+        "N'utilisez pas de lits de bronzage",
+        "Évitez de cueillir ou de gratter la peau"
+      ]
+    },
+    "doctor": {
+      "title": "Quand consulter un médecin ?",
+      "tips": [
+        "Changements de taille ou de couleur de la taupe",
+        "Une plaie qui ne guérit pas",
+        "Démangeaisons ou lésions hémorragiques",
+        "Tout changement de peau qui vous inquiète"
+      ]
+    }
+  },
+  "profile": {
+    "title": "Mon profil",
+    "displayName": "Nom à afficher",
+    "email": "Adresse e-mail",
+    "saving": "Enregistrement en cours...",
+    "save": "Enregistrer les modifications",
+    "updateSuccess": "Profil mis à jour avec succès!",
+    "updateError": "La mise à jour du profil a échoué",
+    "historyTitle": "Historique des prédictions",
+    "historyNote": "L'historique complet sera disponible une fois le backend connecté"
+  },
+  "appointment": {
+  "title": "Trouver un dermatologue",
+  "subtitle": "Recherchez en utilisant votre position ou le GPS",
+  "useGps": "Utiliser le GPS",
+  "manualPlaceholder": "Saisissez votre quartier, ville ou code postal",
+  "search": "Rechercher",
+  "detectedLocation": "Emplacement",
+  "verifyOnMap": "Voir sur la carte",
+  "startPrompt": "Saisissez votre ville ou votre quartier, ou utilisez le GPS pour trouver un dermatologue à proximité.",
+  "locating": "Localisation en cours...",
+  "searching": "Recherche de dermatologues à proximité...",
+  "empty": "Aucun dermatologue trouvé à proximité.",
+  "dermBadge": "Dermatologue",
+  "noAddress": "Adresse non disponible",
+  "away": "Distance",
+  "directions": "Itinéraire",
+  "call": "Appeler",
+  "disclaimer": "Ces informations proviennent d'OpenStreetMap. Veuillez les vérifier avant de vous déplacer."
+}
+}

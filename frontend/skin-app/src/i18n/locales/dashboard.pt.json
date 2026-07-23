@@ -1,0 +1,588 @@
+{
+  "language": "Idioma",
+  "user": "Usuário",
+  "adminBadge": "Admin",
+  "logout": "Sair",
+  "welcomeBack": "Bem-vindo de volta, {{name}}",
+  "nav": {
+    "scan": "Escanear e Prever",
+    "disease": "Informações sobre Doenças",
+    "precautions": "Precauções",
+    "profile": "Meu Perfil",
+    "admin": "Painel do Admin",
+    "appointment": "Encontrar Dermatologista"
+  },
+  "adminPanel": {
+    "title": "Painel do Admin",
+    "description": "Acesse o painel completo para gerenciar usuários, visualizar análises e previsões.",
+    "open": "Abrir Painel do Admin"
+  },
+  "severity": {
+    "low": "Baixo",
+    "medium": "Médio",
+    "high": "Alto",
+    "risk": "Risco {{level}}",
+    "benign": "Geralmente benigno",
+    "monitor": "Monitorar de perto",
+    "urgent": "Consulte um médico em breve"
+  },
+  "scan": {
+  "title": "Análise de Imagem da Pele",
+  "subtitle": "Envie uma imagem ou use sua webcam ao vivo para uma análise instantânea da pele com IA.",
+  "upload": "Enviar",
+  "webcam": "Webcam",
+  "dropHere": "Solte aqui!",
+  "dragDrop": "Arraste e solte sua imagem aqui",
+  "browse": "Ou clique para selecionar um arquivo",
+  "chooseImage": "Escolher imagem",
+  "fileTypes": "JPG, PNG, WebP suportados — Máximo de 10 MB",
+  "ready": "Pronto para análise",
+  "chooseDifferent": "Escolher outra imagem",
+  "analyzing": "Analisando...",
+  "analyze": "Analisar imagem",
+  "cameraDenied": "Acesso à câmera negado",
+  "cameraHint": "Permita o acesso à câmera nas configurações do navegador e tente novamente.",
+  "tryAgain": "Tentar novamente",
+  "startingCamera": "Iniciando a câmera...",
+  "live": "Ao vivo",
+  "flip": "Virar",
+  "tip": "Para obter maior precisão, mantenha a área afetada da pele dentro do enquadramento e garanta uma boa iluminação.",
+  "capture": "Capturar imagem",
+  "captured": "Imagem capturada",
+  "retake": "Capturar novamente",
+  "loadingTitle": "Analisando os padrões da pele...",
+  "loadingSubtitle": "O modelo CNN está processando sua imagem. Aguarde.",
+  "loadingModel": "Executando o modelo de aprendizado profundo...",
+  "associatedSymptoms": "Sintomas associados",
+  "developmentNote": "Modo de demonstração",
+  "fusionTitle": "A integração de decisões baseada em sintomas ainda está em desenvolvimento",
+  "fusionDesc": "Atualmente, a previsão é baseada apenas na imagem enviada. Em futuras atualizações, esses sintomas serão combinados com a análise da imagem para melhorar a precisão.",
+  "durationLabel": "Duração dos sintomas",
+  "symptoms": {
+    "itching": "Coceira",
+    "pain": "Dor",
+    "fever": "Febre",
+    "bleeding": "Sangramento",
+    "burningSensation": "Sensação de queimação",
+    "scaling": "Descamação da pele",
+    "growthInSize": "Aumento de tamanho"
+  },
+  "duration": {
+    "less-than-week": "Menos de uma semana",
+    "weeks": "Semanas",
+    "months": "Meses"
+  },
+  "awaitingImages": "Aguardando imagens da pele",
+  "awaitingSubtitle": "Envie imagens ou tire uma foto no lado esquerdo. A análise da IA aparecerá aqui.",
+  "tipTitle": "Dicas para uma melhor análise",
+  "tip1": "Certifique-se de que a área afetada esteja bem iluminada.",
+  "tip2": "Envie várias imagens da mesma área da pele em diferentes ângulos ou distâncias.",
+  "tip3": "Posicione claramente a lesão ou a área afetada no centro da imagem.",
+  "spotsList": "Imagens das lesões enviadas",
+  "clearAll": "Limpar tudo",
+  "analyzeMultiple": "Analisar lesões prontas ({{count}})",
+  "consensusReport": "Resultado combinado",
+  "individualSpots": "Lesões individuais",
+  "consensusActive": "Resumo combinado de várias imagens",
+  "consensusDesc": "Preparado combinando os resultados de {{count}} imagens de lesões.",
+  "spotDetails": "Detalhes da lesão",
+  "webcamSnap": "Captura da webcam",
+  "uploadedImage": "Imagem enviada",
+  "status": "Status da análise",
+  "readyToScan": "Pronto para escanear",
+  "analyzingLabel": "Análise por IA em andamento...",
+  "analyzed": "Análise concluída com sucesso",
+  "failed": "Falha na análise",
+  "readyExpl": "Esta lesão ainda não foi analisada.",
+  "runScan": "Iniciar análise por IA",
+  "defaultError": "A previsão falhou. Tente novamente.",
+  "retry": "Analisar novamente",
+  "predictionSummary": "Resumo da previsão",
+  "conditionLabel": "Condição",
+  "confidenceLabel": "Nível de confiança",
+  "riskLevelLabel": "Nível de risco"
+},
+
+ "prediction": {
+    "title": "Resultado da Previsão de IA",
+    "condition": "CONDIÇÃO DETECTADA",
+    "confidence": "PONTUAÇÃO DE CONFIANÇA",
+    "severity": "NÍVEL DE GRAVIDADE",
+    "probabilities": "Probabilidades de Previsão",
+    "gradcamTitle": "Visualização Grad-CAM",
+    "original": "IMAGEM ORIGINAL",
+    "heatmap": "MAPA DE CALOR DE FOCO DA IA",
+    "heatmapPending": "O mapa de calor aparecerá aqui assim que o backend Flask estiver conectado",
+    "disclaimer": "Esta é uma previsão de IA apenas para fins informativos. Consulte um dermatologista certificado para um diagnóstico adequado.",
+    "others": "Outros",
+    "downloadReport": "Baixar Relatório",
+    "generatingReport": "Gerando..."
+  
+  },
+  "diseaseInfo": {
+    "title": "Informações sobre Doenças",
+    "subtitle": "Aprenda sobre as 10 condições de pele detectadas pelo DermaLens. Clique em qualquer cartão para ver detalhes completos.",
+    "more": "Mais",
+    "less": "Menos",
+    "medicalRef": "Referência Médica",
+    "lookFor": "O que observar",
+    "symptoms": "Sintomas",
+    "causes": "Causas",
+    "highWarning": "Alto risco — consulte um dermatologista imediatamente se notar esses sintomas.",
+    "mediumWarning": "Médio risco — monitore regularmente e procure um médico se piorar.",
+    "disclaimer": "As imagens são apenas ilustrativas. Sempre consulte um dermatologista."
+  },
+  "diseases": {
+    "acne": {
+      "name": "Acne",
+      "description": "Uma condição comum em que os folículos pilosos ficam obstruídos por óleo e células mortas, causando espinhas e cravos.",
+      "visualLabel": "Espinhas vermelhas e cravos",
+      "visualDesc": "Lesões inflamadas vermelhas ou cravos no rosto, peito e costas",
+      "symptoms": [
+        "Espinhas e pústulas",
+        "Cravos pretos ou brancos",
+        "Pele oleosa",
+        "Cicatrizes"
+      ],
+      "causes": [
+        "Excesso de sebo",
+        "Infecção bacteriana",
+        "Mudanças hormonais",
+        "Poros obstruídos"
+      ],
+      "lookFor": [
+        "Caros vermelhos inflamados",
+        "Cravos",
+        "Pústulas com pus",
+        "Principalmente no rosto e costas"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "Ceratose Actínica",
+      "description": "Mancha áspera e escamosa causada por exposição solar prolongada. Considerada pré-cancerosa.",
+      "visualLabel": "Mancha vermelha áspera",
+      "visualDesc": "Pele seca, áspera e escamosa — geralmente vermelha ou rosa",
+      "symptoms": [
+        "Mancha escamosa",
+        "Plana ou elevada",
+        "Coceira ou ardor",
+        "Superfície áspera"
+      ],
+      "causes": [
+        "Radiação UV",
+        "Câmaras de bronzeamento",
+        "Imunidade baixa"
+      ],
+      "lookFor": [
+        "Textura escamosa",
+        "Cor rosa/vermelha",
+        "Áspera ao toque",
+        "Plana ou elevada"
+      ]
+    },
+    "basalCell": {
+      "name": "Carcinoma Basocelular",
+      "description": "O tipo mais comum de câncer de pele. Crescimento lento, geralmente parece um nódulo perolado.",
+      "visualLabel": "Nódulo perolado rosado",
+      "visualDesc": "Nódulo brilhante e translúcido com aparência perolada",
+      "symptoms": [
+        "Nódulo perolado",
+        "Ferida que não cicatriza",
+        "Sangramento",
+        "Crescimento rosado"
+      ],
+      "causes": [
+        "Exposição solar crônica",
+        "Radioterapia",
+        "Pele clara"
+      ],
+      "lookFor": [
+        "Superfície perolada",
+        "Cor rosada",
+        "Vasos visíveis",
+        "Crescimento lento"
+      ]
+    },
+    "eczema": {
+      "name": "Eczema",
+      "description": "Doença inflamatória crônica que causa coceira, vermelhidão e pele seca.",
+      "visualLabel": "Manchas vermelhas e irritadas",
+      "visualDesc": "Pele seca, inflamada e com coceira",
+      "symptoms": [
+        "Coceira intensa",
+        "Vermelhidão",
+        "Pele seca",
+        "Rachaduras"
+      ],
+      "causes": [
+        "Genética",
+        "Alergias",
+        "Sistema imunológico",
+        "Fatores ambientais"
+      ],
+      "lookFor": [
+        "Manchas vermelhas",
+        "Pele seca",
+        "Descamação",
+        "Áreas de dobra da pele"
+      ]
+    },
+    "psoriasis": {
+      "name": "Psoríase",
+      "description": "Doença autoimune que causa acúmulo rápido de células da pele.",
+      "visualLabel": "Escamas brancas prateadas",
+      "visualDesc": "Placas vermelhas cobertas por escamas espessas",
+      "symptoms": [
+        "Placas vermelhas",
+        "Descamação",
+        "Coceira",
+        "Unhas espessas"
+      ],
+      "causes": [
+        "Autoimunidade",
+        "Genética",
+        "Estresse",
+        "Infecções"
+      ],
+      "lookFor": [
+        "Escamas prateadas",
+        "Base vermelha",
+        "Bordas definidas",
+        "Cotovelos e joelhos"
+      ]
+    },
+    "ringworm": {
+      "name": "Micose",
+      "description": "Infecção fúngica que forma manchas em formato de anel.",
+      "visualLabel": "Mancha em forma de anel",
+      "visualDesc": "Lesão circular vermelha com centro claro",
+      "symptoms": [
+        "Lesão em anel",
+        "Coceira",
+        "Descamação",
+        "Vermelhidão"
+      ],
+      "causes": [
+        "Fungo (Tinea)",
+        "Contato direto",
+        "Higiene ruim",
+        "Ambiente úmido"
+      ],
+      "lookFor": [
+        "Formato circular",
+        "Borda escamosa",
+        "Centro claro",
+        "Coceira"
+      ]
+    },
+    "rosacea": {
+      "name": "Rosácea",
+      "description": "Condição crônica que causa vermelhidão no rosto.",
+      "visualLabel": "Vermelhidão facial",
+      "visualDesc": "Vermelhidão persistente no nariz e bochechas",
+      "symptoms": [
+        "Vermelhidão facial",
+        "Vasos visíveis",
+        "Inchaço",
+        "Irritação ocular"
+      ],
+      "causes": [
+        "Genética",
+        "Sol",
+        "Alimentos quentes",
+        "Estresse"
+      ],
+      "lookFor": [
+        "Face vermelha",
+        "Vasos aparentes",
+        "Rubor frequente",
+        "Bochechas e nariz"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "Cerato-se Seborreica",
+      "description": "Crescimento benigno que parece grudado na pele.",
+      "visualLabel": "Mancha cerosa",
+      "visualDesc": "Lesão áspera e cerosa na pele",
+      "symptoms": [
+        "Mancha cerosa",
+        "Coceira",
+        "Cor variável",
+        "Aspecto grudado"
+      ],
+      "causes": [
+        "Envelhecimento",
+        "Genética",
+        "Sol"
+      ],
+      "lookFor": [
+        "Textura cerosa",
+        "Marrom escuro",
+        "Borda definida",
+        "Aparência colada"
+      ]
+    },
+    "vitiligo": {
+      "name": "Vitiligo",
+      "description": "Perda de pigmentação da pele causando manchas brancas.",
+      "visualLabel": "Manchas brancas",
+      "visualDesc": "Áreas claras sem pigmento na pele",
+      "symptoms": [
+        "Manchas brancas",
+        "Perda de cor",
+        "Cabelos brancos",
+        "Simetria"
+      ],
+      "causes": [
+        "Autoimune",
+        "Genética",
+        "Estresse",
+        "Oxidação"
+      ],
+      "lookFor": [
+        "Manchas brancas",
+        "Bordas definidas",
+        "Simétrico",
+        "Cabelo descolorido"
+      ]
+    },
+    "warts": {
+      "name": "Verrugas",
+      "description": "Crescimentos causados pelo vírus HPV.",
+      "visualLabel": "Protuberâncias ásperas",
+      "visualDesc": "Pequenas protuberâncias com textura áspera",
+      "symptoms": [
+        "Caroço áspero",
+        "Textura irregular",
+        "Pontinhos pretos",
+        "Dor às vezes"
+      ],
+      "causes": [
+        "HPV",
+        "Contato direto",
+        "Feridas na pele",
+        "Baixa imunidade"
+      ],
+      "lookFor": [
+        "Textura áspera",
+        "Cor da pele",
+        "Pontinhos pretos",
+        "Mãos e pés"
+      ]
+    },
+    "athleteFoot": {
+  "name": "Pé de Atleta",
+  "description": "O pé de atleta é uma infecção fúngica que geralmente começa entre os dedos dos pés. É comum em pessoas cujos pés permanecem úmidos ou suam excessivamente.",
+  "visualLabel": "Coceira e descamação entre os dedos",
+  "visualDesc": "Pele avermelhada, descamando e com coceira entre os dedos ou na sola do pé.",
+  "symptoms": [
+    "Coceira",
+    "Sensação de queimação",
+    "Descamação da pele",
+    "Às vezes surgem bolhas"
+  ],
+  "causes": [
+    "Infecção fúngica (Tinea pedis)",
+    "Pés úmidos ou suados",
+    "Andar descalço em chuveiros ou piscinas públicas",
+    "Uso de sapatos apertados"
+  ],
+  "lookFor": [
+    "Descamação entre os dedos",
+    "Vermelhidão e rachaduras",
+    "Coceira ou ardor",
+    "Mau cheiro"
+  ]
+},
+
+"cellulitis": {
+  "name": "Celulite Infecciosa",
+  "description": "A celulite infecciosa é uma infecção bacteriana das camadas profundas da pele. Pode se espalhar rapidamente e requer tratamento médico imediato.",
+  "visualLabel": "Pele avermelhada e inchada em expansão",
+  "visualDesc": "Área vermelha, quente e inchada que aumenta rapidamente.",
+  "symptoms": [
+    "Vermelhidão e dor",
+    "Calor na área afetada",
+    "Febre ou calafrios",
+    "Bolhas"
+  ],
+  "causes": [
+    "Entrada de bactérias por um ferimento",
+    "Cortes ou picadas de insetos",
+    "Sistema imunológico enfraquecido",
+    "Doenças crônicas da pele"
+  ],
+  "lookFor": [
+    "Vermelhidão que se espalha",
+    "Inchaço e calor",
+    "Pele esticada",
+    "Febre"
+  ]
+},
+
+"impetigo": {
+  "name": "Impetigo",
+  "description": "O impetigo é uma infecção bacteriana altamente contagiosa da pele, comum em crianças. Provoca feridas que formam crostas de cor de mel.",
+  "visualLabel": "Crostas cor de mel",
+  "visualDesc": "Feridas vermelhas ao redor do nariz e da boca que formam crostas amarelo-acastanhadas.",
+  "symptoms": [
+    "Feridas vermelhas que se rompem facilmente",
+    "Crostas cor de mel",
+    "Coceira",
+    "Gânglios linfáticos inchados"
+  ],
+  "causes": [
+    "Infecção por bactérias Staphylococcus ou Streptococcus",
+    "Contato direto com a pele",
+    "Lesões na pele",
+    "Locais movimentados, como escolas"
+  ],
+  "lookFor": [
+    "Crostas cor de mel",
+    "Feridas ao redor do nariz ou da boca",
+    "Coceira",
+    "Bolhas cheias de líquido"
+  ]
+},
+
+"shingles": {
+  "name": "Herpes Zóster",
+  "description": "O herpes zóster é uma doença dolorosa da pele causada pela reativação do vírus da catapora. Geralmente aparece apenas em um lado do corpo.",
+  "visualLabel": "Grupo de bolhas dolorosas",
+  "visualDesc": "Bolhas cheias de líquido que aparecem em apenas um lado do corpo.",
+  "symptoms": [
+    "Dor intensa",
+    "Sensação de queimação",
+    "Bolhas cheias de líquido",
+    "Febre"
+  ],
+  "causes": [
+    "Reativação do vírus varicela-zóster",
+    "Idade avançada",
+    "Sistema imunológico enfraquecido",
+    "Estresse"
+  ],
+  "lookFor": [
+    "Erupção em um lado do corpo",
+    "Bolhas cheias de líquido",
+    "Dor",
+    "Vermelhidão"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Urticária",
+  "description": "A urticária é uma reação da pele que causa vergões elevados e com coceira, geralmente provocados por alergias ou outros fatores.",
+  "visualLabel": "Vergões elevados com coceira",
+  "visualDesc": "Vergões vermelhos ou pálidos, elevados e de tamanhos variados que surgem de repente.",
+  "symptoms": [
+    "Coceira intensa",
+    "Vergões elevados",
+    "Erupções que aparecem e desaparecem",
+    "Às vezes inchaço"
+  ],
+  "causes": [
+    "Reação alérgica",
+    "Alguns medicamentos",
+    "Alergias alimentares",
+    "Exposição ao calor ou frio"
+  ],
+  "lookFor": [
+    "Vergões elevados",
+    "Coceira intensa",
+    "Vergões que mudam de tamanho",
+    "Aparecem e desaparecem rapidamente"
+  ]
+}
+  },
+  "profile": {
+    "title": "Meu Perfil",
+    "displayName": "Nome",
+    "email": "E-mail",
+    "saving": "Salvando...",
+    "save": "Salvar alterações",
+    "updateSuccess": "Perfil atualizado com sucesso!",
+    "updateError": "Erro ao atualizar perfil.",
+    "historyTitle": "Histórico de previsões",
+    "historyNote": "Histórico completo disponível após conexão com backend"
+  },
+  "appointment": {
+  "title": "Encontrar Dermatologista",
+  "subtitle": "Pesquise usando sua localização ou GPS",
+  "useGps": "Usar GPS",
+  "manualPlaceholder": "Digite sua região, cidade ou CEP",
+  "search": "Pesquisar",
+  "detectedLocation": "Localização detectada",
+  "verifyOnMap": "Ver no mapa",
+  "startPrompt": "Digite sua cidade ou região, ou use o GPS para encontrar dermatologistas próximos.",
+  "locating": "Detectando localização...",
+  "searching": "Procurando dermatologistas próximos...",
+  "empty": "Nenhum dermatologista encontrado nas proximidades.",
+  "dermBadge": "Dermatologista",
+  "noAddress": "Endereço não disponível",
+  "away": "Distância",
+  "directions": "Como chegar",
+  "call": "Ligar",
+  "disclaimer": "Esta lista é fornecida pelo OpenStreetMap. Verifique as informações antes de visitar."
+},
+  "precautions": {
+    "title": "Precauções e Cuidados com a Pele",
+    "subtitle": "Siga estas orientações para manter a pele saudável e prevenir doenças de pele.",
+    "warningTitle": "AVISO IMPORTANTE",
+    "warningBody": "Se notar qualquer lesão de pele que mude rapidamente, consulte imediatamente um dermatologista certificado. A detecção precoce salva vidas.",
+    "sun": {
+      "title": "Protetor solar",
+      "tips": [
+        "Aplique FPS 30+ protetor solar diariamente",
+        "Reaplique a cada 2 horas ao ar livre",
+        "Usar roupas e chapéus de proteção",
+        "Evite o horário de pico do sol (10h às 16h)"
+      ]
+    },
+    "checks": {
+      "title": "Verificações regulares da pele",
+      "tips": [
+        "Verifique a sua pele mensalmente",
+        "Procure toupeiras novas ou em mudança",
+        "Use a regra ABCDE para moles",
+        "Consulte um dermatologista anualmente"
+      ]
+    },
+    "hydration": {
+      "title": "Skin Hydration",
+      "tips": [
+        "Moisturize daily after bathing",
+        "Drink at least 8 glasses of water",
+        "Avoid hot showers — use warm water",
+        "Use fragrance-free products"
+      ]
+    },
+    "diet": {
+      "title": "Healthy Diet",
+      "tips": [
+        "Eat antioxidant-rich foods",
+        "Include omega-3 fatty acids",
+        "Reduce processed sugar intake",
+        "Eat leafy greens and berries"
+      ]
+    },
+    "habits": {
+      "title": "Avoid Harmful Habits",
+      "tips": [
+        "Avoid smoking — damages skin",
+        "Limit alcohol consumption",
+        "Do not use tanning beds",
+        "Avoid picking or scratching skin"
+      ]
+    },
+    "doctor": {
+      "title": "When to See a Doctor",
+      "tips": [
+        "Mole changes in size or color",
+        "Sore that won't heal",
+        "Itching or bleeding lesions",
+        "Any skin change that worries you"
+      ]
+    }
+  }
+}

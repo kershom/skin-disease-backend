@@ -1,0 +1,656 @@
+{
+  "language": "Sprache",
+  "user": "Benutzer",
+  "adminBadge": "Admin",
+  "logout": "Abmelden",
+  "welcomeBack": "Willkommen zurück, {{name}}",
+  "nav": {
+    "scan": "Scannen & Vorhersage",
+    "disease": "Krankheitsinformationen",
+    "precautions": "Vorsichtsmaßnahmen",
+    "profile": "Mein Profil",
+    "admin": "Admin-Bereich",
+    "appointment": "Hautarzt finden"
+  },
+  "adminPanel": {
+    "title": "Admin-Bereich",
+    "description": "Zugriff auf das vollständige Admin-Dashboard zur Verwaltung von Benutzern, Analysen und Vorhersagen.",
+    "open": "Admin-Dashboard öffnen"
+  },
+  "severity": {
+    "low": "Niedrig",
+    "medium": "Mittel",
+    "high": "Hoch",
+    "risk": "{{level}} Risiko",
+    "benign": "In der Regel gutartig",
+    "monitor": "Genau beobachten",
+    "urgent": "Bald einen Arzt aufsuchen"
+  },
+  "scan": {
+  "title": "Hautbildanalyse",
+  "subtitle": "Laden Sie ein Bild hoch oder verwenden Sie Ihre Live-Webcam für eine sofortige KI-gestützte Hautanalyse.",
+  "upload": "Hochladen",
+  "webcam": "Webcam",
+  "dropHere": "Hier ablegen!",
+  "dragDrop": "Ziehen Sie Ihr Bild hierher und legen Sie es ab",
+  "browse": "Oder klicken Sie, um eine Datei auszuwählen",
+  "chooseImage": "Bild auswählen",
+  "fileTypes": "JPG, PNG, WebP unterstützt – maximal 10 MB",
+  "ready": "Bereit zur Analyse",
+  "chooseDifferent": "Anderes Bild auswählen",
+  "analyzing": "Analyse wird durchgeführt...",
+  "analyze": "Bild analysieren",
+  "cameraDenied": "Kamerazugriff verweigert",
+  "cameraHint": "Bitte erlauben Sie den Kamerazugriff in Ihren Browsereinstellungen und versuchen Sie es erneut.",
+  "tryAgain": "Erneut versuchen",
+  "startingCamera": "Kamera wird gestartet...",
+  "live": "Live",
+  "flip": "Spiegeln",
+  "tip": "Für eine höhere Genauigkeit halten Sie den betroffenen Hautbereich im Bild und sorgen Sie für eine gute Beleuchtung.",
+  "capture": "Bild aufnehmen",
+  "captured": "Bild aufgenommen",
+  "retake": "Erneut aufnehmen",
+  "loadingTitle": "Hautmuster werden analysiert...",
+  "loadingSubtitle": "Das CNN-Modell verarbeitet Ihr Bild. Bitte warten Sie.",
+  "loadingModel": "Deep-Learning-Modell wird ausgeführt...",
+  "associatedSymptoms": "Zugehörige Symptome",
+  "developmentNote": "Demo-Modus",
+  "fusionTitle": "Symptombasierte Entscheidungsfusion befindet sich noch in der Entwicklung",
+  "fusionDesc": "Derzeit basiert die Vorhersage ausschließlich auf dem hochgeladenen Bild. In zukünftigen Updates werden diese Symptome mit der Bildanalyse kombiniert, um die Genauigkeit zu verbessern.",
+  "durationLabel": "Dauer der Symptome",
+  "symptoms": {
+    "itching": "Juckreiz",
+    "pain": "Schmerzen",
+    "fever": "Fieber",
+    "bleeding": "Blutung",
+    "burningSensation": "Brennendes Gefühl",
+    "scaling": "Schuppende Haut",
+    "growthInSize": "Größenzunahme"
+  },
+  "duration": {
+    "less-than-week": "Weniger als eine Woche",
+    "weeks": "Wochen",
+    "months": "Monate"
+  },
+  "awaitingImages": "Warten auf Hautbilder",
+  "awaitingSubtitle": "Laden Sie links Bilder hoch oder machen Sie ein Foto. Die KI-Analyse wird hier angezeigt.",
+  "tipTitle": "Tipps für eine bessere Analyse",
+  "tip1": "Stellen Sie sicher, dass der betroffene Bereich gut beleuchtet ist.",
+  "tip2": "Laden Sie mehrere Bilder desselben Hautbereichs aus verschiedenen Winkeln oder Entfernungen hoch.",
+  "tip3": "Positionieren Sie die betroffene Stelle deutlich in der Mitte des Bildes.",
+  "spotsList": "Hochgeladene Bilder der Hautstellen",
+  "clearAll": "Alle löschen",
+  "analyzeMultiple": "Bereite Hautstellen analysieren ({{count}})",
+  "consensusReport": "Kombiniertes Ergebnis",
+  "individualSpots": "Einzelne Hautstellen",
+  "consensusActive": "Zusammenfassung mehrerer Bilder",
+  "consensusDesc": "Erstellt durch Zusammenführung der Ergebnisse von {{count}} Hautstellenbildern.",
+  "spotDetails": "Details zur Hautstelle",
+  "webcamSnap": "Webcam-Aufnahme",
+  "uploadedImage": "Hochgeladenes Bild",
+  "status": "Analysestatus",
+  "readyToScan": "Bereit zum Scannen",
+  "analyzingLabel": "KI-Analyse läuft...",
+  "analyzed": "Scan erfolgreich",
+  "failed": "Scan fehlgeschlagen",
+  "readyExpl": "Diese Hautstelle wurde noch nicht analysiert.",
+  "runScan": "KI-Scan starten",
+  "defaultError": "Die Vorhersage ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
+  "retry": "Erneut analysieren",
+  "predictionSummary": "Vorhersageübersicht",
+  "conditionLabel": "Zustand",
+  "confidenceLabel": "Konfidenzniveau",
+  "riskLevelLabel": "Risikostufe"
+
+  },
+"prediction": {
+    "title": "KI-Vorhersageergebnis",
+    "condition": "ERKANNTE ERKRANKUNG",
+    "confidence": "VERTRAUENSWERT",
+    "severity": "SCHWEREGRAD",
+    "probabilities": "Vorhersagewahrscheinlichkeiten",
+    "gradcamTitle": "Grad-CAM-Visualisierung",
+    "original": "ORIGINALBILD",
+    "heatmap": "KI-FOKUS-HEATMAP",
+    "heatmapPending": "Die Heatmap wird hier angezeigt, sobald das Flask-Backend verbunden ist",
+    "disclaimer": "Dies ist eine KI-Vorhersage nur zu Informationszwecken. Bitte konsultieren Sie einen zertifizierten Dermatologen für eine korrekte Diagnose.",
+    "others": "Andere",
+    "downloadReport": "Bericht herunterladen",
+    "generatingReport": "Wird erstellt..."
+  },
+  "diseaseInfo": {
+    "title": "Aufklärung über Hautkrankheiten",
+    "subtitle": "Erfahren Sie mehr über die 10 von DermaLens erkannten Hauterkrankungen. Klicken Sie auf eine Karte für Details.",
+    "more": "Mehr",
+    "less": "Weniger",
+    "medicalRef": "Medizinische Referenz",
+    "lookFor": "Worauf zu achten ist",
+    "symptoms": "Symptome",
+    "causes": "Ursachen",
+    "highWarning": "Hohes Risiko – sofort einen Dermatologen aufsuchen.",
+    "mediumWarning": "Mittleres Risiko – regelmäßig beobachten.",
+    "disclaimer": "Die Bilder dienen nur als medizinische Referenz. Bitte konsultieren Sie einen Arzt."
+  },
+  "diseases": {
+    "acne": {
+      "name": "Akne",
+      "description": "Häufige Hauterkrankung, bei der Haarfollikel durch Öl und abgestorbene Hautzellen verstopfen und Pickel, Mitesser und Whiteheads entstehen.",
+      "visualLabel": "Rote Pickel und Whiteheads",
+      "visualDesc": "Entzündete rote Pickel oder Whiteheads im Gesicht, auf Brust und Rücken",
+      "symptoms": [
+        "Pickel und Pusteln",
+        "Mitesser oder Whiteheads",
+        "Fettige Haut",
+        "Narben nach Abheilung"
+      ],
+      "causes": [
+        "Übermäßige Talgproduktion",
+        "Bakterielle Infektion",
+        "Hormonelle Veränderungen",
+        "Verstopfte Poren"
+      ],
+      "lookFor": [
+        "Rote entzündete Pickel",
+        "Mitesser oder Whiteheads",
+        "Eitergefüllte Pusteln",
+        "Vor allem Gesicht und Rücken"
+      ]
+    },
+    "actinicKeratosis": {
+      "name": "Aktinische Keratose",
+      "description": "Raue, schuppige Hautstellen durch jahrelange Sonneneinstrahlung. Gilt als Krebsvorstufe.",
+      "visualLabel": "Raue, schuppige rote Stelle",
+      "visualDesc": "Trockene, raue, schuppige Hautstelle – meist rot, rosa oder braun",
+      "symptoms": [
+        "Raue schuppige Stelle",
+        "Flach oder leicht erhaben",
+        "Juckreiz oder Brennen",
+        "Harte warzenartige Oberfläche"
+      ],
+      "causes": [
+        "UV-Strahlung",
+        "Solarien",
+        "Geschwächtes Immunsystem"
+      ],
+      "lookFor": [
+        "Schuppige Textur",
+        "Rosa bis rote Farbe",
+        "Fühlt sich rau an",
+        "Flach oder leicht erhaben"
+      ]
+    },
+    "basalCell": {
+      "name": "Basalzellkarzinom",
+      "description": "Häufigster Hautkrebs. Wächst langsam und breitet sich selten aus.",
+      "visualLabel": "Perlige rosafarbene Erhebung",
+      "visualDesc": "Glänzender perliger Knoten",
+      "symptoms": [
+        "Perlige Beule",
+        "Narbenartige Stelle",
+        "Blutende Wunde",
+        "Rosa Wachstum"
+      ],
+      "causes": [
+        "Chronische Sonneneinstrahlung",
+        "Strahlentherapie",
+        "Helle Haut"
+      ],
+      "lookFor": [
+        "Perlige Oberfläche",
+        "Rosa oder hautfarben",
+        "Sichtbare Gefäße",
+        "Langsames Wachstum"
+      ]
+    },
+    "benignKeratosis": {
+      "name": "Gutartige Keratose",
+      "description": "Gutartige Hautwucherung, die häufig im Alter auftritt.",
+      "visualLabel": "Wachsartige erhabene Stelle",
+      "visualDesc": "Rau, wachsartig oder „aufgeklebt“ wirkend",
+      "symptoms": [
+        "Wachsartige Oberfläche",
+        "Aufgeklebt wirkend",
+        "Unterschiedliche Farbe",
+        "Juckreiz"
+      ],
+      "causes": [
+        "Alter",
+        "Sonne",
+        "Genetik"
+      ],
+      "lookFor": [
+        "Wachsartige Textur",
+        "Hell- bis dunkelbraun",
+        "Scharf begrenzt",
+        "Aufgeklebt wirkend"
+      ]
+    },
+    "dermatofibroma": {
+      "name": "Dermatofibrom",
+      "description": "Gutartige feste Hautknoten, meist an den Beinen.",
+      "visualLabel": "Kleiner fester runder Knoten",
+      "visualDesc": "Kleiner erhabener Knoten, der sich beim Drücken eindellt",
+      "symptoms": [
+        "Kleiner fester Knoten",
+        "Braun oder rot",
+        "Delle beim Drücken",
+        "Leicht erhaben"
+      ],
+      "causes": [
+        "Kleinere Hautverletzungen",
+        "Insektenstiche",
+        "Unbekannte Ursachen"
+      ],
+      "lookFor": [
+        "Feste Struktur",
+        "Rötlich-braun",
+        "Dellenzeichen",
+        "Meist an den Beinen"
+      ]
+    },
+    "vascularLesion": {
+      "name": "Gefäßläsion",
+      "description": "Abnormalitäten der Blutgefäße, sichtbar auf der Hautoberfläche.",
+      "visualLabel": "Rote Gefäßläsion",
+      "visualDesc": "Hellrot oder violett durch nahegelegene Blutgefäße verursacht",
+      "symptoms": [
+        "Rote oder violette Flecken",
+        "Flach oder erhaben",
+        "Kann bluten",
+        "Spinnenartige Muster"
+      ],
+      "causes": [
+        "Genetik",
+        "Sonnenschäden",
+        "Alterung"
+      ],
+      "lookFor": [
+        "Leuchtend rote Farbe",
+        "Besenreiser",
+        "Verblasst bei Druck",
+        "Unregelmäßige Form"
+      ]
+    },
+    "eczema": {
+      "name": "Ekzem",
+      "description": "Chronisch entzündliche Hauterkrankung mit Juckreiz und Rötung.",
+      "visualLabel": "Rote juckende Hautstellen",
+      "visualDesc": "Trockene, entzündete Haut",
+      "symptoms": [
+        "Starker Juckreiz",
+        "Rötung",
+        "Trockene Haut",
+        "Nässen oder Krusten"
+      ],
+      "causes": [
+        "Immunsystemreaktion",
+        "Genetik",
+        "Umweltfaktoren",
+        "Allergene"
+      ],
+      "lookFor": [
+        "Rote juckende Flecken",
+        "Trockene schuppige Haut",
+        "Verdickte Haut",
+        "Hautfalten betroffen"
+      ]
+    },
+    "psoriasis": {
+      "name": "Psoriasis",
+      "description": "Chronische Autoimmunerkrankung mit schneller Hautzellproduktion.",
+      "visualLabel": "Dick schuppige silberne Plaques",
+      "visualDesc": "Rote Hautstellen mit silbernen Schuppen",
+      "symptoms": [
+        "Rote schuppige Flecken",
+        "Trockene Haut",
+        "Juckreiz oder Brennen",
+        "Verdickte Nägel"
+      ],
+      "causes": [
+        "Autoimmunreaktion",
+        "Genetik",
+        "Stress",
+        "Infektionen"
+      ],
+      "lookFor": [
+        "Silbrige Schuppen",
+        "Rote Basis",
+        "Scharf begrenzt",
+        "Ellbogen und Knie"
+      ]
+    },
+    "ringworm": {
+      "name": "Ringelflechte",
+      "description": "Pilzinfektion der Haut mit ringförmigem Ausschlag.",
+      "visualLabel": "Ringförmiger roter Ausschlag",
+      "visualDesc": "Roter Ring mit hellem Zentrum",
+      "symptoms": [
+        "Ringförmiger Ausschlag",
+        "Schuppige Ränder",
+        "Juckreiz",
+        "Rötung"
+      ],
+      "causes": [
+        "Pilzinfektion",
+        "Kontakt mit Infizierten",
+        "Geteilte Gegenstände",
+        "Feuchte Umgebung"
+      ],
+      "lookFor": [
+        "Ringform",
+        "Schuppige Ränder",
+        "Helles Zentrum",
+        "Juckender roter Rand"
+      ]
+    },
+    "rosacea": {
+      "name": "Rosazea",
+      "description": "Chronische Gesichtsrötung mit sichtbaren Blutgefäßen.",
+      "visualLabel": "Gesichtsrötung",
+      "visualDesc": "Rötung auf Wangen und Nase",
+      "symptoms": [
+        "Gesichtsrötung",
+        "Sichtbare Gefäße",
+        "Pickelartige Läsionen",
+        "Augenreizung"
+      ],
+      "causes": [
+        "Genetik",
+        "Umweltfaktoren",
+        "Sonne",
+        "Essen/Trinken"
+      ],
+      "lookFor": [
+        "Rote Wangen",
+        "Besenreiser im Gesicht",
+        "Häufige Rötung",
+        "Nasenbereich"
+      ]
+    },
+    "seborrheicKeratosis": {
+      "name": "Seborrhoische Keratose",
+      "description": "Gutartige altersbedingte Hautwucherung.",
+      "visualLabel": "Wachsartige „aufgeklebt“ wirkende Stelle",
+      "visualDesc": "Rau und wachsartig auf der Haut",
+      "symptoms": [
+        "Wachsartige Oberfläche",
+        "Aufgeklebt wirkend",
+        "Farbvariationen",
+        "Juckreiz"
+      ],
+      "causes": [
+        "Alter",
+        "Sonne",
+        "Genetik"
+      ],
+      "lookFor": [
+        "Wachsartig",
+        "Braun bis dunkelbraun",
+        "Scharf begrenzt",
+        "Aufgeklebt"
+      ]
+    },
+    "vitiligo": {
+      "name": "Vitiligo",
+      "description": "Pigmentverlust der Haut mit weißen Flecken.",
+      "visualLabel": "Weiße Depigmentierungsflecken",
+      "visualDesc": "Klar abgegrenzte weiße Hautstellen",
+      "symptoms": [
+        "Weiße Flecken",
+        "Haaraufhellung",
+        "Pigmentverlust",
+        "Symmetrische Verteilung"
+      ],
+      "causes": [
+        "Autoimmunerkrankung",
+        "Genetik",
+        "Oxidativer Stress",
+        "Oxidativer Streß"
+      ],
+      "lookFor": [
+        "Milchweiße Flecken",
+        "Scharfe Grenzen",
+        "Symmetrisch",
+        "Weiße Haare im Bereich"
+      ]
+    },
+    "warts": {
+      "name": "Warzen",
+      "description": "Kleine raue Hautwucherungen durch HPV-Virus.",
+      "visualLabel": "Raue erhabene Knötchen",
+      "visualDesc": "Kleine unregelmäßige Hautwucherungen",
+      "symptoms": [
+        "Raue Oberfläche",
+        "Knötchen",
+        "Schwarze Punkte",
+        "Schmerz bei Druck"
+      ],
+      "causes": [
+        "HPV-Virus",
+        "Kontaktinfektion",
+        "Hautverletzungen",
+        "Schwaches Immunsystem"
+      ],
+      "lookFor": [
+        "Raue Textur",
+        "Hautfarben oder grau",
+        "Schwarze Punkte",
+        "Hände und Füße"
+      ]
+    },
+    "athleteFoot": {
+  "name": "Fußpilz",
+  "description": "Fußpilz ist eine Pilzinfektion, die meist zwischen den Zehen beginnt. Sie tritt häufig bei Menschen auf, deren Füße stark schwitzen oder lange feucht bleiben.",
+  "visualLabel": "Juckreiz und schuppige Haut zwischen den Zehen",
+  "visualDesc": "Gerötete, juckende und schuppige Haut zwischen den Zehen oder an der Fußsohle.",
+  "symptoms": [
+    "Juckreiz",
+    "Brennendes Gefühl",
+    "Schuppige Haut",
+    "Manchmal Bläschen"
+  ],
+  "causes": [
+    "Pilzinfektion (Tinea pedis)",
+    "Feuchte oder verschwitzte Füße",
+    "Barfußlaufen in öffentlichen Duschen oder Schwimmbädern",
+    "Enge Schuhe tragen"
+  ],
+  "lookFor": [
+    "Schuppige Haut zwischen den Zehen",
+    "Rötung und Risse",
+    "Juckreiz oder Brennen",
+    "Unangenehmer Geruch"
+  ]
+},
+
+"cellulitis": {
+  "name": "Zellulitis",
+  "description": "Zellulitis ist eine bakterielle Infektion der tieferen Hautschichten. Sie kann sich schnell ausbreiten und erfordert eine sofortige medizinische Behandlung.",
+  "visualLabel": "Sich ausbreitende gerötete und geschwollene Haut",
+  "visualDesc": "Schnell ausbreitende, gerötete, warme und geschwollene Haut.",
+  "symptoms": [
+    "Rötung und schmerzhafte Schwellung",
+    "Wärmegefühl im betroffenen Bereich",
+    "Fieber oder Schüttelfrost",
+    "Bläschen"
+  ],
+  "causes": [
+    "Bakterien gelangen durch eine Wunde in die Haut",
+    "Schnittverletzungen oder Insektenstiche",
+    "Geschwächtes Immunsystem",
+    "Chronische Hauterkrankungen"
+  ],
+  "lookFor": [
+    "Sich ausbreitende Rötung",
+    "Schwellung und Wärme",
+    "Spannende Haut",
+    "Fieber"
+  ]
+},
+
+"impetigo": {
+  "name": "Impetigo",
+  "description": "Impetigo ist eine hoch ansteckende bakterielle Hautinfektion, die besonders häufig bei Kindern vorkommt. Typisch sind honiggelbe Krusten.",
+  "visualLabel": "Honiggelbe Krusten",
+  "visualDesc": "Rote Wunden um Nase und Mund, die gelblich-braune Krusten bilden.",
+  "symptoms": [
+    "Leicht platzende rote Wunden",
+    "Honiggelbe Krusten",
+    "Juckreiz",
+    "Geschwollene Lymphknoten"
+  ],
+  "causes": [
+    "Infektion mit Staphylokokken oder Streptokokken",
+    "Direkter Hautkontakt",
+    "Hautverletzungen",
+    "Überfüllte Orte wie Schulen"
+  ],
+  "lookFor": [
+    "Honiggelbe Krusten",
+    "Rote Wunden um Nase oder Mund",
+    "Juckreiz",
+    "Flüssigkeitsgefüllte Bläschen"
+  ]
+},
+
+"shingles": {
+  "name": "Gürtelrose",
+  "description": "Gürtelrose ist eine schmerzhafte Hauterkrankung, die durch die Reaktivierung des Windpockenvirus verursacht wird. Sie tritt meist nur auf einer Körperseite auf.",
+  "visualLabel": "Gruppe schmerzhafter Bläschen",
+  "visualDesc": "Flüssigkeitsgefüllte Bläschen erscheinen auf einer Körperseite.",
+  "symptoms": [
+    "Starke Schmerzen",
+    "Brennendes Gefühl",
+    "Flüssigkeitsgefüllte Bläschen",
+    "Fieber"
+  ],
+  "causes": [
+    "Reaktivierung des Varizella-Zoster-Virus",
+    "Höheres Alter",
+    "Geschwächtes Immunsystem",
+    "Stress"
+  ],
+  "lookFor": [
+    "Ausschlag auf einer Körperseite",
+    "Flüssigkeitsgefüllte Bläschen",
+    "Schmerzen",
+    "Rötung"
+  ]
+},
+
+"urticariaHives": {
+  "name": "Nesselsucht",
+  "description": "Nesselsucht ist eine Hautreaktion mit juckenden, erhabenen Quaddeln, die häufig durch Allergien oder andere Auslöser verursacht wird.",
+  "visualLabel": "Juckende, erhabene Quaddeln",
+  "visualDesc": "Plötzlich auftretende rote oder blasse, unterschiedlich große Quaddeln.",
+  "symptoms": [
+    "Starker Juckreiz",
+    "Erhabene Quaddeln",
+    "Ausschlag, der kommt und geht",
+    "Manchmal Schwellungen"
+  ],
+  "causes": [
+    "Allergische Reaktion",
+    "Bestimmte Medikamente",
+    "Lebensmittelallergien",
+    "Hitze oder Kälte"
+  ],
+  "lookFor": [
+    "Erhabene Quaddeln",
+    "Starker Juckreiz",
+    "Größenveränderung der Quaddeln",
+    "Plötzliches Auftreten und Verschwinden"
+  ]
+}
+  },
+  "precautions": {
+    "title": "Vorsichtsmaßnahmen & Hautpflege",
+    "subtitle": "Richtlinien für gesunde Haut.",
+    "warningTitle": "Wichtiger Hinweis",
+    "warningBody": "Bei schnellen Hautveränderungen sofort zum Arzt.",
+    "sun": {
+      "title": "Sonnenschutz",
+      "tips": [
+        "SPF 30+",
+        "Alle 2 Stunden neu auftragen",
+        "Schutzkleidung",
+        "10–16 Uhr vermeiden"
+      ]
+    },
+    "checks": {
+      "title": "Hautkontrolle",
+      "tips": [
+        "Monatlich prüfen",
+        "Neue Muttermale beobachten",
+        "ABCDE-Regel",
+        "Jährlicher Arztbesuch"
+      ]
+    },
+    "hydration": {
+      "title": "Hydration",
+      "tips": [
+        "Eincremen",
+        "Viel Wasser trinken",
+        "Keine heißen Duschen",
+        "Duftfrei"
+      ]
+    },
+    "diet": {
+      "title": "Ernährung",
+      "tips": [
+        "Antioxidantien",
+        "Omega-3",
+        "Weniger Zucker",
+        "Obst & Gemüse"
+      ]
+    },
+    "habits": {
+      "title": "Schlechte Gewohnheiten vermeiden",
+      "tips": [
+        "Nicht rauchen",
+        "Wenig Alkohol",
+        "Kein Solarium",
+        "Nicht kratzen"
+      ]
+    },
+    "doctor": {
+      "title": "Wann zum Arzt",
+      "tips": [
+        "Größenänderung",
+        "Nicht heilende Wunden",
+        "Blutung",
+        "Verdächtige Veränderungen"
+      ]
+    }
+  },
+  "profile": {
+    "title": "Mein Profil",
+    "displayName": "Anzeigename",
+    "email": "E-Mail-Adresse",
+    "saving": "Speichern...",
+    "save": "Änderungen speichern",
+    "updateSuccess": "Profil erfolgreich aktualisiert!",
+    "updateError": "Fehler beim Aktualisieren.",
+    "historyTitle": "Vorhersageverlauf",
+    "historyNote": "Verlauf verfügbar, sobald Backend verbunden ist"
+  },
+  "appointment": {
+  "title": "Hautarzt finden",
+  "subtitle": "Suchen Sie mithilfe Ihres Standorts oder per GPS",
+  "useGps": "GPS verwenden",
+  "manualPlaceholder": "Geben Sie Ihren Ort, Ihre Stadt oder Postleitzahl ein",
+  "search": "Suchen",
+  "detectedLocation": "Erkannter Standort",
+  "verifyOnMap": "Auf der Karte anzeigen",
+  "startPrompt": "Geben Sie Ihre Stadt oder Ihren Ort ein oder verwenden Sie GPS, um Hautärzte in Ihrer Nähe zu finden.",
+  "locating": "Standort wird ermittelt...",
+  "searching": "Suche nach Hautärzten in der Nähe...",
+  "empty": "Keine Hautärzte in der Nähe gefunden.",
+  "dermBadge": "Hautarzt",
+  "noAddress": "Adresse nicht verfügbar",
+  "away": "Entfernung",
+  "directions": "Route",
+  "call": "Anrufen",
+  "disclaimer": "Diese Einträge stammen von OpenStreetMap. Bitte überprüfen Sie die Informationen vor Ihrem Besuch."
+}
+}

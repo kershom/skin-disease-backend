@@ -1,0 +1,151 @@
+{
+  "app": {
+    "tagline": "人工智能皮肤病检测",
+    "loading": "正在加载DermaLens..."
+  },
+  "languages": {
+    "en": "英语",
+    "hi": "印地语",
+    "ml": "马拉雅拉姆语",
+    "ta": "泰米尔语",
+    "te": "泰卢固语",
+    "kn": "卡纳达语",
+    "bn": "孟加拉语",
+    "mr": "马拉地语",
+    "gu": "古吉拉特语",
+    "pa": "旁遮普语",
+    "or": "奥迪亚语",
+    "ur": "乌都语",
+    "fr": "嘿，法国人！",
+    "es": "西班牙",
+    "ar": "阿拉伯语",
+    "zh": "中国",
+    "ja": "日语",
+    "ko": "朝鲜语",
+    "ru": "俄语",
+    "de": "德国",
+    "pt": "葡萄牙语"
+  },
+  "nav": {
+    "features": "特点",
+    "howItWorks": "工作原理",
+    "awareness": "意识",
+    "login": "登录",
+    "indianLanguages": "印度语言",
+    "internationalLanguages": "2. 国际语言：",
+    "switchToLight": "切换到浅色",
+    "switchToDark": "切换到深色模式"
+  },
+  "hero": {
+    "badge": "人工智能驱动的医疗保健",
+    "titleLine1": "人工智能驱动",
+    "titleLine2": "皮肤病",
+    "titleLine3": "检测系统",
+    "subtitle": "上传或扫描您的皮肤图像，并接收即时人工智能预测、疾病信息和专家预防措施。",
+    "getStarted": "开始",
+    "scanNow": "立即扫描",
+    "statDiseases": "检测到的疾病",
+    "statAccuracy": "合格率",
+    "statInstant": "AI结果",
+    "statInstantValue": "速溶咖啡",
+    "aiAnalysis": "AI 分析",
+    "badgeAccurate": "95%准确度",
+    "badgeResults": "即时结果",
+    "badgeSecure": "安全与隐私"
+  },
+  "features": {
+    "badge": "我们提供的内容",
+    "title": "强大的功能",
+    "subtitle": "在一个平台上提供人工智能皮肤病检测所需的一切。",
+    "aiPrediction": {
+      "title": "AI预测",
+      "description": "在HAM10000数据集上训练的CNN模型可以高精度地检测7种类型的皮肤疾病。"
+    },
+    "webcam": {
+      "title": "实时网络摄像头检测",
+      "description": "使用您的设备摄像头实时捕获和分析皮肤图像。"
+    },
+    "awareness": {
+      "title": "疾病意识",
+      "description": "每种疾病的症状、原因、严重程度和预防的详细信息。"
+    },
+    "gradcam": {
+      "title": "Grad-CAM可视化",
+      "description": "使用热图叠加层查看AI聚焦在图像上的确切位置。"
+    },
+    "multilingual": {
+      "title": "多语言支持",
+      "description": "提供英语、印地语、马拉雅拉姆语、泰米尔语等多种语言版本，方便房客使用。"
+    },
+    "secure": {
+      "title": "安全用户配置文件",
+      "description": "您的数据受到Firebase身份验证和安全云存储的保护。"
+    }
+  },
+  "howItWorks": {
+    "badge": "简便、高效的流程",
+    "title": "工作原理",
+    "subtitle": "只需3个简单步骤即可获得AI皮肤分析—无需医学知识。",
+    "stepLabel": "STEP",
+    "step1": {
+      "title": "上传或扫描图像",
+      "description": "拖放皮肤图像或使用实时网络摄像头直接捕获皮肤图像。"
+    },
+    "step2": {
+      "title": "AI分析图像",
+      "description": "我们的CNN模型处理图像，并通过HAM10000训练模型运行。"
+    },
+    "step3": {
+      "title": "获取结果和注意事项",
+      "description": "接受预测疾病、置信评分、Grad-CAM热图和注意事项。"
+    }
+  },
+  "awareness": {
+    "disclaimerTitle": "医疗免责声明",
+    "disclaimerBody": "人工智能预测不能替代专业的医疗诊断。此工具仅用于提高认识和早期检测。始终咨询经过认证的皮肤科医生，以获得适当的诊断和治疗。",
+    "ctaTitle": "准备好开始了吗？",
+    "ctaSubtitle": "加入成千上万使用人工智能的用户的行列，了解他们的皮肤健康状况。",
+    "ctaButton": "免费试用DermaLens"
+  },
+  "footer": {
+    "tagline": "人工智能皮肤病检测系统",
+    "copyright": "© 2025 DermaLens。仅供参考。不能代替医疗建议。"
+  },
+  "login": {
+    "backToHome": "返回首页",
+    "tagline": "人工智能皮肤病检测",
+    "loginTab": "登录",
+    "signupTab": "建立新帳戶",
+    "email": "电子邮箱",
+    "password": "密码",
+    "fullName": "全名",
+    "phone": "电话号码",
+    "phoneOptional": "（可选）",
+    "confirmPassword": "确认密码",
+    "savePassword": "保存密码",
+    "loggingIn": "正在登录……",
+    "loginButton": "登录",
+    "creatingAccount": "正在创建帐户...",
+    "createAccount": "信用账户",
+    "or": "或者",
+    "continueGoogle": "继续使用 Google 浏览",
+    "emailPlaceholder": "you@example.com",
+    "phonePlaceholder": "10位数字",
+    "passwordMinPlaceholder": "最少6个字符",
+    "confirmPlaceholder": "再次输入密码",
+    "errors": {
+      "fillAll": "请填写所有字段。",
+      "fillRequired": "请完成所有必填项。",
+      "passwordMin": "密码必须不少于6个字符",
+      "passwordMismatch": "密码不一致。",
+      "phoneInvalid": "请输入一个有效的电话号码。",
+      "userNotFound": "未找到使用此电子邮箱的帐户。",
+      "wrongPassword": "密码不正确。",
+      "invalidEmail": "电子邮箱地址无效。",
+      "emailInUse": "此电子邮件已被一账户使用"
+    },
+    "successLogin": "登录成功",
+    "successSignup": "帐户创建成功！请登录。",
+    "successGoogle": "已使用Google登入！"
+  }
+}
